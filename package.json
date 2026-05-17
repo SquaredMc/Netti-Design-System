@@ -19,7 +19,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run build:tokens && vite build && tsc --emitDeclarationOnly --declaration --declarationDir dist",
+    "build": "npm run build:tokens && vite build && cp src/tokens.css dist/tokens.css",
     "build:tokens": "node sd.config.js",
     "dev": "storybook dev -p 6006",
     "storybook": "storybook dev -p 6006",
