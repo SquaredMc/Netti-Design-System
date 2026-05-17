@@ -1,0 +1,51 @@
+.ds-money-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-6) 0;
+}
+
+.ds-money-row-label {
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  color: var(--text-2);
+}
+
+.ds-money-row-amount {
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  font-weight: var(--weight-medium);
+  color: var(--text-1);
+  text-align: right;
+}
+
+.ds-money-row--positive .ds-money-row-amount {
+  color: var(--text-positive);
+}
+
+.ds-money-row--negative .ds-money-row-amount {
+  color: var(--text-negative);
+}
+
+.ds-money-row--strong {
+  padding: var(--space-12) 0;
+}
+
+.ds-money-row--strong .ds-money-row-label {
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  font-weight: var(--weight-semibold);
+  color: var(--text-1);
+}
+
+.ds-money-row--strong .ds-money-row-amount {
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-line);
+  font-weight: var(--weight-bold);
+}
+
+.ds-divider {
+  height: 1px;
+  background-color: var(--surface-3);
+  margin: var(--space-6) 0;
+}

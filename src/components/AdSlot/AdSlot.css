@@ -1,0 +1,21 @@
+.ds-ad-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  height: 50px;
+  background: linear-gradient(to right, #fce7f3, #f3e8ff);
+  border: 2px solid #fda5d5;
+  border-radius: var(--radius);
+}
+
+.ds-ad-slot-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.ds-ad-slot-text {
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  color: #99A1AF;
+}

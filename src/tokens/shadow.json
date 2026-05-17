@@ -1,0 +1,40 @@
+{
+  "$description": "Netti shadow / elevation tokens — W3C DTCG format",
+
+  "shadow": {
+    "card": {
+      "$value": [
+        { "offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px", "color": "rgba(0,0,0,0.10)" },
+        { "offsetX": "0px", "offsetY": "1px", "blur": "3px", "spread": "0px", "color": "rgba(0,0,0,0.10)" }
+      ],
+      "$type": "shadow",
+      "$description": "Default card elevation and selected interactive item"
+    },
+    "sheet": {
+      "$value": [
+        { "offsetX": "0px", "offsetY": "-12px", "blur": "30px", "spread": "0px", "color": "rgba(0,0,0,0.12)" }
+      ],
+      "$type": "shadow",
+      "$description": "Bottom sheet — casts upward"
+    },
+    "none": {
+      "$value": [
+        { "offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "0px", "color": "rgba(0,0,0,0)" }
+      ],
+      "$type": "shadow"
+    }
+  },
+
+  "elevate": {
+    "1": {
+      "$value": "rgba(0,0,0,0.03)",
+      "$type": "color",
+      "$description": "Hover overlay — lightest interaction layer"
+    },
+    "2": {
+      "$value": "rgba(0,0,0,0.08)",
+      "$type": "color",
+      "$description": "Active / pressed overlay"
+    }
+  }
+}

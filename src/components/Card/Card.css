@@ -1,0 +1,26 @@
+.ds-card {
+  background-color: var(--surface-1);
+  border-radius: var(--radius);
+  padding: var(--space-16);
+  box-shadow: var(--shadow-card);
+}
+
+.ds-card-header {
+  margin-bottom: var(--space-12);
+}
+
+.ds-card-title {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-2);
+}
+
+.ds-card-subtitle {
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+  color: var(--text-2);
+  margin-top: var(--space-4);
+}

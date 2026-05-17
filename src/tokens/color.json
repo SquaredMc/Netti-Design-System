@@ -1,0 +1,31 @@
+{
+  "$description": "Netti colour tokens — W3C DTCG format",
+
+  "color": {
+    "brand": {
+      "cyan":      { "$value": "#26D4EB", "$type": "color", "$description": "Primary accent / highlight" },
+      "navy":      { "$value": "#010045", "$type": "color", "$description": "Primary dark — header, primary buttons" },
+      "navyDeep":  { "$value": "#00021B", "$type": "color", "$description": "Deepest navy — darkest backgrounds" }
+    },
+
+    "surface": {
+      "1": { "$value": "#FFFFFF", "$type": "color", "$description": "Primary surface — cards, modals, inputs" },
+      "2": { "$value": "#F3F4F6", "$type": "color", "$description": "Secondary surface — segmented control bg, hover fills" },
+      "3": { "$value": "#E5E7EB", "$type": "color", "$description": "Page background" },
+      "4": { "$value": "#EEEEEE", "$type": "color", "$description": "Dividers, subtle fills" }
+    },
+
+    "text": {
+      "primary":   { "$value": "#0A0A0A", "$type": "color", "$description": "Primary body text" },
+      "secondary": { "$value": "#4A5565", "$type": "color", "$description": "Labels, secondary content, card titles" },
+      "tertiary":  { "$value": "#99A1AF", "$type": "color", "$description": "Placeholders, hints, disabled text" },
+      "positive":  { "$value": "#00A63E", "$type": "color", "$description": "Success, take-home pay, positive amounts" },
+      "negative":  { "$value": "#E1000A", "$type": "color", "$description": "Error, destructive actions, negative amounts" }
+    },
+
+    "ui": {
+      "selected":  { "$value": "#01236E", "$type": "color", "$description": "Focus rings, selected borders, active states" },
+      "link":      { "$value": "#0066FF", "$type": "color", "$description": "Hyperlinks" }
+    }
+  }
+}

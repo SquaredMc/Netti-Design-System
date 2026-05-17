@@ -1,0 +1,150 @@
+:root {
+  /* ========================================
+     SPACING TOKENS (px)
+     ======================================== */
+  --space-0: 0px;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+
+  /* ========================================
+     COLOUR TOKENS
+     ======================================== */
+  /* Surface */
+  --surface-1: #FFFFFF;
+  --surface-2: #F3F4F6;
+  --surface-3: #E5E7EB;
+  --surface-4: #EEEEEE;
+
+  /* Text */
+  --text-1: #0A0A0A;
+  --text-2: #4A5565;
+  --text-3: #99A1AF;
+  --text-positive: #00A63E;
+  --text-negative: #E1000A;
+
+  /* Accent / Selected */
+  --selected: #01236E;
+
+  /* Brand */
+  --brand-1: #26D4EB;
+  --brand-2: #010045;
+  --brand-3: #00021B;
+
+  /* Links */
+  --links: #0066FF;
+
+  /* Header */
+  --header-bg: #010045;
+
+  /* ========================================
+     TYPOGRAPHY TOKENS
+     ======================================== */
+  --font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* Font weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Type sizes + line heights */
+  --h1-size: 36px;
+  --h1-line: 40px;
+  --h2-size: 30px;
+  --h2-line: 36px;
+  --h3-size: 12px;
+  --h3-line: 16px;
+  --text-lg-size: 24px;
+  --text-lg-line: 32px;
+  --text-md-size: 16px;
+  --text-md-line: 24px;
+  --text-md-sb-size: 18px;
+  --text-md-sb-line: 24px;
+  --text-sm-size: 14px;
+  --text-sm-line: 24px;
+  --text-sm-sb-size: 14px;
+  --text-sm-sb-line: 20px;
+
+  /* ========================================
+     SHADOW SYSTEM
+     ======================================== */
+  --shadow-card: 0px 1px 2px rgba(0,0,0,0.10), 0px 1px 3px rgba(0,0,0,0.10);
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+  --radius: 24px;
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+  font-weight: var(--weight-regular);
+  color: var(--text-1);
+  background-color: var(--surface-3);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography utility classes */
+.h1 {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line);
+  font-weight: var(--weight-bold);
+}
+
+.h2 {
+  font-size: var(--h2-size);
+  line-height: var(--h2-line);
+  font-weight: var(--weight-semibold);
+}
+
+.h3 {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-2);
+}
+
+.text-lg {
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-line);
+}
+
+.text-md {
+  font-size: var(--text-md-size);
+  line-height: var(--text-md-line);
+}
+
+.text-sm {
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line);
+}
+
+.text-sm-sb {
+  font-size: var(--text-sm-sb-size);
+  line-height: var(--text-sm-sb-line);
+  font-weight: var(--weight-semibold);
+}

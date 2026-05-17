@@ -1,0 +1,48 @@
+.ds-bottom-nav {
+  display: flex;
+  align-items: center;
+  height: var(--bottom-nav-height, 64px);
+  background-color: var(--surface-1);
+  padding-bottom: 0;
+}
+
+.ds-bottom-nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 100%;
+  padding: var(--space-6) 0 var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.ds-bottom-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-3);
+  transition: color 150ms ease;
+}
+
+.ds-bottom-nav-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.ds-bottom-nav-label {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+  font-weight: var(--weight-medium);
+  color: var(--text-3);
+  transition: color 150ms ease;
+}
+
+.ds-bottom-nav-item--active .ds-bottom-nav-icon,
+.ds-bottom-nav-item--active .ds-bottom-nav-label {
+  color: var(--selected);
+}
