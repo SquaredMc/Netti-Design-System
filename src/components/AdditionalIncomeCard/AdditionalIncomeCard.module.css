@@ -54,6 +54,13 @@
   margin: 0 var(--netti-list-row-padding-x, 16px);
 }
 
+/* ── Income rows list ────────────────────────────────────────────────────── */
+
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 
 .footer {

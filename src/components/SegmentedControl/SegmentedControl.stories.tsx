@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { SegmentedControl } from './SegmentedControl';
+import '../../tokens.css';
 
 const PERIOD_OPTIONS = [
   { value: 'yearly',  label: 'Yearly' },
@@ -34,9 +35,14 @@ function Controlled({ context = 'light' }: { context?: 'dark' | 'light' }) {
 }
 
 export const Light: Story = { render: () => <Controlled context="light" /> };
+
 export const Dark: Story = {
   render: () => (
-    <div style={{ background: '#010045', padding: 16, borderRadius: 12 }}>
+    <div style={{
+      background: 'var(--netti-color-background-card)',
+      padding: 'var(--netti-card-padding)',
+      borderRadius: 'var(--netti-card-border-radius)',
+    }}>
       <Controlled context="dark" />
     </div>
   ),

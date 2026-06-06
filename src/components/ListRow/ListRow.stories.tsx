@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ListRow } from './ListRow';
+import '../../tokens.css';
 
 const CARD_STYLE: React.CSSProperties = {
-  background: '#010045',
-  borderRadius: 12,
+  background: 'var(--netti-color-background-card)',
+  borderRadius: 'var(--netti-card-border-radius)',
   overflow: 'hidden',
   width: 361,
 };
@@ -20,9 +21,11 @@ type Story = StoryObj<typeof ListRow>;
 export const Default: Story = {
   args: { label: 'Bonus', subLabel: '(yearly)', amountFormatted: '£5,000', onRemove: () => {} },
 };
+
 export const NoSubLabel: Story = {
   args: { label: 'Overtime', amountFormatted: '£800', onRemove: () => {} },
 };
+
 export const Stacked: Story = {
   render: () => (
     <div style={CARD_STYLE}>

@@ -4,8 +4,8 @@
   justify-content: center;
   gap: var(--netti-space-6);
   height: 50px;
-  background: linear-gradient(to right, #fce7f3, #f3e8ff);
-  border: 2px solid #fda5d5;
+  background: linear-gradient(to right, var(--netti-color-background-surface-raised), var(--netti-color-background-surface));
+  border: 2px solid var(--netti-color-border-default);
   border-radius: var(--netti-card-border-radius);
 }
 
@@ -17,5 +17,5 @@
 .ds-ad-slot-text {
   font-size: var(--netti-font-size-sm);
   line-height: var(--netti-font-line-height-sm);
-  color: #99A1AF;
+  color: var(--netti-color-text-muted);
 }

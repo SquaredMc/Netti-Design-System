@@ -34,12 +34,6 @@
   --netti-color-red-600: #e1000a;
   --netti-color-red-100: #fee2e2;
 
-  /* Legacy surface aliases (for existing components) */
-  --netti-color-surface-1: #ffffff;
-  --netti-color-surface-2: #f3f4f6;
-  --netti-color-surface-3: #e5e7eb;
-  --netti-color-surface-4: #eeeeee;
-
   /* Spacing */
   --netti-space-0: 0px;
   --netti-space-1: 1px;

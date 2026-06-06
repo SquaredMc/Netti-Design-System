@@ -6,7 +6,7 @@ const meta: Meta<typeof MoneyRow> = {
   component: MoneyRow,
   decorators: [
     (Story) => (
-      <div style={{ width: 320, background: 'var(--surface-1)', padding: 16, borderRadius: 16 }}>
+      <div style={{ width: 320, background: 'var(--netti-color-background-surface)', padding: 16, borderRadius: 16 }}>
         <Story />
       </div>
     ),

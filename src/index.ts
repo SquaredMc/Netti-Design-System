@@ -8,9 +8,6 @@
  * To re-theme for a new product, override the semantic layer in your own CSS.
  */
 
-/* ── Tokens ─────────────────────────────────────────────────────────────── */
-export type { } from './tokens'; // re-export token types if generated
-
 /* ── Primitives ─────────────────────────────────────────────────────────── */
 export { Button }                   from './components/Button/Button';
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button/Button';
@@ -28,10 +25,8 @@ export { SegmentedControl }         from './components/SegmentedControl/Segmente
 export type { SegmentedControlProps, SegmentOption } from './components/SegmentedControl/SegmentedControl';
 
 export { MoneyRow, Divider }        from './components/MoneyRow/MoneyRow';
-export type { } from './components/MoneyRow/MoneyRow';
 
 export { InputField }               from './components/InputField/InputField';
-export type { } from './components/InputField/InputField';
 
 export { Select }                   from './components/Select/Select';
 

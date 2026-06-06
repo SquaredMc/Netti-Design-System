@@ -23,7 +23,7 @@
   width: 36px;
   height: 5px;
   border-radius: 100px;
-  background: var(--surface-4, rgba(0, 0, 0, 0.18));
+  background: var(--netti-color-border-default);
   margin: 0 auto var(--netti-space-16);
 }
 
