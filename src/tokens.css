@@ -1,3 +1,9 @@
+/* ─── Inter font — loaded via Google Fonts ───────────────────────────────────
+   Variable font: covers weights 100–900 in a single request.
+   display=swap ensures text is visible immediately while the font loads.
+   ──────────────────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /**
  * Netti Design System — CSS Custom Properties
  *
