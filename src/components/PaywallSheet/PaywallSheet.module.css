@@ -1,0 +1,175 @@
+/* ─── PaywallSheet ───────────────────────────────────────────────────────── */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 40;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--netti-space-16);
+  padding: 0 var(--netti-sheet-padding, 20px) calc(28px + env(safe-area-inset-bottom));
+  background-color: var(--netti-color-background-surface);
+  border-top-left-radius:  var(--netti-sheet-border-radius, 32px);
+  border-top-right-radius: var(--netti-sheet-border-radius, 32px);
+  box-shadow: var(--netti-shadow-sheet);
+  outline: none;
+  /* Let content determine height; vaul handles max-height */
+  max-height: 92dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Grabber ─────────────────────────────────────────────────────────────── */
+
+.grabber {
+  width: 36px;
+  height: 5px;
+  border-radius: var(--netti-radius-full);
+  background-color: var(--netti-color-border-strong);
+  margin-top: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Headline ────────────────────────────────────────────────────────────── */
+
+.headline {
+  font-family: var(--netti-font-family-sans);
+  font-size: 24px;
+  font-weight: var(--netti-font-weight-bold);
+  line-height: 30px;
+  color: var(--netti-color-text-primary);
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Sub-headline ────────────────────────────────────────────────────────── */
+
+.subhead {
+  font-family: var(--netti-font-family-sans);
+  font-size: 15px;
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 22px;
+  color: var(--netti-color-text-secondary);
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Example callout ─────────────────────────────────────────────────────── */
+
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--netti-space-4);
+  width: 100%;
+  padding: var(--netti-space-12) var(--netti-space-16);
+  border-radius: var(--netti-card-border-radius, 12px);
+  background-color: var(--netti-color-background-surface-raised);
+}
+
+.calloutLabel {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-h3);
+  font-weight: var(--netti-font-weight-medium);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--netti-color-text-muted);
+}
+
+.calloutRow {
+  display: flex;
+  align-items: center;
+  gap: var(--netti-space-8);
+}
+
+.calloutGross {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md);
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: var(--netti-font-line-height-md);
+  color: var(--netti-color-text-primary);
+}
+
+.calloutArrow {
+  color: var(--netti-color-text-muted);
+}
+
+.calloutNet {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md);
+  font-weight: var(--netti-font-weight-bold);
+  line-height: var(--netti-font-line-height-md);
+  color: var(--netti-color-text-positive);
+}
+
+/* ── Feature rows ────────────────────────────────────────────────────────── */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--netti-space-12);
+  width: 100%;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────────────── */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--netti-color-border-default);
+}
+
+/* ── Price row ───────────────────────────────────────────────────────────── */
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: var(--netti-space-8);
+  width: 100%;
+}
+
+.price {
+  font-family: var(--netti-font-family-sans);
+  font-size: 28px;
+  font-weight: var(--netti-font-weight-bold);
+  line-height: 36px;
+  color: var(--netti-color-text-primary);
+}
+
+.priceNote {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 18px;
+  color: var(--netti-color-text-muted);
+}
+
+/* ── Restore link ────────────────────────────────────────────────────────── */
+
+.restore {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 18px;
+  color: var(--netti-color-text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.restore:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

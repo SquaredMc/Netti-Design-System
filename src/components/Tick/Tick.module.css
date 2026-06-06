@@ -1,0 +1,26 @@
+/* ─── Tick ────────────────────────────────────────────────────────────────── */
+
+.tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--netti-radius-full);
+  font-family: var(--netti-font-family-sans);
+  font-weight: var(--netti-font-weight-bold);
+  font-size: 11px;
+  line-height: 1;
+  text-align: center;
+}
+
+.active {
+  background-color: var(--netti-color-status-positive-bg);
+  color: var(--netti-color-status-positive-text);
+}
+
+.inactive {
+  background-color: var(--netti-color-border-default);
+  color: var(--netti-color-text-muted);
+}

@@ -1,0 +1,64 @@
+/* ─── AdditionalIncomeCard ───────────────────────────────────────────────── */
+
+.card {
+  width: 100%;
+  border-radius: var(--netti-card-border-radius, 12px);
+  background-color: var(--netti-color-background-card);
+  border: 1px solid var(--netti-color-background-card-border);
+  box-shadow: var(--netti-shadow-card);
+  overflow: hidden;
+}
+
+/* Empty state — just the CTA button, add padding around it */
+.empty {
+  padding: 7px;
+}
+
+/* Has-items state — no outer padding, inner layout handles spacing */
+.hasItems {
+  padding: 0;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────  */
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 var(--netti-list-row-padding-x, 16px);
+}
+
+.eyebrow {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-h3);
+  font-weight: var(--netti-font-weight-medium);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--netti-color-text-inverse);
+  opacity: 0.7;
+}
+
+/* ── Divider ─────────────────────────────────────────────────────────────── */
+
+.divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.10);
+  width: 100%;
+}
+
+/* ── Row divider (inset) ─────────────────────────────────────────────────── */
+
+.rowDivider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.10);
+  margin: 0 var(--netti-list-row-padding-x, 16px);
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+}

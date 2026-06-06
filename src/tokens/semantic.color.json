@@ -1,0 +1,46 @@
+{
+  "$description": "Netti semantic colour tokens — W3C DTCG format. These are the ONLY tokens components should reference. Primitives are internal.",
+
+  "color": {
+    "background": {
+      "screen":       { "$value": "#00021B", "$type": "color", "$description": "Full-screen gradient base — page background" },
+      "card":         { "$value": "#010045", "$type": "color", "$description": "Dark card surface — Salary Card, Additional Income Card" },
+      "cardSubtle":   { "$value": "#0B0E3C", "$type": "color", "$description": "Toggle bar inside dark cards" },
+      "cardBorder":   { "$value": "#07205E", "$type": "color", "$description": "Border on dark cards" },
+      "surface":      { "$value": "#FFFFFF", "$type": "color", "$description": "Primary surface — Bottom Sheet, inputs, white cards" },
+      "surfaceRaised":{ "$value": "#F3F4F6", "$type": "color", "$description": "Raised surface — segmented control bg, callout boxes" }
+    },
+
+    "text": {
+      "primary":   { "$value": "#0A0A0A", "$type": "color", "$description": "Primary body text on light surfaces" },
+      "secondary": { "$value": "#4A5565", "$type": "color", "$description": "Secondary labels, captions" },
+      "muted":     { "$value": "#6B7280", "$type": "color", "$description": "Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white." },
+      "inverse":   { "$value": "#FFFFFF", "$type": "color", "$description": "Text on dark card surfaces" },
+      "positive":  { "$value": "#00A63E", "$type": "color", "$description": "Take-home pay, positive amounts, success" },
+      "negative":  { "$value": "#E1000A", "$type": "color", "$description": "Errors, destructive actions, negative amounts" },
+      "brand":     { "$value": "#010045", "$type": "color", "$description": "Brand text — used on cyan backgrounds (Pro button)" }
+    },
+
+    "action": {
+      "primaryBg":       { "$value": "#26D4EB", "$type": "color", "$description": "Pro / primary CTA fill — cyan" },
+      "primaryText":     { "$value": "#010045", "$type": "color", "$description": "Text on cyan CTA — navy" },
+      "secondaryBorder": { "$value": "#26D4EB", "$type": "color", "$description": "Outlined secondary button border" },
+      "selectedBorder":  { "$value": "#01236E", "$type": "color", "$description": "Selected toggle pill border, focus rings" },
+      "selectedBg":      { "$value": "#FFFFFF", "$type": "color", "$description": "Selected toggle pill fill" }
+    },
+
+    "border": {
+      "default":  { "$value": "#EEEEEE", "$type": "color", "$description": "Dividers, card outlines on light surfaces" },
+      "strong":   { "$value": "#E5E7EB", "$type": "color", "$description": "Stronger dividers, grabber handle" },
+      "inverse":  { "$value": "#07205E", "$type": "color", "$description": "Border on dark card surfaces" },
+      "focus":    { "$value": "#26D4EB", "$type": "color", "$description": "Focus ring — accessibility" }
+    },
+
+    "status": {
+      "positiveText": { "$value": "#00A63E", "$type": "color", "$description": "Success text and icons" },
+      "positiveBg":   { "$value": "#DCFCE7", "$type": "color", "$description": "Success background — Tick active state" },
+      "negativeText": { "$value": "#E1000A", "$type": "color", "$description": "Error text and icons" },
+      "negativeBg":   { "$value": "#FEE2E2", "$type": "color", "$description": "Error background" }
+    }
+  }
+}

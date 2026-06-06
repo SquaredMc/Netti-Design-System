@@ -1,66 +1,94 @@
-# @netti/design-system
+# Netti Design System
 
-Netti's standalone design system — design tokens and React components, built to be shared across multiple products.
+React component library and design token system for Netti and future products.
 
-## Packages
-
-| Entrypoint | Contents |
-|---|---|
-| `@netti/design-system` | All React components + TypeScript types |
-| `@netti/design-system/tokens.css` | CSS custom properties (`:root` vars) |
-| `@netti/design-system/style.css` | Bundled component CSS |
-
-## Getting started
+## Installation
 
 ```bash
 npm install @netti/design-system
 ```
 
+## Setup
+
+Import the token stylesheet once in your app root, before any components:
+
 ```tsx
-import { Button, Card, InputField } from '@netti/design-system';
+// main.tsx or App.tsx
 import '@netti/design-system/tokens.css';
-import '@netti/design-system/style.css';
 ```
 
-## Components
+## Usage
+
+```tsx
+import { Button, SalaryCard, PaywallSheet } from '@netti/design-system';
+
+function App() {
+  return (
+    <Button variant="pro" fullWidth onClick={handleUnlock}>
+      Unlock Netti Pro
+    </Button>
+  );
+}
+```
+
+## Token Architecture
+
+Two-layer system — all components reference **semantic** tokens only:
+
+```
+Primitives  →  Semantic  →  Component
+#26D4EB        action/primary-bg    Button[variant=pro] background
+#010045        action/primary-text  Button[variant=pro] color
+```
+
+**To re-theme for a new product**, override the semantic layer in your own CSS:
+
+```css
+:root {
+  --netti-color-action-primary-bg:   #your-accent;
+  --netti-color-action-primary-text: #your-on-accent;
+  /* ... other semantic overrides */
+}
+```
+
+Primitive values stay unchanged. No component code needs to change.
+
+## Component overview
 
 | Component | Description |
 |---|---|
-| `Button` | Secondary/utility button with optional left icon |
-| `PrimaryButton` | Brand primary action button (cyan) |
-| `Card` | Surface container with optional title/subtitle header |
-| `InputField` | Labelled text or number input with prefix/suffix adornments |
-| `Select` | Custom dropdown with smart portal positioning |
-| `SegmentedControl` | Multi-option tab bar (2–5 options) |
-| `Switch` | Binary On/Off toggle |
-| `MoneyRow` | Currency row for financial breakdowns, with `Divider` |
-| `BottomNav` | Mobile navigation bar |
-| `BottomSheet` | Vaul-based bottom sheet drawer |
-| `FullScreenSheet` | Full-screen overlay modal |
-| `InfoSheet` | Vaul-based info/read-only drawer |
-| `AdSlot` | Placeholder component for mobile ad banner slots |
-| `NettiLogo` | Netti SVG wordmark |
+| `Button` | 5 variants: `pro`, `primary`, `secondary`, `ghost`, `text` |
+| `SegmentedControl` | Period toggle — 2–4 options, `dark`/`light` context |
+| `SalaryCard` | Dark navy salary display. Switches to Pro state with income badge |
+| `AdditionalIncomeCard` | Dark navy income list card. Empty and has-items states |
+| `ListRow` | Single income item row — label, amount, remove button |
+| `FeatureRow` | Paywall feature line — Tick + title + description |
+| `Tick` | 22px circle checkmark — `active` or `inactive` |
+| `PaywallSheet` | Pro paywall bottom sheet — price pulled at runtime |
+| `MoneyRow` | Label + formatted currency amount row |
+| `InputField` | Text/number input with prefix, suffix, focus state |
+| `Select` | Custom dropdown with portal positioning |
+| `BottomSheet` | Drag-to-dismiss sheet (vaul) |
+| `FullScreenSheet` | Full-screen overlay sheet |
+| `BottomNav` | Tab bar navigation |
+| `NettiLogo` | SVG wordmark |
+| `AdSlot` | Ad placeholder |
 
-## Design tokens
+## Accessibility
 
-Tokens are defined in W3C DTCG format (`src/tokens/*.json`) and built to CSS custom properties via Style Dictionary.
+- All interactive elements have focus-visible styles using `--netti-color-border-focus`
+- `SegmentedControl` supports arrow key navigation
+- `text/muted` (`--netti-color-neutral-500`, `#6B7280`) meets WCAG AA 4.5:1 on white
+- `PaywallSheet` uses Drawer.Title and Drawer.Description for screen reader labelling
+
+## Storybook
 
 ```bash
-npm run build:tokens   # regenerates src/tokens.css from JSON source
+npm run storybook
 ```
 
-The token namespace uses `--{category}-{name}` (e.g. `--surface-1`, `--text-2`, `--space-16`).
-
-## Development
+## Build
 
 ```bash
-npm install
-npm run dev        # Storybook on :6006
-npm run build      # Production build to dist/
+npm run build
 ```
-
-## Multi-product usage
-
-`BottomSheet` and `FullScreenSheet` expose `onOpen` / `onClose` callbacks instead of coupling to any ad SDK — wire these up to your own analytics or ad lifecycle logic per product.
-
-`MoneyRow` accepts `currency` and `locale` props (defaults: `GBP`, `en-GB`) for localisation.

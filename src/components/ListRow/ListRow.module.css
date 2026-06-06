@@ -1,0 +1,86 @@
+/* ─── ListRow ────────────────────────────────────────────────────────────── */
+
+.row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: var(--netti-list-row-height, 56px);
+  padding: 0 var(--netti-list-row-padding-x, 16px);
+  gap: var(--netti-space-12);
+}
+
+/* ── Labels (left, grows) ────────────────────────────────────────────────── */
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.label {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md);
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: var(--netti-font-line-height-md);
+  color: var(--netti-color-text-inverse);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.subLabel {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 18px;
+  color: var(--netti-color-text-inverse);
+  opacity: 0.5;
+}
+
+/* ── Right slot ──────────────────────────────────────────────────────────── */
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--netti-space-8);
+  flex-shrink: 0;
+}
+
+.amount {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md);
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: var(--netti-font-line-height-md);
+  color: var(--netti-color-text-inverse);
+}
+
+/* ── Remove button ───────────────────────────────────────────────────────── */
+
+.remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--netti-radius-full);
+  border: none;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.remove:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.remove:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: 2px;
+}

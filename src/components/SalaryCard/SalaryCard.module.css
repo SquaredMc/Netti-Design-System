@@ -1,0 +1,50 @@
+/* ─── SalaryCard ─────────────────────────────────────────────────────────── */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--netti-space-8);
+  width: 100%;
+  padding: var(--netti-card-padding, 20px) var(--netti-card-padding, 20px) var(--netti-space-16);
+  border-radius: var(--netti-card-border-radius, 12px);
+  background-color: var(--netti-color-background-card);
+  border: 1px solid var(--netti-color-background-card-border);
+  box-shadow: var(--netti-shadow-card);
+}
+
+.eyebrow {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-h3);
+  font-weight: var(--netti-font-weight-medium);
+  line-height: var(--netti-font-line-height-h3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--netti-color-text-inverse);
+  opacity: 0.7;
+}
+
+.amount {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-h1);
+  font-weight: var(--netti-font-weight-bold);
+  line-height: var(--netti-font-line-height-h1);
+  color: var(--netti-color-text-inverse);
+}
+
+/* Pro badge — shown when additional income is active */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--netti-radius-full);
+  background-color: var(--netti-color-action-primary-bg);
+  font-family: var(--netti-font-family-sans);
+  font-size: 11px;
+  font-weight: var(--netti-font-weight-semibold);
+  color: var(--netti-color-action-primary-text);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

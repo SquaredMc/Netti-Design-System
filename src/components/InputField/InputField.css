@@ -1,7 +1,7 @@
 .ds-input-field {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--netti-space-6);
   min-width: 0;
 }
 
@@ -11,40 +11,40 @@
 }
 
 .ds-input-label {
-  font-size: var(--text-sm-size);
-  line-height: var(--text-sm-sb-line);
-  font-weight: var(--weight-medium);
-  color: var(--text-2);
+  font-size: var(--netti-font-size-sm);
+  line-height: var(--netti-font-line-height-sm-sb);
+  font-weight: var(--netti-font-weight-medium);
+  color: var(--netti-color-text-secondary);
 }
 
 .ds-input-wrapper {
   display: flex;
   align-items: center;
-  gap: var(--space-8);
-  padding: var(--space-12);
-  background-color: var(--surface-1);
-  border: 1px solid var(--text-3);
-  border-radius: var(--radius);
+  gap: var(--netti-space-8);
+  padding: var(--netti-space-12);
+  background-color: var(--netti-color-background-surface);
+  border: 1px solid var(--netti-color-text-muted);
+  border-radius: var(--netti-card-border-radius);
   transition: all 150ms ease;
   min-width: 0;
   width: 100%;
 }
 
 .ds-input-wrapper:hover {
-  border-color: var(--text-2);
+  border-color: var(--netti-color-text-secondary);
 }
 
 .ds-input--focused {
-  border-color: var(--selected);
+  border-color: var(--netti-color-action-selected-border);
 }
 
 .ds-input--has-data {
-  border-color: var(--text-2);
+  border-color: var(--netti-color-text-secondary);
 }
 
 .ds-input-prefix {
-  font-size: var(--text-md-size);
-  color: var(--text-2);
+  font-size: var(--netti-font-size-md);
+  color: var(--netti-color-text-secondary);
   flex-shrink: 0;
 }
 
@@ -52,14 +52,14 @@
   flex: 1;
   border: none;
   background: transparent;
-  font-family: var(--font-family);
-  font-size: var(--text-md-size);
-  line-height: var(--text-md-line);
-  color: var(--text-1);
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md);
+  line-height: var(--netti-font-line-height-md);
+  color: var(--netti-color-text-primary);
   outline: none;
   min-width: 0;
 }
 
 .ds-input::placeholder {
-  color: var(--text-3);
+  color: var(--netti-color-text-muted);
 }

@@ -1,0 +1,139 @@
+/* ─── Button ─────────────────────────────────────────────────────────────────
+   All values reference semantic CSS custom properties from tokens.css.
+   Never use raw hex values here.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--netti-space-8);
+  border: 1px solid transparent;
+  border-radius: var(--netti-layout-button-border-radius-lg, 12px);
+  font-family: var(--netti-font-family-sans);
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Sizes ────────────────────────────────────────────────────────────────── */
+
+[data-size='lg'].button {
+  height: 42px;
+  padding: var(--netti-button-padding-y-lg, 12px) var(--netti-button-padding-x, 16px);
+  border-radius: var(--netti-button-border-radius-lg, 12px);
+  font-size: var(--netti-font-size-md-sb);
+}
+
+[data-size='md'].button {
+  height: 34px;
+  padding: var(--netti-button-padding-y-sm, 8px) var(--netti-button-padding-x, 16px);
+  border-radius: var(--netti-button-border-radius-sm, 8px);
+  font-size: var(--netti-font-size-sm);
+}
+
+/* ── Variants ─────────────────────────────────────────────────────────────── */
+
+/* Pro — cyan fill, navy text */
+[data-variant='pro'].button {
+  background-color: var(--netti-color-action-primary-bg);
+  color: var(--netti-color-action-primary-text);
+  border-color: transparent;
+  box-shadow: var(--netti-shadow-card);
+}
+
+[data-variant='pro'].button:hover:not(:disabled) {
+  opacity: 0.92;
+}
+
+/* Primary — white fill, cyan border */
+[data-variant='primary'].button {
+  background-color: var(--netti-color-background-surface);
+  color: var(--netti-color-text-primary);
+  border-color: var(--netti-color-action-secondary-border);
+  box-shadow: var(--netti-shadow-card);
+}
+
+[data-variant='primary'].button:hover:not(:disabled) {
+  background-color: var(--netti-color-background-surface-raised);
+}
+
+/* Secondary — white fill, grey border */
+[data-variant='secondary'].button {
+  background-color: var(--netti-color-background-surface);
+  color: var(--netti-color-text-primary);
+  border-color: var(--netti-color-border-default);
+  box-shadow: var(--netti-shadow-card);
+}
+
+[data-variant='secondary'].button:hover:not(:disabled) {
+  background-color: var(--netti-color-background-surface-raised);
+}
+
+/* Ghost — translucent white on dark surfaces (Add income pill) */
+[data-variant='ghost'].button {
+  background-color: rgba(255, 255, 255, 0.10);
+  color: var(--netti-color-action-primary-bg);
+  border-color: transparent;
+  border-radius: var(--netti-radius-full);
+}
+
+[data-variant='ghost'].button:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Text — no fill or border */
+[data-variant='text'].button {
+  background-color: transparent;
+  color: var(--netti-color-text-secondary);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+[data-variant='text'].button:hover:not(:disabled) {
+  color: var(--netti-color-text-primary);
+}
+
+/* ── States ───────────────────────────────────────────────────────────────── */
+
+.button:active:not(:disabled) {
+  opacity: 0.75;
+}
+
+.button.disabled,
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Modifiers ────────────────────────────────────────────────────────────── */
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ── Sub-elements ─────────────────────────────────────────────────────────── */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.label {
+  /* Allows text to be independently ellipsed on overflow */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

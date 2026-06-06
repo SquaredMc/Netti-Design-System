@@ -19,13 +19,13 @@ const sd = new StyleDictionary({
         },
       ],
     },
-    figma: {
+    ts: {
       transformGroup: 'js',
-      buildPath: 'build/',
+      buildPath: 'src/',
       files: [
         {
-          destination: 'figma-tokens.json',
-          format: 'json/nested',
+          destination: 'tokens.ts',
+          format: 'javascript/es6',
         },
       ],
     },

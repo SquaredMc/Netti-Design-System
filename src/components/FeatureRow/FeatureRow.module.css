@@ -1,0 +1,36 @@
+/* ─── FeatureRow ─────────────────────────────────────────────────────────── */
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--netti-space-10, 10px);
+  width: 100%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--netti-font-family-sans);
+  font-size: 15px;
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: 22px;
+  color: var(--netti-color-text-primary);
+}
+
+.muted {
+  color: var(--netti-color-text-muted);
+}
+
+.description {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 18px;
+  color: var(--netti-color-text-muted);
+}

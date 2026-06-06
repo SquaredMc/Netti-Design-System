@@ -1,0 +1,75 @@
+/* ─── SegmentedControl ───────────────────────────────────────────────────────
+   Renders in two contexts:
+   .dark  — on navy card backgrounds
+   .light — on white sheet/surface backgrounds
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.track {
+  display: flex;
+  height: 44px;
+  padding: var(--netti-toggle-padding, 4px);
+  border-radius: var(--netti-toggle-border-radius, 16px);
+  gap: 0;
+}
+
+/* ── Context: dark ───────────────────────────────────────────────────────── */
+.dark {
+  background-color: var(--netti-color-background-card-subtle);
+}
+
+/* ── Context: light ──────────────────────────────────────────────────────── */
+.light {
+  background-color: var(--netti-color-background-surface-raised);
+}
+
+/* ── Segment tab ─────────────────────────────────────────────────────────── */
+.segment {
+  flex: 1;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--netti-toggle-pill-radius, 12px);
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: var(--netti-font-line-height-sm-sb);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+
+/* Unselected — dark context */
+.dark .segment {
+  color: var(--netti-color-text-inverse);
+  opacity: 0.7;
+}
+
+/* Unselected — light context */
+.light .segment {
+  color: var(--netti-color-text-secondary);
+  opacity: 0.6;
+}
+
+/* ── Selected pill ───────────────────────────────────────────────────────── */
+.selected {
+  background-color: var(--netti-color-action-selected-bg);
+  border-color: var(--netti-color-action-selected-border);
+  box-shadow: var(--netti-shadow-card);
+  opacity: 1 !important;
+}
+
+/* Selected text is always primary (dark on white pill) */
+.dark .selected,
+.light .selected {
+  color: var(--netti-color-text-primary);
+}
+
+/* ── Focus ───────────────────────────────────────────────────────────────── */
+.segment:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: 2px;
+}
