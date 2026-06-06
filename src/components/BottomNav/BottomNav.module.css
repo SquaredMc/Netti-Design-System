@@ -1,0 +1,51 @@
+/* ─── BottomNav ──────────────────────────────────────────────────────────── */
+
+.nav {
+  display: flex;
+  align-items: stretch;
+  height: 83px;
+  background-color: var(--netti-color-background-surface);
+  border-top: 1px solid var(--netti-color-border-default);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--netti-space-4);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: var(--netti-space-8) var(--netti-space-4);
+  color: var(--netti-color-text-muted);
+  transition: color 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.item:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: -2px;
+}
+
+.active {
+  color: var(--netti-color-action-selected-border);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.label {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  font-weight: var(--netti-font-weight-medium);
+  line-height: 16px;
+}

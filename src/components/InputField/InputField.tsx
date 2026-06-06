@@ -1,61 +1,153 @@
-import { useState } from 'react';
-import './InputField.css';
+import { InputHTMLAttributes, useId, useState } from 'react';
+import styles from './InputField.module.css';
 
-interface InputFieldProps {
+/**
+ * InputField
+ *
+ * Two visual variants mapping directly to the Figma Input Field component:
+ *
+ *   standard     — bordered box (42px). Used for numeric/text inputs like
+ *                  "Hours worked". Label above, value inside the box.
+ *
+ *   largeAmount  — large display style with underline cursor (no border box).
+ *                  Used for primary monetary inputs like "Hourly rate" or
+ *                  "Bonus amount". £/% prefix alongside 36px value.
+ *
+ * State is derived automatically from value + focus:
+ *   empty   — no value, not focused
+ *   focused — currently active
+ *   filled  — has a value, not focused
+ */
+
+export type InputFieldVariant = 'standard' | 'largeAmount';
+
+export interface InputFieldProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'prefix'> {
   label: string;
-  value: string | number;
+  value: string;
   onChange: (value: string) => void;
-  onBlur?: () => void;
-  type?: 'text' | 'number';
-  placeholder?: string;
+  variant?: InputFieldVariant;
+  /** Currency/unit prefix shown before the value. e.g. "£" or "%" */
   prefix?: string;
-  suffix?: string;
+  /** Error message — shown below the field when set */
+  error?: string;
   className?: string;
-  inputMode?: 'text' | 'numeric' | 'decimal';
-  testId?: string;
 }
 
 export function InputField({
   label,
   value,
   onChange,
-  onBlur,
-  type = 'text',
+  variant = 'standard',
+  prefix = '£',
+  error,
+  className,
   placeholder,
-  prefix,
-  suffix,
-  className = '',
+  disabled,
   inputMode,
-  testId,
+  ...rest
 }: InputFieldProps) {
-  const [isFocused, setIsFocused] = useState(false);
-  const hasData = value !== '' && value !== undefined;
+  const [focused, setFocused] = useState(false);
+  const id = useId();
+  const hasValue = value !== '' && value !== undefined;
 
-  const stateClass = isFocused ? 'ds-input--focused' : hasData ? 'ds-input--has-data' : '';
+  const state = focused ? 'focused' : hasValue ? 'filled' : 'empty';
 
-  const handleBlur = () => {
-    setIsFocused(false);
-    onBlur?.();
-  };
+  if (variant === 'largeAmount') {
+    return (
+      <div
+        className={[
+          styles.field,
+          styles.fieldLarge,
+          styles[`state_${state}`],
+          disabled ? styles.disabled : '',
+          className ?? '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
+      >
+        <label htmlFor={id} className={styles.label}>
+          {label}
+        </label>
 
-  return (
-    <div className={`ds-input-field ${className}`}>
-      <label className="ds-input-label">{label}</label>
-      <div className={`ds-input-wrapper ${stateClass}`}>
-        {prefix && <span className="ds-input-prefix">{prefix}</span>}
-        <input
-          type={type}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          onFocus={() => setIsFocused(true)}
-          onBlur={handleBlur}
-          placeholder={placeholder}
-          inputMode={inputMode}
-          className="ds-input"
-          data-testid={testId}
+        <div className={styles.largeAmountRow}>
+          {prefix && (
+            <span className={styles.largePrefix} aria-hidden="true">
+              {prefix}
+            </span>
+          )}
+          <input
+            id={id}
+            type="text"
+            inputMode={inputMode ?? 'decimal'}
+            value={value}
+            placeholder={hasValue ? undefined : '0'}
+            onChange={(e) => onChange(e.target.value)}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            disabled={disabled}
+            aria-invalid={!!error}
+            aria-describedby={error ? `${id}-error` : undefined}
+            className={styles.largeInput}
+            {...rest}
+          />
+        </div>
+
+        {/* Underline cursor — always present, cyan when focused */}
+        <div
+          className={[styles.underline, focused ? styles.underlineFocused : ''].join(' ')}
+          aria-hidden="true"
         />
-        {suffix && <span className="ds-input-suffix">{suffix}</span>}
+
+        {error && (
+          <span id={`${id}-error`} className={styles.error} role="alert">
+            {error}
+          </span>
+        )}
       </div>
+    );
+  }
+
+  // Standard variant — bordered box
+  return (
+    <div
+      className={[
+        styles.field,
+        styles.fieldStandard,
+        styles[`state_${state}`],
+        disabled ? styles.disabled : '',
+        className ?? '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
+      <label htmlFor={id} className={styles.label}>
+        {label}
+      </label>
+
+      <div className={styles.inputBox}>
+        <input
+          id={id}
+          type="text"
+          inputMode={inputMode ?? 'decimal'}
+          value={value}
+          placeholder={placeholder ?? 'e.g. 16'}
+          onChange={(e) => onChange(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          disabled={disabled}
+          aria-invalid={!!error}
+          aria-describedby={error ? `${id}-error` : undefined}
+          className={styles.input}
+          {...rest}
+        />
+      </div>
+
+      {error && (
+        <span id={`${id}-error`} className={styles.error} role="alert">
+          {error}
+        </span>
+      )}
     </div>
   );
 }

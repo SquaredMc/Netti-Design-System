@@ -1,0 +1,105 @@
+/* ─── Select ─────────────────────────────────────────────────────────────── */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+}
+
+.label {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 20px;
+  color: var(--netti-color-text-secondary);
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 42px;
+  padding: 4px var(--netti-space-16);
+  background-color: var(--netti-color-background-surface);
+  border: 1px solid var(--netti-color-text-muted);
+  border-radius: var(--netti-button-border-radius-sm, 8px);
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md-sb);
+  font-weight: var(--netti-font-weight-semibold);
+  color: var(--netti-color-text-primary);
+  cursor: pointer;
+  transition: border-color 150ms ease;
+  width: 100%;
+  text-align: left;
+}
+
+.trigger:hover {
+  border-color: var(--netti-color-text-secondary);
+}
+
+.triggerOpen {
+  border-color: var(--netti-color-border-focus);
+  box-shadow: 0 0 0 3px rgba(38, 212, 235, 0.15);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: 2px;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--netti-color-text-muted);
+  transition: transform 200ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown portal ─────────────────────────────────────────────────────── */
+
+.dropdown {
+  position: fixed;
+  z-index: 9999;
+  background-color: var(--netti-color-background-surface);
+  border: 1px solid var(--netti-color-border-default);
+  border-radius: var(--netti-card-border-radius, 12px);
+  box-shadow: var(--netti-shadow-sheet);
+  overflow: hidden;
+  max-height: min(60dvh, 320px);
+  overflow-y: auto;
+}
+
+.dropdownUpward {
+  border-radius: var(--netti-card-border-radius, 12px);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  padding: 0 var(--netti-space-16);
+  border: none;
+  background: transparent;
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md);
+  font-weight: var(--netti-font-weight-regular);
+  color: var(--netti-color-text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 100ms ease;
+}
+
+.option:hover {
+  background-color: var(--netti-color-background-surface-raised);
+}
+
+.optionSelected {
+  font-weight: var(--netti-font-weight-semibold);
+  color: var(--netti-color-action-selected-border);
+  background-color: var(--netti-color-background-surface-raised);
+}

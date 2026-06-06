@@ -1,11 +1,11 @@
 /**
  * Netti Design System
  *
- * Import tokens.css in your app root before using components:
+ * Import the token stylesheet once in your app root before using components:
  *   import '@netti/design-system/tokens.css';
  *
- * All components reference semantic CSS custom properties from that stylesheet.
- * To re-theme for a new product, override the semantic layer in your own CSS.
+ * All components reference semantic CSS custom properties.
+ * Re-theme for a new product by overriding the semantic layer in your CSS.
  */
 
 /* ── Primitives ─────────────────────────────────────────────────────────── */
@@ -24,11 +24,17 @@ export type { ListRowProps }        from './components/ListRow/ListRow';
 export { SegmentedControl }         from './components/SegmentedControl/SegmentedControl';
 export type { SegmentedControlProps, SegmentOption } from './components/SegmentedControl/SegmentedControl';
 
-export { MoneyRow, Divider }        from './components/MoneyRow/MoneyRow';
-
 export { InputField }               from './components/InputField/InputField';
+export type { InputFieldProps, InputFieldVariant } from './components/InputField/InputField';
+
+export { MoneyRow, Divider }        from './components/MoneyRow/MoneyRow';
+export type { MoneyRowProps }       from './components/MoneyRow/MoneyRow';
 
 export { Select }                   from './components/Select/Select';
+export type { SelectProps, SelectOption } from './components/Select/Select';
+
+export { BottomNav }                from './components/BottomNav/BottomNav';
+export type { BottomNavProps, NavItem } from './components/BottomNav/BottomNav';
 
 /* ── Composed ───────────────────────────────────────────────────────────── */
 export { SalaryCard }               from './components/SalaryCard/SalaryCard';
@@ -46,15 +52,11 @@ export { BottomSheet }              from './components/BottomSheet/BottomSheet';
 export { FullScreenSheet }          from './components/FullScreenSheet/FullScreenSheet';
 export { InfoSheet }                from './components/InfoSheet/InfoSheet';
 
-/* ── Navigation ─────────────────────────────────────────────────────────── */
-export { BottomNav }                from './components/BottomNav/BottomNav';
-
 /* ── Brand ──────────────────────────────────────────────────────────────── */
 export { NettiLogo }                from './components/NettiLogo/NettiLogo';
 export { AdSlot }                   from './components/AdSlot/AdSlot';
 
 /**
  * @deprecated Use Button with variant="pro" instead.
- * PrimaryButton will be removed in the next major version.
  */
 export { PrimaryButton }            from './components/PrimaryButton/PrimaryButton';

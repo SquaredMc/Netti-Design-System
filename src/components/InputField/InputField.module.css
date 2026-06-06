@@ -1,0 +1,175 @@
+/* ─── InputField ─────────────────────────────────────────────────────────────
+   Two variants:
+   .fieldStandard   — bordered box, 42px height
+   .fieldLarge      — large amount display with underline cursor, no box
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
+
+/* ── Label ───────────────────────────────────────────────────────────────── */
+
+.label {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 20px;
+  color: var(--netti-color-text-secondary);
+  margin-bottom: 4px;
+  transition: color 150ms ease;
+}
+
+/* Label turns cyan when focused */
+.state_focused .label {
+  color: var(--netti-color-action-primary-bg);
+}
+
+/* ══════════════════════════════════════════════════════════
+   STANDARD VARIANT — bordered input box
+   ══════════════════════════════════════════════════════════ */
+
+.fieldStandard {
+  gap: 0;
+}
+
+.fieldStandard .label {
+  margin-bottom: 4px;
+}
+
+.inputBox {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  padding: 4px 16px;
+  background-color: var(--netti-color-background-surface);
+  border: 1px solid var(--netti-color-text-muted);
+  border-radius: var(--netti-button-border-radius-sm, 8px);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+/* Focused: cyan border + subtle glow */
+.state_focused .inputBox {
+  border-color: var(--netti-color-border-focus);
+  box-shadow: 0 0 0 3px rgba(38, 212, 235, 0.15);
+}
+
+/* Filled: slightly stronger border */
+.state_filled .inputBox {
+  border-color: var(--netti-color-text-secondary);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md-sb);
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: 24px;
+  color: var(--netti-color-text-primary);
+  text-align: right;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--netti-color-text-muted);
+  font-weight: var(--netti-font-weight-semibold);
+}
+
+/* ══════════════════════════════════════════════════════════
+   LARGE AMOUNT VARIANT — display style with underline
+   ══════════════════════════════════════════════════════════ */
+
+.fieldLarge {
+  gap: 0;
+}
+
+.fieldLarge .label {
+  margin-bottom: 8px;
+}
+
+.largeAmountRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 0 8px;
+}
+
+/* £ or % prefix */
+.largePrefix {
+  font-family: var(--netti-font-family-sans);
+  font-size: 30px;
+  font-weight: var(--netti-font-weight-bold);
+  line-height: 36px;
+  color: var(--netti-color-text-muted);
+  flex-shrink: 0;
+  /* Visually baseline-align with the larger input */
+  margin-bottom: 2px;
+}
+
+/* The large value */
+.largeInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--netti-font-family-sans);
+  font-size: 36px;
+  font-weight: var(--netti-font-weight-bold);
+  line-height: 40px;
+  color: var(--netti-color-text-primary);
+  outline: none;
+  padding: 0;
+  /* Show cursor at end of number */
+  caret-color: var(--netti-color-action-primary-bg);
+}
+
+.largeInput::placeholder {
+  color: var(--netti-color-text-muted);
+}
+
+/* Empty state — muted value colour */
+.state_empty .largeInput {
+  color: var(--netti-color-text-muted);
+}
+
+/* Underline cursor — 2px bar below the amount row */
+.underline {
+  height: 2px;
+  width: 100%;
+  background-color: var(--netti-color-border-strong);
+  margin-top: 6px;
+  transition: background-color 150ms ease;
+}
+
+.underlineFocused {
+  background-color: var(--netti-color-action-primary-bg);
+}
+
+/* ── Shared states ────────────────────────────────────────────────────────── */
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ── Error ───────────────────────────────────────────────────────────────── */
+
+.error {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 18px;
+  color: var(--netti-color-text-negative);
+  margin-top: 4px;
+}
+
+.fieldStandard.state_focused .inputBox:has(input[aria-invalid='true']),
+.fieldStandard .inputBox:has(input[aria-invalid='true']) {
+  border-color: var(--netti-color-text-negative);
+}

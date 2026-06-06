@@ -1,126 +1,110 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { InputField } from './InputField';
-import '../../tokens.css';
 
 const meta: Meta<typeof InputField> = {
   title: 'Components/InputField',
   component: InputField,
   parameters: {
+    layout: 'padded',
     docs: {
       description: {
         component:
-          'Labelled text or numeric input. The border colour responds to focus and filled states automatically. ' +
-          '`prefix` and `suffix` are inline adornments (£, hrs, %). All colours reference semantic tokens.',
+          'Two variants: **standard** (bordered box, e.g. Hours worked) and **largeAmount** (large display with underline, e.g. Hourly rate / Bonus amount). State (empty/focused/filled) is derived automatically.',
       },
     },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ width: 320 }}>
-        <Story />
-      </div>
-    ),
-  ],
+  argTypes: {
+    variant: { control: 'radio', options: ['standard', 'largeAmount'] },
+    prefix: { control: 'text' },
+    label: { control: 'text' },
+    error: { control: 'text' },
+    disabled: { control: 'boolean' },
+  },
 };
 export default meta;
-
 type Story = StoryObj<typeof InputField>;
 
-/** Empty — border uses muted colour until the user interacts. */
-export const Empty: Story = {
-  render: () => {
-    const [value, setValue] = useState('');
-    return (
+// ── Standard ──────────────────────────────────────────────
+
+function StandardControlled(props: Partial<React.ComponentProps<typeof InputField>>) {
+  const [val, setVal] = useState(props.value ?? '');
+  return (
+    <div style={{ width: 353 }}>
       <InputField
-        label="Salary"
-        value={value}
-        onChange={setValue}
-        placeholder="Enter amount"
+        label="Hours worked"
+        variant="standard"
+        value={val as string}
+        onChange={setVal}
+        placeholder="e.g. 16"
+        {...props}
       />
-    );
-  },
+    </div>
+  );
+}
+
+export const StandardEmpty: Story = {
+  render: () => <StandardControlled value="" />,
 };
 
-/** Pre-filled value — border switches to `--netti-color-text-secondary`. */
-export const WithValue: Story = {
-  render: () => {
-    const [value, setValue] = useState('35000');
-    return (
+export const StandardFilled: Story = {
+  render: () => <StandardControlled value="16" />,
+};
+
+export const StandardDisabled: Story = {
+  render: () => <StandardControlled value="" disabled />,
+};
+
+export const StandardError: Story = {
+  render: () => <StandardControlled value="" error="Please enter hours worked" />,
+};
+
+// ── Large Amount ──────────────────────────────────────────
+
+function LargeControlled(props: Partial<React.ComponentProps<typeof InputField>>) {
+  const [val, setVal] = useState(props.value ?? '');
+  return (
+    <div style={{ width: 353 }}>
       <InputField
-        label="Annual Salary"
-        value={value}
-        onChange={setValue}
+        label="Hourly rate"
+        variant="largeAmount"
         prefix="£"
-        inputMode="numeric"
+        value={val as string}
+        onChange={setVal}
+        {...props}
       />
-    );
-  },
+    </div>
+  );
+}
+
+export const LargeEmpty: Story = {
+  render: () => <LargeControlled value="" />,
 };
 
-/** Currency prefix — £ symbol sits inline before the input. */
-export const WithPrefix: Story = {
-  render: () => {
-    const [value, setValue] = useState('');
-    return (
-      <InputField
-        label="Annual Salary"
-        value={value}
-        onChange={setValue}
-        prefix="£"
-        inputMode="numeric"
-        placeholder="0"
-      />
-    );
-  },
+export const LargeFilled: Story = {
+  render: () => <LargeControlled value="18" />,
 };
 
-/** Unit suffix — "hrs" or "%" sits inline after the input. */
-export const WithSuffix: Story = {
-  render: () => {
-    const [value, setValue] = useState('');
-    return (
-      <InputField
-        label="Hours per week"
-        value={value}
-        onChange={setValue}
-        suffix="hrs"
-        inputMode="numeric"
-        placeholder="40"
-      />
-    );
-  },
+export const LargeDisabled: Story = {
+  render: () => <LargeControlled value="" disabled />,
 };
 
-/** Both prefix and suffix — e.g. a percentage field with a £ baseline. */
-export const PrefixAndSuffix: Story = {
-  render: () => {
-    const [value, setValue] = useState('');
-    return (
-      <InputField
-        label="Commission rate"
-        value={value}
-        onChange={setValue}
-        prefix="+"
-        suffix="%"
-        inputMode="decimal"
-        placeholder="0.0"
-      />
-    );
-  },
+export const LargeBonusAmount: Story = {
+  name: 'Large — Bonus amount',
+  render: () => <LargeControlled label="Bonus amount before tax" value="3500" />,
 };
 
-/** Multiple fields in a column — how they look together in a form. */
-export const FormGroup: Story = {
+// ── Side by side ─────────────────────────────────────────
+
+export const BothVariants: Story = {
+  name: 'Both variants',
   render: () => {
-    const [salary, setSalary]   = useState('35000');
-    const [hours,  setHours]    = useState('');
-    const [bonus,  setBonus]    = useState('');
+    const [hourly, setHourly] = useState('18');
+    const [hours, setHours] = useState('');
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--netti-card-gap)' }}>
-        <InputField label="Annual Salary"  value={salary} onChange={setSalary} prefix="£" inputMode="numeric" />
-        <InputField label="Hours per week" value={hours}  onChange={setHours}  suffix="hrs" inputMode="numeric" placeholder="40" />
-        <InputField label="Annual Bonus"   value={bonus}  onChange={setBonus}  prefix="£" inputMode="numeric" placeholder="0" />
+      <div style={{ width: 353, display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <InputField label="Hourly rate"   variant="largeAmount" prefix="£" value={hourly} onChange={setHourly} />
+        <InputField label="Hours worked"  variant="standard"                value={hours}  onChange={setHours}  placeholder="e.g. 16" />
       </div>
     );
   },

@@ -1,17 +1,21 @@
-.ds-money-row {
+/* ─── MoneyRow ───────────────────────────────────────────────────────────── */
+
+.row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--netti-space-6) 0;
 }
 
-.ds-money-row-label {
+.label {
+  font-family: var(--netti-font-family-sans);
   font-size: var(--netti-font-size-sm);
   line-height: var(--netti-font-line-height-sm);
   color: var(--netti-color-text-secondary);
 }
 
-.ds-money-row-amount {
+.amount {
+  font-family: var(--netti-font-family-sans);
   font-size: var(--netti-font-size-sm);
   line-height: var(--netti-font-line-height-sm);
   font-weight: var(--netti-font-weight-medium);
@@ -19,32 +23,30 @@
   text-align: right;
 }
 
-.ds-money-row--positive .ds-money-row-amount {
-  color: var(--netti-color-text-positive);
-}
+/* Positive — take-home / income amounts */
+.positive .amount { color: var(--netti-color-text-positive); }
 
-.ds-money-row--negative .ds-money-row-amount {
-  color: var(--netti-color-text-negative);
-}
+/* Negative — tax / deductions */
+.negative .amount { color: var(--netti-color-text-negative); }
 
-.ds-money-row--strong {
+/* Strong — total row */
+.strong {
   padding: var(--netti-space-12) 0;
 }
-
-.ds-money-row--strong .ds-money-row-label {
+.strong .label {
   font-size: var(--netti-font-size-md);
   line-height: var(--netti-font-line-height-md);
   font-weight: var(--netti-font-weight-semibold);
   color: var(--netti-color-text-primary);
 }
-
-.ds-money-row--strong .ds-money-row-amount {
+.strong .amount {
   font-size: var(--netti-font-size-lg);
   line-height: var(--netti-font-line-height-lg);
   font-weight: var(--netti-font-weight-bold);
 }
 
-.ds-divider {
+/* Divider */
+.divider {
   height: 1px;
   background-color: var(--netti-color-border-strong);
   margin: var(--netti-space-6) 0;

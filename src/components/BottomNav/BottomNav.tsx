@@ -1,31 +1,33 @@
 import { ReactNode } from 'react';
-import './BottomNav.css';
+import styles from './BottomNav.module.css';
 
-interface NavItem {
+export interface NavItem {
   id: string;
   label: string;
   icon: ReactNode;
 }
 
-interface BottomNavProps {
+export interface BottomNavProps {
   items: NavItem[];
   activeId: string;
   onChange: (id: string) => void;
+  className?: string;
 }
 
-export function BottomNav({ items, activeId, onChange }: BottomNavProps) {
+export function BottomNav({ items, activeId, onChange, className }: BottomNavProps) {
   return (
-    <nav className="ds-bottom-nav">
+    <nav className={[styles.nav, className ?? ''].filter(Boolean).join(' ')}>
       {items.map((item) => (
         <button
           key={item.id}
           type="button"
-          className={`ds-bottom-nav-item ${activeId === item.id ? 'ds-bottom-nav-item--active' : ''}`}
+          className={[styles.item, activeId === item.id ? styles.active : ''].filter(Boolean).join(' ')}
           onClick={() => onChange(item.id)}
+          aria-current={activeId === item.id ? 'page' : undefined}
           data-testid={`nav-${item.id}`}
         >
-          <span className="ds-bottom-nav-icon">{item.icon}</span>
-          <span className="ds-bottom-nav-label">{item.label}</span>
+          <span className={styles.icon} aria-hidden="true">{item.icon}</span>
+          <span className={styles.label}>{item.label}</span>
         </button>
       ))}
     </nav>
