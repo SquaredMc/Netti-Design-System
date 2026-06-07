@@ -1,29 +1,41 @@
-/* ─── ListRow ────────────────────────────────────────────────────────────── */
+/* ─── ListRow ────────────────────────────────────────────────────────────────
+   Figma spec: 56px total height = 55px content row + 1px divider.
+   Dark surface — text/inverse throughout.
+   ──────────────────────────────────────────────────────────────────────────── */
 
+/* Outer wrapper — vertical stack of content row + divider */
+.outer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ── Horizontal content row — 55px (56px - 1px divider) ─────────────────── */
 .row {
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 56px; /* Figma: 56px fixed row height */
-  padding: 0 var(--netti-list-row-padding-x, 16px);
-  gap: var(--netti-space-12);
+  height: 55px;
+  padding: 0 var(--netti-space-16);   /* Figma: screen/margin 16px */
+  gap: var(--netti-space-12);         /* Figma: card/gap 12px */
+  flex-shrink: 0;
 }
 
 /* ── Labels (left, grows) ────────────────────────────────────────────────── */
-
 .labels {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 2px;                           /* Figma: 2px between label and sub-label */
   flex: 1;
   min-width: 0;
+  overflow: hidden;
 }
 
 .label {
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-md);
+  font-size: 16px;                    /* Figma: body/md */
   font-weight: var(--netti-font-weight-semibold);
-  line-height: var(--netti-font-line-height-md);
+  line-height: 24px;
   color: var(--netti-color-text-inverse);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -32,15 +44,14 @@
 
 .subLabel {
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-sm);
+  font-size: 13px;
   font-weight: var(--netti-font-weight-regular);
   line-height: 18px;
   color: var(--netti-color-text-inverse);
-  opacity: 0.5;
+  opacity: 0.5;                       /* Figma: white 50% */
 }
 
 /* ── Right slot ──────────────────────────────────────────────────────────── */
-
 .right {
   display: flex;
   align-items: center;
@@ -50,14 +61,15 @@
 
 .amount {
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-md);
+  font-size: 16px;
   font-weight: var(--netti-font-weight-semibold);
-  line-height: var(--netti-font-line-height-md);
+  line-height: 24px;
   color: var(--netti-color-text-inverse);
+  white-space: nowrap;
 }
 
-/* ── Remove button ───────────────────────────────────────────────────────── */
-
+/* ── Remove button — only shown in edit context ──────────────────────────── */
+/* Figma: 28×28px translucent white circle, Bold −, pill radius */
 .remove {
   display: inline-flex;
   align-items: center;
@@ -68,7 +80,9 @@
   border: none;
   background-color: rgba(255, 255, 255, 0.12);
   color: var(--netti-color-text-inverse);
-  font-size: 18px;
+  font-family: var(--netti-font-family-sans);
+  font-size: 16px;
+  font-weight: var(--netti-font-weight-bold);
   line-height: 1;
   cursor: pointer;
   flex-shrink: 0;
@@ -77,10 +91,19 @@
 }
 
 .remove:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.22);
 }
 
 .remove:focus-visible {
   outline: 2px solid var(--netti-color-border-focus);
   outline-offset: 2px;
+}
+
+/* ── Bottom divider — 1px rgba white ────────────────────────────────────── */
+/* Figma: rgba(255,255,255,0.10) */
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.10);
+  flex-shrink: 0;
 }

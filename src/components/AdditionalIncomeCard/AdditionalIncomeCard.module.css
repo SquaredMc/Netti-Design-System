@@ -1,4 +1,8 @@
-/* ─── AdditionalIncomeCard ───────────────────────────────────────────────── */
+/* ─── AdditionalIncomeCard ───────────────────────────────────────────────────
+   Figma spec — two states:
+   Empty:     navy card, Ghost button fills width, padding 7px (56px total).
+   Has Items: navy card, header row inline with Add button, rows below.
+   ──────────────────────────────────────────────────────────────────────────── */
 
 .card {
   width: 100%;
@@ -9,63 +13,55 @@
   overflow: hidden;
 }
 
-/* Empty state — just the CTA button, add padding around it */
+/* ── Empty — Ghost CTA fills the card ───────────────────────────────────── */
+/* Figma: card is 56px total (42px button + 7px padding top/bottom) */
 .empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 7px;
 }
 
-/* Has-items state — no outer padding, inner layout handles spacing */
+/* ── Has Items ────────────────────────────────────────────────────────────── */
 .hasItems {
-  padding: 0;
-}
-
-/* ── Header ────────────────────────────────────────────────────────────────  */
-
-.header {
-  display: flex;
-  align-items: center;
-  height: 44px;
-  padding: 0 var(--netti-list-row-padding-x, 16px);
-}
-
-.eyebrow {
-  font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-h3);
-  font-weight: var(--netti-font-weight-medium);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--netti-color-text-inverse);
-  opacity: 0.7;
-}
-
-/* ── Divider ─────────────────────────────────────────────────────────────── */
-
-.divider {
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.10);
-  width: 100%;
-}
-
-/* ── Row divider (inset) ─────────────────────────────────────────────────── */
-
-.rowDivider {
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.10);
-  margin: 0 var(--netti-list-row-padding-x, 16px);
-}
-
-/* ── Income rows list ────────────────────────────────────────────────────── */
-
-.rows {
   display: flex;
   flex-direction: column;
 }
 
-/* ── Footer ──────────────────────────────────────────────────────────────── */
-
-.footer {
+/* ── Header — "ADDITIONAL INCOME" + Ghost button inline ─────────────────── */
+/* Figma: 12px vertical padding, screen/margin horizontal, space-between */
+.header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 44px;
+  justify-content: space-between;
+  padding: 12px var(--netti-space-16);  /* Figma: 12px top/bottom, 16px sides */
+  gap: var(--netti-space-12);
+}
+
+/* "ADDITIONAL INCOME" eyebrow label */
+.eyebrow {
+  font-family: var(--netti-font-family-sans);
+  font-size: 12px;                        /* Figma: h3/size */
+  font-weight: var(--netti-font-weight-medium);
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--netti-color-text-inverse);
+  opacity: 0.7;                           /* Figma: 70% */
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Full-width divider below header ─────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.10); /* Figma: white 10% */
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* ── Income rows container ───────────────────────────────────────────────── */
+.rows {
+  display: flex;
+  flex-direction: column;
 }
