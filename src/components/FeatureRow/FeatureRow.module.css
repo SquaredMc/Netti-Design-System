@@ -3,7 +3,7 @@
 .row {
   display: flex;
   align-items: flex-start;
-  gap: var(--netti-space-10, 10px);
+  gap: 10px; /* Figma: 10px gap tick→text */
   width: 100%;
 }
 

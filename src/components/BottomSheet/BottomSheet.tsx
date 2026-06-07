@@ -1,8 +1,8 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { Drawer } from 'vaul';
-import './BottomSheet.css';
+import styles from './BottomSheet.module.css';
 
-interface BottomSheetProps {
+export interface BottomSheetProps {
   title?: string;
   description?: string;
   trigger?: ReactNode;
@@ -32,48 +32,54 @@ export function BottomSheet({
   const open = isControlled ? controlledOpen : internalOpen;
 
   const handleOpenChange = (next: boolean) => {
-    if (isControlled) {
-      onOpenChange?.(next);
-    } else {
-      setInternalOpen(next);
-    }
+    if (isControlled) onOpenChange?.(next);
+    else setInternalOpen(next);
   };
 
   useEffect(() => {
-    if (open) {
-      onOpen?.();
-    } else {
-      onClose?.();
-    }
+    if (open) onOpen?.();
+    else onClose?.();
   }, [open]);
 
   return (
     <Drawer.Root open={open} onOpenChange={handleOpenChange}>
       {trigger && <Drawer.Trigger asChild>{trigger}</Drawer.Trigger>}
       <Drawer.Portal>
-        <Drawer.Overlay className="drawer-overlay" />
-        <Drawer.Content className="bottom-sheet__content">
-          <div className="bottom-sheet__handle" />
+        <Drawer.Overlay className={styles.overlay} />
+        <Drawer.Content className={styles.content} aria-label={title}>
+          <div className={styles.handle} aria-hidden="true" />
+
           {title && (
-            <div className="bottom-sheet__title-bar">
+            <div className={styles.titleBar}>
               {onBack ? (
-                <button type="button" className="bottom-sheet__back" onClick={onBack} aria-label="Back">
-                  <svg viewBox="0 0 24 24" fill="none">
+                <button
+                  type="button"
+                  className={styles.back}
+                  onClick={onBack}
+                  aria-label="Back"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
               ) : (
-                <div className="bottom-sheet__title-spacer" />
+                <div className={styles.titleSpacer} />
               )}
-              <div className="bottom-sheet__title">{title}</div>
-              <div className="bottom-sheet__title-spacer" />
+              <Drawer.Title className={styles.title}>{title}</Drawer.Title>
+              <div className={styles.titleSpacer} />
             </div>
           )}
-          <div className="bottom-sheet__body">
-            {description && <p className="bottom-sheet__description">{description}</p>}
+
+          <div className={styles.body}>
+            {description && (
+              <Drawer.Description className={styles.description}>
+                {description}
+              </Drawer.Description>
+            )}
             {children}
           </div>
-          {footer && <div className="bottom-sheet__footer">{footer}</div>}
+
+          {footer && <div className={styles.footer}>{footer}</div>}
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>

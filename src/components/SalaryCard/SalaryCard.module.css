@@ -1,38 +1,52 @@
-/* ─── SalaryCard ─────────────────────────────────────────────────────────── */
+/* ─── SalaryCard ─────────────────────────────────────────────────────────────
+   Figma spec:
+   - Card: navy bg, navy border, 12px radius, drop shadow
+   - Layout: VERTICAL, items centred horizontally
+   - Eyebrow: 12px Medium uppercase, 0.5px letter-spacing, white 70%
+   - Amount: 36px/40px Bold, white
+   - Badge (Pro only): cyan pill, 11px Semibold, navy text — below amount
+   - Toggle: 44px, spans full inner width, 16px top gap from amount/badge
+   ──────────────────────────────────────────────────────────────────────────── */
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--netti-space-8);
   width: 100%;
-  padding: var(--netti-card-padding, 20px) var(--netti-card-padding, 20px) var(--netti-space-16);
+  padding: var(--netti-card-padding, 20px);
+  padding-bottom: var(--netti-space-16);
+  gap: 0;                         /* gaps defined per-element below */
   border-radius: var(--netti-card-border-radius, 12px);
   background-color: var(--netti-color-background-card);
   border: 1px solid var(--netti-color-background-card-border);
   box-shadow: var(--netti-shadow-card);
 }
 
+/* ── Eyebrow ─────────────────────────────────────────────────────────────── */
 .eyebrow {
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-h3);
+  font-size: 12px;                /* Figma h3/size */
   font-weight: var(--netti-font-weight-medium);
-  line-height: var(--netti-font-line-height-h3);
+  line-height: 16px;              /* Figma h3/line-height */
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--netti-color-text-inverse);
   opacity: 0.7;
+  margin-bottom: 8px;             /* Figma: 8px gap eyebrow→amount */
 }
 
+/* ── Salary amount ────────────────────────────────────────────────────────── */
 .amount {
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-h1);
+  font-size: 36px;                /* Figma display/size */
   font-weight: var(--netti-font-weight-bold);
-  line-height: var(--netti-font-line-height-h1);
+  line-height: 40px;              /* Figma display/line-height */
   color: var(--netti-color-text-inverse);
+  margin-bottom: 12px;            /* gap to badge or toggle */
 }
 
-/* Pro badge — shown when additional income is active */
+/* ── Pro badge ────────────────────────────────────────────────────────────── */
+/* Figma: cyan pill, 11px Semibold, navy text, pill radius, margin-bottom 12px */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -42,9 +56,17 @@
   font-family: var(--netti-font-family-sans);
   font-size: 11px;
   font-weight: var(--netti-font-weight-semibold);
+  line-height: 16px;
   color: var(--netti-color-action-primary-text);
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 12px;            /* gap badge→toggle */
+}
+
+/* ── Toggle — full width ─────────────────────────────────────────────────── */
+/* SegmentedControl fills full card inner width */
+.toggle {
+  width: 100%;
 }

@@ -1,6 +1,7 @@
 /* ─── Button ─────────────────────────────────────────────────────────────────
-   All values reference semantic CSS custom properties from tokens.css.
-   Never use raw hex values here.
+   Uses data attributes for variant/size so the module class stays stable
+   while attributes carry the semantic meaning. This is the correct pattern
+   for CSS Modules + data attributes — attribute selectors work fine in modules.
    ──────────────────────────────────────────────────────────────────────────── */
 
 .button {
@@ -9,7 +10,7 @@
   justify-content: center;
   gap: var(--netti-space-8);
   border: 1px solid transparent;
-  border-radius: var(--netti-layout-button-border-radius-lg, 12px);
+  border-radius: var(--netti-button-border-radius-lg, 12px);
   font-family: var(--netti-font-family-sans);
   font-weight: var(--netti-font-weight-semibold);
   line-height: 1;
@@ -17,111 +18,107 @@
   transition:
     opacity 0.15s ease,
     background-color 0.15s ease,
-    border-color 0.15s ease;
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
   white-space: nowrap;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+  /* Reset browser button defaults */
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 /* ── Sizes ────────────────────────────────────────────────────────────────── */
 
-[data-size='lg'].button {
+.sizeLg {
   height: 42px;
   padding: var(--netti-button-padding-y-lg, 12px) var(--netti-button-padding-x, 16px);
   border-radius: var(--netti-button-border-radius-lg, 12px);
-  font-size: var(--netti-font-size-md-sb);
+  font-size: 18px; /* Figma: 18px Semi Bold */
+  line-height: 26px;
 }
 
-[data-size='md'].button {
+.sizeMd {
   height: 34px;
   padding: var(--netti-button-padding-y-sm, 8px) var(--netti-button-padding-x, 16px);
   border-radius: var(--netti-button-border-radius-sm, 8px);
-  font-size: var(--netti-font-size-sm);
+  font-size: 14px; /* Figma: 14px Semi Bold */
+  line-height: 20px;
 }
 
 /* ── Variants ─────────────────────────────────────────────────────────────── */
 
 /* Pro — cyan fill, navy text */
-[data-variant='pro'].button {
+.variantPro {
   background-color: var(--netti-color-action-primary-bg);
   color: var(--netti-color-action-primary-text);
   border-color: transparent;
   box-shadow: var(--netti-shadow-card);
 }
-
-[data-variant='pro'].button:hover:not(:disabled) {
-  opacity: 0.92;
-}
+.variantPro:hover:not(:disabled) { opacity: 0.92; }
+.variantPro:active:not(:disabled) { opacity: 0.80; }
 
 /* Primary — white fill, cyan border */
-[data-variant='primary'].button {
+.variantPrimary {
   background-color: var(--netti-color-background-surface);
   color: var(--netti-color-text-primary);
   border-color: var(--netti-color-action-secondary-border);
   box-shadow: var(--netti-shadow-card);
 }
-
-[data-variant='primary'].button:hover:not(:disabled) {
+.variantPrimary:hover:not(:disabled) {
   background-color: var(--netti-color-background-surface-raised);
 }
 
 /* Secondary — white fill, grey border */
-[data-variant='secondary'].button {
+.variantSecondary {
   background-color: var(--netti-color-background-surface);
   color: var(--netti-color-text-primary);
   border-color: var(--netti-color-border-default);
   box-shadow: var(--netti-shadow-card);
 }
-
-[data-variant='secondary'].button:hover:not(:disabled) {
+.variantSecondary:hover:not(:disabled) {
   background-color: var(--netti-color-background-surface-raised);
 }
 
-/* Ghost — translucent white on dark surfaces (Add income pill) */
-[data-variant='ghost'].button {
+/* Ghost — translucent white on dark surfaces — pill radius */
+.variantGhost {
   background-color: rgba(255, 255, 255, 0.10);
   color: var(--netti-color-action-primary-bg);
   border-color: transparent;
   border-radius: var(--netti-radius-full);
+  box-shadow: none;
 }
-
-[data-variant='ghost'].button:hover:not(:disabled) {
-  background-color: rgba(255, 255, 255, 0.16);
+.variantGhost:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.18);
 }
 
 /* Text — no fill or border */
-[data-variant='text'].button {
+.variantText {
   background-color: transparent;
   color: var(--netti-color-text-secondary);
   border-color: transparent;
   box-shadow: none;
 }
+.variantText:hover:not(:disabled) { color: var(--netti-color-text-primary); }
 
-[data-variant='text'].button:hover:not(:disabled) {
-  color: var(--netti-color-text-primary);
-}
-
-/* ── States ───────────────────────────────────────────────────────────────── */
-
-.button:active:not(:disabled) {
-  opacity: 0.75;
-}
-
-.button.disabled,
-.button:disabled {
+/* ── Disabled state — Figma: 40% opacity, all variants ───────────────────── */
+.button:disabled,
+.button[aria-disabled='true'] {
   opacity: 0.4;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 /* ── Modifiers ────────────────────────────────────────────────────────────── */
+.fullWidth { width: 100%; }
 
-.fullWidth {
-  width: 100%;
+/* ── Focus ────────────────────────────────────────────────────────────────── */
+.button:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: 2px;
 }
 
-/* ── Sub-elements ─────────────────────────────────────────────────────────── */
-
+/* ── Icon slot ────────────────────────────────────────────────────────────── */
 .icon {
   display: inline-flex;
   align-items: center;
@@ -132,7 +129,6 @@
 }
 
 .label {
-  /* Allows text to be independently ellipsed on overflow */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

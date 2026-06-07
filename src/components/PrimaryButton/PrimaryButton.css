@@ -1,20 +1,37 @@
+/**
+ * @deprecated Use <Button variant="pro"> instead.
+ * Kept for backward compatibility. Matches Figma Button[Type=Pro, Size=Large].
+ */
+
 .ds-primary-btn {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 44px;
+  height: 42px;                                    /* Figma: 42px (was 44px — wrong) */
   background: var(--netti-color-action-primary-bg);
   border: none;
-  border-radius: 16px;
+  border-radius: var(--netti-button-border-radius-lg, 12px); /* Figma: 12px (was 16px — wrong) */
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-md-sb);
-  line-height: var(--netti-font-line-height-sm-sb);
+  font-size: 18px;                                 /* Figma: 18px Semi Bold */
+  line-height: 26px;
   font-weight: var(--netti-font-weight-semibold);
   color: var(--netti-color-action-primary-text);
   cursor: pointer;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--netti-shadow-card);
+  transition: opacity 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
 }
+
+.ds-primary-btn:hover:not(:disabled) { opacity: 0.92; }
+.ds-primary-btn:active:not(:disabled) { opacity: 0.80; }
 
 .ds-primary-btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.ds-primary-btn:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: 2px;
 }

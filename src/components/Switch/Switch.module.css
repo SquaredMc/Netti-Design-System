@@ -1,0 +1,47 @@
+/* ─── Switch ─────────────────────────────────────────────────────────────────
+   Two-option toggle switch. Visually identical to SegmentedControl with
+   2 tabs on a light background. Kept for semantic/API compatibility.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.track {
+  display: inline-flex;
+  gap: 0;
+  background-color: var(--netti-color-background-surface-raised);
+  padding: var(--netti-toggle-padding, 4px);
+  border-radius: var(--netti-toggle-border-radius, 16px);
+  height: 44px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--netti-space-16);
+  min-height: 36px;
+  border: 1px solid transparent;
+  border-radius: var(--netti-toggle-pill-radius, 12px);
+  background-color: transparent;
+  font-family: var(--netti-font-family-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: var(--netti-font-weight-semibold);
+  color: var(--netti-color-text-secondary);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: all 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: 2px;
+}
+
+.selected {
+  background-color: var(--netti-color-action-selected-bg);
+  border-color: var(--netti-color-action-selected-border);
+  color: var(--netti-color-text-primary);
+  opacity: 1;
+  box-shadow: var(--netti-shadow-card);
+}

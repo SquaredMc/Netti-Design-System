@@ -1,0 +1,33 @@
+/* ─── Card ───────────────────────────────────────────────────────────────────
+   Generic white surface card. Used for light-surface sections.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.card {
+  background-color: var(--netti-color-background-surface);
+  border-radius: var(--netti-card-border-radius, 12px);
+  padding: var(--netti-card-padding, 20px);
+  box-shadow: var(--netti-shadow-card);
+  border: 1px solid var(--netti-color-border-default);
+}
+
+.header {
+  margin-bottom: var(--netti-card-gap, 12px);
+}
+
+.title {
+  font-family: var(--netti-font-family-sans);
+  font-size: 12px;                        /* Figma h3/size */
+  line-height: 16px;
+  font-weight: var(--netti-font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--netti-color-text-secondary);
+}
+
+.subtitle {
+  font-family: var(--netti-font-family-sans);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--netti-color-text-secondary);
+  margin-top: var(--netti-space-4);
+}

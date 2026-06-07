@@ -9,6 +9,7 @@
   height: 44px;
   padding: var(--netti-toggle-padding, 4px);
   border-radius: var(--netti-toggle-border-radius, 16px);
+  width: 100%;
   gap: 0;
 }
 

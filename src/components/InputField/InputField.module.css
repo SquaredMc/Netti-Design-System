@@ -46,7 +46,7 @@
   height: 42px;
   padding: 4px 16px;
   background-color: var(--netti-color-background-surface);
-  border: 1px solid var(--netti-color-text-muted);
+  border: 1px solid var(--netti-color-border-default); /* Figma: border/default in empty state */
   border-radius: var(--netti-button-border-radius-sm, 8px);
   transition: border-color 150ms ease, box-shadow 150ms ease;
 }

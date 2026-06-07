@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: var(--netti-list-row-height, 56px);
+  min-height: 56px; /* Figma: 56px fixed row height */
   padding: 0 var(--netti-list-row-padding-x, 16px);
   gap: var(--netti-space-12);
 }

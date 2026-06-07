@@ -1,20 +1,20 @@
 import { ReactNode } from 'react';
-import './Card.css';
+import styles from './Card.module.css';
 
-interface CardProps {
+export interface CardProps {
   children: ReactNode;
   title?: string;
   subtitle?: string;
   className?: string;
 }
 
-export function Card({ children, title, subtitle, className = '' }: CardProps) {
+export function Card({ children, title, subtitle, className }: CardProps) {
   return (
-    <div className={`ds-card ${className}`}>
+    <div className={[styles.card, className ?? ''].filter(Boolean).join(' ')}>
       {(title || subtitle) && (
-        <div className="ds-card-header">
-          {title && <h2 className="ds-card-title">{title}</h2>}
-          {subtitle && <p className="ds-card-subtitle">{subtitle}</p>}
+        <div className={styles.header}>
+          {title    && <h2 className={styles.title}>{title}</h2>}
+          {subtitle && <p  className={styles.subtitle}>{subtitle}</p>}
         </div>
       )}
       {children}

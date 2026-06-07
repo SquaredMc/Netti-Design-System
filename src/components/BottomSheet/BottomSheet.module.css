@@ -1,0 +1,114 @@
+/* ─── BottomSheet ────────────────────────────────────────────────────────────
+   Generic reusable bottom sheet using vaul.
+   For the PaywallSheet see PaywallSheet.tsx — it has its own layout.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);  /* Figma: 40% black */
+  z-index: 40;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  background: var(--netti-color-background-surface);
+  border: none;
+  border-top-left-radius:  var(--netti-sheet-border-radius, 32px); /* Figma: 32px */
+  border-top-right-radius: var(--netti-sheet-border-radius, 32px);
+  padding: 20px var(--netti-sheet-padding, 20px) 0;
+  box-shadow: var(--netti-shadow-sheet);
+  max-height: 92dvh;
+  outline: none;
+}
+
+/* ── Grabber — Figma: 36×5px, border/strong (#E5E7EB) ───────────────────── */
+.handle {
+  width: 36px;
+  height: 5px;
+  border-radius: var(--netti-radius-full);
+  background: var(--netti-color-border-strong); /* Figma: border/strong, NOT border/default */
+  margin: 0 auto var(--netti-space-16);
+  flex-shrink: 0;
+}
+
+/* ── Title bar ───────────────────────────────────────────────────────────── */
+.titleBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--netti-space-20);
+}
+
+.title {
+  flex: 1;
+  font-family: var(--netti-font-family-sans);
+  font-size: 18px;
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: 24px;
+  color: var(--netti-color-text-primary);
+  text-align: center;
+}
+
+.titleSpacer {
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.back {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--netti-color-text-secondary);
+  flex-shrink: 0;
+  border-radius: var(--netti-radius-md);
+}
+
+.back:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: 2px;
+}
+
+.back svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Body ────────────────────────────────────────────────────────────────── */
+.body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  min-height: 0;
+  padding-bottom: calc(var(--netti-space-40) + env(safe-area-inset-bottom, 0px));
+}
+
+.content:has(.footer) .body {
+  padding-bottom: 0;
+}
+
+.description {
+  margin: 0 0 var(--netti-space-16);
+  font-family: var(--netti-font-family-sans);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--netti-color-text-secondary);
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+.footer {
+  flex-shrink: 0;
+  padding: var(--netti-space-12) 0 calc(var(--netti-space-40) + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--netti-color-border-strong);
+}

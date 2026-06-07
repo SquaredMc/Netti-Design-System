@@ -1,6 +1,6 @@
-import './Switch.css';
+import styles from './Switch.module.css';
 
-interface SwitchProps {
+export interface SwitchProps {
   checked: boolean;
   onChange: (checked: boolean) => void;
   offLabel?: string;
@@ -8,21 +8,37 @@ interface SwitchProps {
   className?: string;
 }
 
-export function Switch({ checked, onChange, offLabel = 'Off', onLabel = 'On', className = '' }: SwitchProps) {
+/**
+ * Switch — two-option toggle.
+ * Visually matches the Figma SegmentedControl with 2 tabs (light context).
+ * For more than 2 options use SegmentedControl directly.
+ */
+export function Switch({
+  checked,
+  onChange,
+  offLabel = 'Off',
+  onLabel = 'On',
+  className,
+}: SwitchProps) {
   return (
-    <div className={`ds-switch-container ${className}`}>
+    <div
+      className={[styles.track, className ?? ''].filter(Boolean).join(' ')}
+      role="group"
+    >
       <button
         type="button"
-        className={`ds-switch-option ${!checked ? 'ds-switch-option--selected' : ''}`}
+        className={[styles.option, !checked ? styles.selected : ''].filter(Boolean).join(' ')}
         onClick={() => onChange(false)}
+        aria-pressed={!checked}
         data-testid="switch-off"
       >
         {offLabel}
       </button>
       <button
         type="button"
-        className={`ds-switch-option ${checked ? 'ds-switch-option--selected' : ''}`}
+        className={[styles.option, checked ? styles.selected : ''].filter(Boolean).join(' ')}
         onClick={() => onChange(true)}
+        aria-pressed={checked}
         data-testid="switch-on"
       >
         {onLabel}
