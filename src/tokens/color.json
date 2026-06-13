@@ -1,55 +1,124 @@
 {
-  "$description": "Netti primitive colour tokens — W3C DTCG format. Do not reference these directly from components — use semantic tokens.",
-
   "color": {
     "brand": {
-      "cyan":      { "$value": "#26D4EB", "$type": "color", "$description": "Primary accent / highlight" },
-      "navy":      { "$value": "#010045", "$type": "color", "$description": "Primary dark — header, primary buttons" },
-      "navyDeep":  { "$value": "#00021B", "$type": "color", "$description": "Deepest navy — darkest backgrounds" },
-      "navyMid":   { "$value": "#0B0E3C", "$type": "color", "$description": "Mid navy — toggle bar bg on dark cards" },
-      "navyCard":  { "$value": "#07205E", "$type": "color", "$description": "Dark card border" },
-      "blue":      { "$value": "#01236E", "$type": "color", "$description": "Selected / focus state" },
-      "cyanLight": { "$value": "#A8EFF7", "$type": "color", "$description": "Cyan tint — light accent" }
+      "cyan": {
+        "$value": "#26D4EB",
+        "$type": "color",
+        "$description": "Primary accent / highlight"
+      },
+      "navy": {
+        "$value": "#010045",
+        "$type": "color",
+        "$description": "Primary dark — header, primary buttons"
+      },
+      "navyDeep": {
+        "$value": "#00021B",
+        "$type": "color",
+        "$description": "Deepest navy — darkest backgrounds"
+      },
+      "navyMid": {
+        "$value": "#0B0E3C",
+        "$type": "color",
+        "$description": "Mid navy — toggle bar bg on dark cards"
+      },
+      "navyCard": {
+        "$value": "#07205E",
+        "$type": "color",
+        "$description": "Dark card border"
+      },
+      "blue": {
+        "$value": "#01236E",
+        "$type": "color",
+        "$description": "Selected / focus state"
+      },
+      "cyanLight": {
+        "$value": "#A8EFF7",
+        "$type": "color",
+        "$description": "Cyan tint — light accent"
+      }
     },
-
     "neutral": {
-      "950": { "$value": "#0A0A0A", "$type": "color" },
-      "700": { "$value": "#4A5565", "$type": "color" },
-      "500": { "$value": "#6B7280", "$type": "color", "$description": "WCAG AA 4.63:1 on white — use for muted text" },
-      "200": { "$value": "#EEEEEE", "$type": "color" },
-      "100": { "$value": "#E5E7EB", "$type": "color" },
-      "50":  { "$value": "#F3F4F6", "$type": "color" },
-      "0":   { "$value": "#FFFFFF", "$type": "color" }
+      "0": {
+        "$value": "#FFFFFF",
+        "$type": "color"
+      },
+      "50": {
+        "$value": "#F3F4F6",
+        "$type": "color"
+      },
+      "100": {
+        "$value": "#E5E7EB",
+        "$type": "color"
+      },
+      "200": {
+        "$value": "#EEEEEE",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#6B7280",
+        "$type": "color",
+        "$description": "WCAG AA 4.63:1 on white — use for muted text"
+      },
+      "700": {
+        "$value": "#4A5565",
+        "$type": "color"
+      },
+      "950": {
+        "$value": "#0A0A0A",
+        "$type": "color"
+      }
     },
-
     "green": {
-      "500": { "$value": "#00A63E", "$type": "color" },
-      "100": { "$value": "#DCFCE7", "$type": "color" }
+      "100": {
+        "$value": "#DCFCE7",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#00A63E",
+        "$type": "color"
+      }
     },
-
     "red": {
-      "600": { "$value": "#E1000A", "$type": "color" },
-      "100": { "$value": "#FEE2E2", "$type": "color" }
+      "100": {
+        "$value": "#FEE2E2",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "#E1000A",
+        "$type": "color"
+      }
     },
-
     "surface": {
-      "1": { "$value": "#FFFFFF",  "$type": "color", "$description": "Primary surface" },
-      "2": { "$value": "#F3F4F6", "$type": "color", "$description": "Secondary surface" },
-      "3": { "$value": "#E5E7EB", "$type": "color", "$description": "Dividers, page bg" },
-      "4": { "$value": "#EEEEEE", "$type": "color", "$description": "Subtle fills" }
+      "1": {
+        "$value": "#FFFFFF",
+        "$type": "color",
+        "$description": "Primary surface"
+      },
+      "2": {
+        "$value": "#F3F4F6",
+        "$type": "color",
+        "$description": "Secondary surface"
+      },
+      "3": {
+        "$value": "#E5E7EB",
+        "$type": "color",
+        "$description": "Dividers, page bg"
+      },
+      "4": {
+        "$value": "#EEEEEE",
+        "$type": "color",
+        "$description": "Subtle fills"
+      }
     },
-
-    "text": {
-      "primary":   { "$value": "#0A0A0A", "$type": "color" },
-      "secondary": { "$value": "#4A5565", "$type": "color" },
-      "tertiary":  { "$value": "#6B7280", "$type": "color", "$description": "WCAG AA compliant muted text — updated from #99A1AF" },
-      "positive":  { "$value": "#00A63E", "$type": "color" },
-      "negative":  { "$value": "#E1000A", "$type": "color" }
-    },
-
     "ui": {
-      "selected": { "$value": "#01236E", "$type": "color" },
-      "link":     { "$value": "#0066FF", "$type": "color" }
+      "selected": {
+        "$value": "#01236E",
+        "$type": "color"
+      },
+      "link": {
+        "$value": "#0066FF",
+        "$type": "color"
+      }
     }
   }
 }

@@ -1,39 +1,104 @@
 {
-  "$description": "Netti semantic spacing tokens — role-named aliases of the spacing scale. Components reference these, not raw space.* values.",
-
   "layout": {
-    "screenMargin":  { "$value": "16px", "$type": "dimension", "$description": "Horizontal padding inside screen-width containers" },
-    "screenGap":     { "$value": "20px", "$type": "dimension", "$description": "Vertical gap between top-level screen sections" },
-    "sectionGap":    { "$value": "24px", "$type": "dimension", "$description": "Gap between content sections within a page" }
+    "screenMargin": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Horizontal padding inside screen-width containers"
+    },
+    "screenGap": {
+      "$value": "20px",
+      "$type": "dimension",
+      "$description": "Vertical gap between top-level screen sections"
+    },
+    "sectionGap": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$description": "Gap between content sections within a page"
+    }
   },
-
   "card": {
-    "padding":       { "$value": "20px", "$type": "dimension", "$description": "Inner padding of card components" },
-    "gap":           { "$value": "12px", "$type": "dimension", "$description": "Gap between items inside a card" },
-    "borderRadius":  { "$value": "12px", "$type": "dimension", "$description": "Card corner radius" }
+    "padding": {
+      "$value": "20px",
+      "$type": "dimension",
+      "$description": "Inner padding of card components"
+    },
+    "gap": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Gap between items inside a card"
+    },
+    "borderRadius": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Card corner radius"
+    }
   },
-
   "sheet": {
-    "padding":       { "$value": "20px", "$type": "dimension", "$description": "Horizontal padding inside bottom sheets" },
-    "borderRadius":  { "$value": "32px", "$type": "dimension", "$description": "Top corner radius for bottom sheets" }
+    "padding": {
+      "$value": "20px",
+      "$type": "dimension",
+      "$description": "Horizontal padding inside bottom sheets"
+    },
+    "borderRadius": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$description": "Top corner radius for bottom sheets"
+    }
   },
-
   "button": {
-    "paddingX":      { "$value": "16px", "$type": "dimension", "$description": "Horizontal padding inside buttons" },
-    "paddingYLg":    { "$value": "12px", "$type": "dimension", "$description": "Vertical padding — Large button" },
-    "paddingYSm":    { "$value": "8px",  "$type": "dimension", "$description": "Vertical padding — Medium button" },
-    "borderRadiusLg":{ "$value": "12px", "$type": "dimension", "$description": "Corner radius — Large button" },
-    "borderRadiusSm":{ "$value": "8px",  "$type": "dimension", "$description": "Corner radius — Medium button" }
+    "paddingX": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Horizontal padding inside buttons"
+    },
+    "paddingYLg": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Vertical padding — Large button"
+    },
+    "paddingYSm": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$description": "Vertical padding — Medium button"
+    },
+    "borderRadiusLg": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Corner radius — Large button"
+    },
+    "borderRadiusSm": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$description": "Corner radius — Medium button"
+    }
   },
-
   "toggle": {
-    "padding":       { "$value": "4px",  "$type": "dimension", "$description": "Inner padding of segmented control container" },
-    "borderRadius":  { "$value": "16px", "$type": "dimension", "$description": "Outer container radius" },
-    "pillRadius":    { "$value": "12px", "$type": "dimension", "$description": "Selected pill radius inside toggle" }
+    "padding": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$description": "Inner padding of segmented control container"
+    },
+    "borderRadius": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Outer container radius"
+    },
+    "pillRadius": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Selected pill radius inside toggle"
+    }
   },
-
   "listRow": {
-    "height":        { "$value": "56px", "$type": "dimension", "$description": "Fixed height of a list row" },
-    "paddingX":      { "$value": "16px", "$type": "dimension", "$description": "Horizontal padding of list row content" }
+    "height": {
+      "$value": "56px",
+      "$type": "dimension",
+      "$description": "Fixed height of a list row"
+    },
+    "paddingX": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Horizontal padding of list row content"
+    }
   }
 }

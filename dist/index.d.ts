@@ -1,7 +1,17 @@
 import { ButtonHTMLAttributes } from 'react';
+import { InputHTMLAttributes } from 'react';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { ReactNode } from 'react';
 import { ReactPortal } from 'react';
+
+export declare function AdditionalIncomeCard({ items, onAdd, className, }: AdditionalIncomeCardProps): JSX_2.Element;
+
+export declare interface AdditionalIncomeCardProps {
+    items: IncomeItem[];
+    onAdd: () => void;
+    onRemove?: (id: string) => void;
+    className?: string;
+}
 
 export declare function AdSlot({ className }: AdSlotProps): JSX_2.Element;
 
@@ -9,12 +19,13 @@ declare interface AdSlotProps {
     className?: string;
 }
 
-export declare function BottomNav({ items, activeId, onChange }: BottomNavProps): JSX_2.Element;
+export declare function BottomNav({ items, activeId, onChange, className }: BottomNavProps): JSX_2.Element;
 
-declare interface BottomNavProps {
+export declare interface BottomNavProps {
     items: NavItem[];
     activeId: string;
     onChange: (id: string) => void;
+    className?: string;
 }
 
 export declare function BottomSheet({ title, description, trigger, children, footer, open: controlledOpen, onOpenChange, onBack, onOpen, onClose, }: BottomSheetProps): JSX_2.Element;
@@ -32,12 +43,19 @@ declare interface BottomSheetProps {
     onClose?: () => void;
 }
 
-export declare function Button({ leftIcon, children, className, ...props }: ButtonProps): JSX_2.Element;
+export declare function Button({ variant, size, icon, fullWidth, children, className, disabled, ...rest }: ButtonProps): JSX_2.Element;
 
-declare interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    leftIcon?: ReactNode;
+export declare interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    variant?: ButtonVariant;
+    size?: ButtonSize;
+    icon?: ReactNode;
+    fullWidth?: boolean;
     children: ReactNode;
 }
+
+export declare type ButtonSize = 'lg' | 'md';
+
+export declare type ButtonVariant = 'pro' | 'primary' | 'secondary' | 'ghost' | 'text';
 
 export declare function Card({ children, title, subtitle, className }: CardProps): JSX_2.Element;
 
@@ -48,7 +66,27 @@ declare interface CardProps {
     className?: string;
 }
 
-export declare function Divider(): JSX_2.Element;
+export declare function Divider({ className }: {
+    className?: string;
+}): JSX_2.Element;
+
+export declare function FeatureRow({ title, description, state, className, }: FeatureRowProps): JSX_2.Element;
+
+/**
+ * FeatureRow
+ *
+ * A single feature line in the Paywall Sheet.
+ * Tick + title + optional sub-label.
+ *
+ * state=active   — full colour, for included features
+ * state=inactive — muted colour, for "coming soon" items
+ */
+export declare interface FeatureRowProps {
+    title: string;
+    description?: string;
+    state?: TickState;
+    className?: string;
+}
 
 export declare function FullScreenSheet({ title, open, onOpenChange, onBack, children, footer, hideClose, onOpen, onClose, }: FullScreenSheetProps): ReactPortal | null;
 
@@ -64,6 +102,28 @@ declare interface FullScreenSheetProps {
     onClose?: () => void;
 }
 
+/**
+ * AdditionalIncomeCard
+ *
+ * Dark navy card below the SalaryCard on the Calculate screen.
+ *
+ * Empty state — no items:
+ *   Full-width Ghost button fills the card.
+ *
+ * Has-items state:
+ *   Header row: "ADDITIONAL INCOME" label + "Add income" Ghost button inline (right).
+ *   Income rows below — no remove buttons in this view.
+ *   Remove happens via the individual item edit screen.
+ *
+ * Figma: node 80:65 (Has Items) and 80:35 (Empty).
+ */
+export declare interface IncomeItem {
+    id: string;
+    label: string;
+    subLabel?: string;
+    amountFormatted: string;
+}
+
 export declare function InfoSheet({ title, description, children }: InfoSheetProps): JSX_2.Element;
 
 declare interface InfoSheetProps {
@@ -72,35 +132,92 @@ declare interface InfoSheetProps {
     children: ReactNode;
 }
 
-export declare function InputField({ label, value, onChange, onBlur, type, placeholder, prefix, suffix, className, inputMode, testId, }: InputFieldProps): JSX_2.Element;
+export declare function InputField({ label, value, onChange, variant, prefix, error, className, placeholder, disabled, inputMode, ...rest }: InputFieldProps): JSX_2.Element;
 
-declare interface InputFieldProps {
+export declare interface InputFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'prefix'> {
     label: string;
-    value: string | number;
+    value: string;
     onChange: (value: string) => void;
-    onBlur?: () => void;
-    type?: 'text' | 'number';
-    placeholder?: string;
+    variant?: InputFieldVariant;
+    /** Currency/unit prefix shown before the value. e.g. "£" or "%" */
     prefix?: string;
-    suffix?: string;
+    /** Error message — shown below the field when set */
+    error?: string;
     className?: string;
-    inputMode?: 'text' | 'numeric' | 'decimal';
-    testId?: string;
 }
 
-export declare function MoneyRow({ label, amount, strong, showSign, className, currency, locale, }: MoneyRowProps): JSX_2.Element;
+/**
+ * InputField
+ *
+ * Two visual variants mapping directly to the Figma Input Field component:
+ *
+ *   standard     — bordered box (42px). Used for numeric/text inputs like
+ *                  "Hours worked". Label above, value inside the box.
+ *
+ *   largeAmount  — large display style with underline cursor (no border box).
+ *                  Used for primary monetary inputs like "Hourly rate" or
+ *                  "Bonus amount". £/% prefix alongside 36px value.
+ *
+ * State is derived automatically from value + focus:
+ *   empty   — no value, not focused
+ *   focused — currently active
+ *   filled  — has a value, not focused
+ */
+export declare type InputFieldVariant = 'standard' | 'largeAmount';
 
-declare interface MoneyRowProps {
+export declare function ListRow({ label, subLabel, amountFormatted, hasRemove, onRemove, removeLabel, hasDivider, badge, className, }: ListRowProps): JSX_2.Element;
+
+/**
+ * ListRow
+ *
+ * A single income item row inside the Additional Income Card.
+ * Dark surface — always used on navy card backgrounds.
+ *
+ * Left:  label + optional sub-label (grows to fill)
+ * Right: formatted amount + optional remove button
+ *
+ * hasRemove defaults to false — the remove button is only shown
+ * when the user is actively editing an item, not in the default list view.
+ * This matches the Figma spec where removal happens via the edit screen.
+ */
+export declare interface ListRowProps {
     label: string;
+    /** e.g. "(yearly)" */
+    subLabel?: string;
+    /** Formatted amount string, e.g. "£5,000" */
+    amountFormatted?: string;
+    /**
+     * Show the remove (−) button.
+     * False by default — only shown in edit/detail context, not in the card list.
+     */
+    hasRemove?: boolean;
+    /** Called when the remove button is pressed */
+    onRemove?: () => void;
+    /** Accessible label for the remove button */
+    removeLabel?: string;
+    /** Show a 1px divider at the bottom of the row */
+    hasDivider?: boolean;
+    /** Slot for a right-side badge (e.g. "Pro") */
+    badge?: ReactNode;
+    className?: string;
+}
+
+export declare function MoneyRow({ label, amount, strong, showPositive, className, currency, locale, }: MoneyRowProps): JSX_2.Element;
+
+export declare interface MoneyRowProps {
+    label: string;
+    /** Raw numeric amount. Formatted automatically with Intl. */
     amount: number;
+    /** Makes the row larger and bolder — use for totals */
     strong?: boolean;
-    showSign?: boolean;
+    /** Colour-code positive amounts green */
+    showPositive?: boolean;
     className?: string;
     currency?: string;
     locale?: string;
 }
 
-declare interface NavItem {
+export declare interface NavItem {
     id: string;
     label: string;
     icon: ReactNode;
@@ -114,48 +231,122 @@ declare interface NettiLogoProps {
     className?: string;
 }
 
+/**
+ * PaywallSheet
+ *
+ * Bottom sheet shown when a free user attempts to access a Pro feature.
+ * Uses vaul Drawer for native-feeling drag-to-dismiss behaviour.
+ *
+ * Pull price from the store at runtime — never hard-code it.
+ * Analytics events (paywall_shown, paywall_dismissed, pro_purchase_initiated)
+ * should be fired by the parent via onShow / onDismiss / onPurchase callbacks.
+ */
+export declare interface PaywallFeature extends Pick<FeatureRowProps, 'title' | 'description' | 'state'> {
+}
+
+export declare function PaywallSheet({ open, onOpenChange, trigger, priceFormatted, priceNote, features, onPurchase, onRestore, isPurchasing, }: PaywallSheetProps): JSX_2.Element;
+
+export declare interface PaywallSheetProps {
+    /** Control sheet open state from outside */
+    open: boolean;
+    onOpenChange: (open: boolean) => void;
+    /** Element that opens the sheet (optional — can be controlled externally) */
+    trigger?: ReactNode;
+    /** Price string pulled from RevenueCat at runtime, e.g. "£9.99" */
+    priceFormatted: string;
+    /** Note beneath the price, e.g. "one-off · no subscription" */
+    priceNote?: string;
+    /** Feature rows — ordered as they appear in the sheet */
+    features?: PaywallFeature[];
+    /** Called when the Unlock CTA is pressed */
+    onPurchase: () => void;
+    /** Called when the Restore link is pressed */
+    onRestore: () => void;
+    /** Whether a purchase is in progress (shows loading state on CTA) */
+    isPurchasing?: boolean;
+}
+
+export declare type Period = 'yearly' | 'monthly' | 'weekly' | 'daily';
+
 export declare function PrimaryButton({ children, className, ...props }: PrimaryButtonProps): JSX_2.Element;
 
 declare interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
 }
 
-export declare function SegmentedControl({ options, value, onChange, className }: SegmentedControlProps): JSX_2.Element;
+export declare function SalaryCard({ salaryFormatted, period, onPeriodChange, additionalIncomeSummary, className, }: SalaryCardProps): JSX_2.Element;
 
-declare interface SegmentedControlProps {
-    options: {
-        value: string;
-        label: string;
-    }[];
-    value: string;
-    onChange: (value: string) => void;
+export declare interface SalaryCardProps {
+    salaryFormatted: string;
+    period: Period;
+    onPeriodChange: (period: Period) => void;
+    additionalIncomeSummary?: string;
     className?: string;
 }
 
-export declare function Select({ label, options, value, onChange, className, testId }: SelectProps): JSX_2.Element;
+export declare function SegmentedControl({ options, value, onChange, context, className, 'aria-label': ariaLabel, }: SegmentedControlProps): JSX_2.Element;
 
-declare interface SelectOption {
+export declare interface SegmentedControlProps {
+    options: SegmentOption[];
+    value: string;
+    onChange: (value: string) => void;
+    context?: 'dark' | 'light';
+    className?: string;
+    /** Accessible label for the group */
+    'aria-label'?: string;
+}
+
+/**
+ * SegmentedControl (Toggle)
+ *
+ * Period or mode selector — maps to the Figma Toggle component.
+ *
+ * context:
+ *   dark  — renders on navy card backgrounds (Salary Card, Additional Income Card)
+ *   light — renders on white surface backgrounds (Bottom Sheet)
+ *
+ * Supports 2, 3, or 4 options. All widths share the same 44px height and
+ * the same total width so they are interchangeable on screen.
+ */
+export declare interface SegmentOption {
     value: string;
     label: string;
 }
 
-declare interface SelectProps {
+export declare function Select({ label, options, value, onChange, className, disabled, 'data-testid': testId }: SelectProps): JSX_2.Element;
+
+export declare interface SelectOption {
+    value: string;
+    label: string;
+}
+
+export declare interface SelectProps {
     label: string;
     options: SelectOption[];
     value: string;
     onChange: (value: string) => void;
     className?: string;
-    testId?: string;
+    disabled?: boolean;
+    'data-testid'?: string;
 }
 
-export declare function Switch({ checked, onChange, offLabel, onLabel, className }: SwitchProps): JSX_2.Element;
+export declare function Tick({ state, className, 'aria-label': ariaLabel, }: TickProps): JSX_2.Element;
 
-declare interface SwitchProps {
-    checked: boolean;
-    onChange: (checked: boolean) => void;
-    offLabel?: string;
-    onLabel?: string;
+export declare interface TickProps {
+    state?: TickState;
     className?: string;
+    /** Screen-reader label — defaults to state description */
+    'aria-label'?: string;
 }
+
+/**
+ * Tick
+ *
+ * 22×22 circle with a checkmark. Used in feature lists and confirmation flows.
+ *
+ * state=active   — green circle, green tick (feature included)
+ * state=inactive — grey circle, muted tick (coming soon / locked)
+ */
+export declare type TickState = 'active' | 'inactive';
 
 export { }

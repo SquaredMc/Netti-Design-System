@@ -1,15 +1,45 @@
 {
-  "$description": "Netti border-radius tokens — W3C DTCG format",
-
   "radius": {
-    "none":      { "$value": "0px",    "$type": "dimension" },
-    "sm":        { "$value": "3px",    "$type": "dimension" },
-    "md":        { "$value": "6px",    "$type": "dimension" },
-    "lg":        { "$value": "9px",    "$type": "dimension" },
-    "segment":   { "$value": "12px",   "$type": "dimension", "$description": "Segmented control items and switch options" },
-    "container": { "$value": "16px",   "$type": "dimension", "$description": "Segmented control / switch outer container" },
-    "pill":      { "$value": "24px",   "$type": "dimension", "$description": "Cards, inputs, buttons — primary UI radius" },
-    "sheet":     { "$value": "28px",   "$type": "dimension", "$description": "Bottom sheet top corners" },
-    "full":      { "$value": "9999px", "$type": "dimension", "$description": "True pill / circle" }
+    "none": {
+      "$value": "0px",
+      "$type": "dimension"
+    },
+    "sm": {
+      "$value": "3px",
+      "$type": "dimension"
+    },
+    "md": {
+      "$value": "6px",
+      "$type": "dimension"
+    },
+    "lg": {
+      "$value": "9px",
+      "$type": "dimension"
+    },
+    "segment": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Segmented control items and switch options"
+    },
+    "container": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Segmented control / switch outer container"
+    },
+    "pill": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$description": "Cards, inputs, buttons — primary UI radius"
+    },
+    "sheet": {
+      "$value": "28px",
+      "$type": "dimension",
+      "$description": "Bottom sheet top corners"
+    },
+    "full": {
+      "$value": "9999px",
+      "$type": "dimension",
+      "$description": "True pill / circle"
+    }
   }
 }

@@ -6,17 +6,53 @@
   --netti-color-brand-cyan: #26d4eb; /** Primary accent / highlight */
   --netti-color-brand-navy: #010045; /** Primary dark — header, primary buttons */
   --netti-color-brand-navy-deep: #00021b; /** Deepest navy — darkest backgrounds */
-  --netti-color-surface-1: #ffffff; /** Primary surface — cards, modals, inputs */
-  --netti-color-surface-2: #f3f4f6; /** Secondary surface — segmented control bg, hover fills */
-  --netti-color-surface-3: #e5e7eb; /** Page background */
-  --netti-color-surface-4: #eeeeee; /** Dividers, subtle fills */
-  --netti-color-text-primary: #0a0a0a; /** Primary body text */
-  --netti-color-text-secondary: #4a5565; /** Labels, secondary content, card titles */
-  --netti-color-text-tertiary: #99a1af; /** Placeholders, hints, disabled text */
-  --netti-color-text-positive: #00a63e; /** Success, take-home pay, positive amounts */
-  --netti-color-text-negative: #e1000a; /** Error, destructive actions, negative amounts */
-  --netti-color-ui-selected: #01236e; /** Focus rings, selected borders, active states */
-  --netti-color-ui-link: #0066ff; /** Hyperlinks */
+  --netti-color-brand-navy-mid: #0b0e3c; /** Mid navy — toggle bar bg on dark cards */
+  --netti-color-brand-navy-card: #07205e; /** Dark card border */
+  --netti-color-brand-blue: #01236e; /** Selected / focus state */
+  --netti-color-brand-cyan-light: #a8eff7; /** Cyan tint — light accent */
+  --netti-color-neutral-0: #ffffff;
+  --netti-color-neutral-50: #f3f4f6;
+  --netti-color-neutral-100: #e5e7eb;
+  --netti-color-neutral-200: #eeeeee;
+  --netti-color-neutral-500: #6b7280; /** WCAG AA 4.63:1 on white — use for muted text */
+  --netti-color-neutral-700: #4a5565;
+  --netti-color-neutral-950: #0a0a0a;
+  --netti-color-green-100: #dcfce7;
+  --netti-color-green-500: #00a63e;
+  --netti-color-red-100: #fee2e2;
+  --netti-color-red-600: #e1000a;
+  --netti-color-surface-1: #ffffff; /** Primary surface */
+  --netti-color-surface-2: #f3f4f6; /** Secondary surface */
+  --netti-color-surface-3: #e5e7eb; /** Dividers, page bg */
+  --netti-color-surface-4: #eeeeee; /** Subtle fills */
+  --netti-color-ui-selected: #01236e;
+  --netti-color-ui-link: #0066ff;
+  --netti-color-background-screen: #00021b; /** Full-screen gradient base — page background */
+  --netti-color-background-card: #010045; /** Dark card surface — Salary Card, Additional Income Card */
+  --netti-color-background-card-subtle: #0b0e3c; /** Toggle bar inside dark cards */
+  --netti-color-background-card-border: #07205e; /** Border on dark cards */
+  --netti-color-background-surface: #ffffff; /** Primary surface — Bottom Sheet, inputs, white cards */
+  --netti-color-background-surface-raised: #f3f4f6; /** Raised surface — segmented control bg, callout boxes */
+  --netti-color-text-primary: #0a0a0a; /** Primary body text on light surfaces */
+  --netti-color-text-secondary: #4a5565; /** Secondary labels, captions */
+  --netti-color-text-muted: #6b7280; /** Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white. */
+  --netti-color-text-inverse: #ffffff; /** Text on dark card surfaces */
+  --netti-color-text-positive: #00a63e; /** Take-home pay, positive amounts, success */
+  --netti-color-text-negative: #e1000a; /** Errors, destructive actions, negative amounts */
+  --netti-color-text-brand: #010045; /** Brand text — used on cyan backgrounds (Pro button) */
+  --netti-color-action-primary-bg: #26d4eb; /** Pro / primary CTA fill — cyan */
+  --netti-color-action-primary-text: #010045; /** Text on cyan CTA — navy */
+  --netti-color-action-secondary-border: #26d4eb; /** Outlined secondary button border */
+  --netti-color-action-selected-border: #01236e; /** Selected toggle pill border, focus rings */
+  --netti-color-action-selected-bg: #ffffff; /** Selected toggle pill fill */
+  --netti-color-border-default: #eeeeee; /** Dividers, card outlines on light surfaces */
+  --netti-color-border-strong: #e5e7eb; /** Stronger dividers, grabber handle */
+  --netti-color-border-inverse: #07205e; /** Border on dark card surfaces */
+  --netti-color-border-focus: #26d4eb; /** Focus ring — accessibility */
+  --netti-color-status-positive-text: #00a63e; /** Success text and icons */
+  --netti-color-status-positive-bg: #dcfce7; /** Success background — Tick active state */
+  --netti-color-status-negative-text: #e1000a; /** Error text and icons */
+  --netti-color-status-negative-bg: #fee2e2; /** Error background */
   --netti-radius-none: 0px;
   --netti-radius-sm: 3px;
   --netti-radius-md: 6px;
@@ -26,6 +62,24 @@
   --netti-radius-pill: 24px; /** Cards, inputs, buttons — primary UI radius */
   --netti-radius-sheet: 28px; /** Bottom sheet top corners */
   --netti-radius-full: 9999px; /** True pill / circle */
+  --netti-layout-screen-margin: 16px; /** Horizontal padding inside screen-width containers */
+  --netti-layout-screen-gap: 20px; /** Vertical gap between top-level screen sections */
+  --netti-layout-section-gap: 24px; /** Gap between content sections within a page */
+  --netti-card-padding: 20px; /** Inner padding of card components */
+  --netti-card-gap: 12px; /** Gap between items inside a card */
+  --netti-card-border-radius: 12px; /** Card corner radius */
+  --netti-sheet-padding: 20px; /** Horizontal padding inside bottom sheets */
+  --netti-sheet-border-radius: 32px; /** Top corner radius for bottom sheets */
+  --netti-button-padding-x: 16px; /** Horizontal padding inside buttons */
+  --netti-button-padding-y-lg: 12px; /** Vertical padding — Large button */
+  --netti-button-padding-y-sm: 8px; /** Vertical padding — Medium button */
+  --netti-button-border-radius-lg: 12px; /** Corner radius — Large button */
+  --netti-button-border-radius-sm: 8px; /** Corner radius — Medium button */
+  --netti-toggle-padding: 4px; /** Inner padding of segmented control container */
+  --netti-toggle-border-radius: 16px; /** Outer container radius */
+  --netti-toggle-pill-radius: 12px; /** Selected pill radius inside toggle */
+  --netti-list-row-height: 56px; /** Fixed height of a list row */
+  --netti-list-row-padding-x: 16px; /** Horizontal padding of list row content */
   --netti-shadow-card: 0px 1px 2px 0px rgba(0,0,0,0.10), 0px 1px 3px 0px rgba(0,0,0,0.10); /** Default card elevation and selected interactive item */
   --netti-shadow-sheet: 0px -12px 30px 0px rgba(0,0,0,0.12); /** Bottom sheet — casts upward */
   --netti-shadow-none: 0px 0px 0px 0px rgba(0,0,0,0);
