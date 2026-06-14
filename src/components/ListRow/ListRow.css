@@ -1,0 +1,49 @@
+/* Row inside a dark AdditionalIncomeCard — Figma node 18:6607 (List Row) */
+.ds-list-row {
+  display: flex;
+  align-items: center;
+  gap: var(--netti-space-12);
+  width: 100%;
+  height: 55px;
+  padding: 0 var(--netti-space-16);
+}
+
+.ds-list-row--tappable {
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ds-list-row__labels {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--netti-space-2);
+  color: #ffffff;
+}
+
+.ds-list-row__label {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md);
+  line-height: var(--netti-font-line-height-md);
+  font-weight: var(--netti-font-weight-semibold);
+}
+
+.ds-list-row__meta {
+  font-family: var(--netti-font-family-sans);
+  /* 13/18 — one-off below the --netti-font-size-sm (14) step */
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: var(--netti-font-weight-regular);
+  opacity: 0.5;
+}
+
+.ds-list-row__value {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md);
+  line-height: var(--netti-font-line-height-md);
+  font-weight: var(--netti-font-weight-semibold);
+  color: #ffffff;
+}

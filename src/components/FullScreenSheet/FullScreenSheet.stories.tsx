@@ -22,7 +22,7 @@ export const Default: Story = {
           Open Full Screen
         </button>
         <FullScreenSheet title="Pro Features" open={open} onOpenChange={setOpen}>
-          <p style={{ color: 'var(--text-2)', fontSize: 14, lineHeight: '24px' }}>
+          <p style={{ color: 'var(--netti-color-text-secondary)', fontSize: 14, lineHeight: '24px' }}>
             Full screen sheet content goes here.
           </p>
         </FullScreenSheet>

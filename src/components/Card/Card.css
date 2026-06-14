@@ -1,26 +1,26 @@
 .ds-card {
-  background-color: var(--surface-1);
-  border-radius: var(--radius);
-  padding: var(--space-16);
-  box-shadow: var(--shadow-card);
+  background-color: var(--netti-color-surface-1);
+  border-radius: var(--netti-radius-pill);
+  padding: var(--netti-space-16);
+  box-shadow: var(--netti-shadow-card);
 }
 
 .ds-card-header {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--netti-space-12);
 }
 
 .ds-card-title {
-  font-size: var(--h3-size);
-  line-height: var(--h3-line);
-  font-weight: var(--weight-medium);
+  font-size: var(--netti-font-size-h3);
+  line-height: var(--netti-font-line-height-h3);
+  font-weight: var(--netti-font-weight-medium);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--text-2);
+  color: var(--netti-color-text-secondary);
 }
 
 .ds-card-subtitle {
-  font-size: var(--text-sm-size);
-  line-height: var(--text-sm-line);
-  color: var(--text-2);
-  margin-top: var(--space-4);
+  font-size: var(--netti-font-size-sm);
+  line-height: var(--netti-font-line-height-sm);
+  color: var(--netti-color-text-secondary);
+  margin-top: var(--netti-space-4);
 }

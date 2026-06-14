@@ -3,6 +3,20 @@ import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { ReactNode } from 'react';
 import { ReactPortal } from 'react';
 
+export declare function AdditionalIncomeCard({ label, addLabel, onAdd, children, className, }: AdditionalIncomeCardProps): JSX_2.Element;
+
+declare interface AdditionalIncomeCardProps {
+    /** Eyebrow label. Defaults to "ADDITIONAL INCOME". */
+    label?: string;
+    /** Label inside the add pill. Defaults to "Add income". */
+    addLabel?: string;
+    /** Called when the "+ Add income" pill is tapped. Omit to hide the pill. */
+    onAdd?: () => void;
+    /** ListRow items. When present, a divider separates them from the header. */
+    children?: ReactNode;
+    className?: string;
+}
+
 export declare function AdSlot({ className }: AdSlotProps): JSX_2.Element;
 
 declare interface AdSlotProps {
@@ -32,11 +46,13 @@ declare interface BottomSheetProps {
     onClose?: () => void;
 }
 
-export declare function Button({ leftIcon, children, className, ...props }: ButtonProps): JSX_2.Element;
+export declare function Button({ leftIcon, children, variant, className, ...props }: ButtonProps): JSX_2.Element;
 
 declare interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     leftIcon?: ReactNode;
     children: ReactNode;
+    /** Visual style. `pro` is the cyan Pro CTA (navy text); `default` is the outlined light button. */
+    variant?: 'default' | 'pro';
 }
 
 export declare function Card({ children, title, subtitle, className }: CardProps): JSX_2.Element;
@@ -88,6 +104,20 @@ declare interface InputFieldProps {
     testId?: string;
 }
 
+export declare function ListRow({ label, meta, value, onClick, className }: ListRowProps): JSX_2.Element;
+
+declare interface ListRowProps {
+    /** Primary label, e.g. "Bonus". */
+    label: string;
+    /** Secondary muted text, e.g. "(yearly)". */
+    meta?: string;
+    /** Right-aligned value, e.g. "£3,500". */
+    value: string;
+    /** When provided the row becomes a tappable button (e.g. to edit). */
+    onClick?: () => void;
+    className?: string;
+}
+
 export declare function MoneyRow({ label, amount, strong, showSign, className, currency, locale, }: MoneyRowProps): JSX_2.Element;
 
 declare interface MoneyRowProps {
@@ -118,6 +148,27 @@ export declare function PrimaryButton({ children, className, ...props }: Primary
 
 declare interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
+}
+
+export declare function SalaryCard({ label, children, periods, period, onPeriodChange, footer, className, }: SalaryCardProps): JSX_2.Element;
+
+declare interface SalaryCardProps {
+    /** Eyebrow label above the figure. Defaults to "YOUR SALARY". */
+    label?: string;
+    /** The salary figure or an editable input row. Inherits white/36px/bold/centred styling. */
+    children: ReactNode;
+    /** Period toggle options. Omit to hide the toggle. */
+    periods?: {
+        value: string;
+        label: string;
+    }[];
+    /** Currently selected period value. */
+    period?: string;
+    /** Called when a period tab is tapped. */
+    onPeriodChange?: (value: string) => void;
+    /** Optional content rendered below the card body (e.g. the Pro additional-income section). */
+    footer?: ReactNode;
+    className?: string;
 }
 
 export declare function SegmentedControl({ options, value, onChange, className }: SegmentedControlProps): JSX_2.Element;

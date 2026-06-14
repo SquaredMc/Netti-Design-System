@@ -16,7 +16,7 @@ export const WithTrigger: Story = {
       title="Tax Breakdown"
       trigger={<button style={{ padding: '12px 24px', background: '#010045', color: '#fff', border: 'none', borderRadius: 12, cursor: 'pointer' }}>Open Sheet</button>}
     >
-      <p style={{ color: 'var(--text-2)', fontSize: 14, lineHeight: '24px' }}>
+      <p style={{ color: 'var(--netti-color-text-secondary)', fontSize: 14, lineHeight: '24px' }}>
         Your tax breakdown summary goes here.
       </p>
     </BottomSheet>
@@ -34,7 +34,7 @@ export const WithFooter: Story = {
         </button>
       }
     >
-      <p style={{ color: 'var(--text-2)', fontSize: 14 }}>Sheet content goes here.</p>
+      <p style={{ color: 'var(--netti-color-text-secondary)', fontSize: 14 }}>Sheet content goes here.</p>
     </BottomSheet>
   ),
 };

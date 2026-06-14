@@ -17,6 +17,9 @@
   --netti-color-text-negative: #e1000a; /** Error, destructive actions, negative amounts */
   --netti-color-ui-selected: #01236e; /** Focus rings, selected borders, active states */
   --netti-color-ui-link: #0066ff; /** Hyperlinks */
+  --netti-color-background-card: #010045; /** Dark card surface — SalaryCard, AdditionalIncomeCard */
+  --netti-color-background-card-border: #07205e; /** Border on dark cards */
+  --netti-color-background-card-subtle: #0e1868; /** Toggle / pill background inside dark cards */
   --netti-radius-none: 0px;
   --netti-radius-sm: 3px;
   --netti-radius-md: 6px;

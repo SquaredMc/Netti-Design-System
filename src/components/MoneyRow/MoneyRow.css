@@ -2,50 +2,50 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-6) 0;
+  padding: var(--netti-space-6) 0;
 }
 
 .ds-money-row-label {
-  font-size: var(--text-sm-size);
-  line-height: var(--text-sm-line);
-  color: var(--text-2);
+  font-size: var(--netti-font-size-sm);
+  line-height: var(--netti-font-line-height-sm);
+  color: var(--netti-color-text-secondary);
 }
 
 .ds-money-row-amount {
-  font-size: var(--text-sm-size);
-  line-height: var(--text-sm-line);
-  font-weight: var(--weight-medium);
-  color: var(--text-1);
+  font-size: var(--netti-font-size-sm);
+  line-height: var(--netti-font-line-height-sm);
+  font-weight: var(--netti-font-weight-medium);
+  color: var(--netti-color-text-primary);
   text-align: right;
 }
 
 .ds-money-row--positive .ds-money-row-amount {
-  color: var(--text-positive);
+  color: var(--netti-color-text-positive);
 }
 
 .ds-money-row--negative .ds-money-row-amount {
-  color: var(--text-negative);
+  color: var(--netti-color-text-negative);
 }
 
 .ds-money-row--strong {
-  padding: var(--space-12) 0;
+  padding: var(--netti-space-12) 0;
 }
 
 .ds-money-row--strong .ds-money-row-label {
-  font-size: var(--text-md-size);
-  line-height: var(--text-md-line);
-  font-weight: var(--weight-semibold);
-  color: var(--text-1);
+  font-size: var(--netti-font-size-md);
+  line-height: var(--netti-font-line-height-md);
+  font-weight: var(--netti-font-weight-semibold);
+  color: var(--netti-color-text-primary);
 }
 
 .ds-money-row--strong .ds-money-row-amount {
-  font-size: var(--text-lg-size);
-  line-height: var(--text-lg-line);
-  font-weight: var(--weight-bold);
+  font-size: var(--netti-font-size-lg);
+  line-height: var(--netti-font-line-height-lg);
+  font-weight: var(--netti-font-weight-bold);
 }
 
 .ds-divider {
   height: 1px;
-  background-color: var(--surface-3);
-  margin: var(--space-6) 0;
+  background-color: var(--netti-color-surface-3);
+  margin: var(--netti-space-6) 0;
 }

@@ -1,5 +1,8 @@
 export { Button } from './components/Button/Button';
 export { Card } from './components/Card/Card';
+export { SalaryCard } from './components/SalaryCard/SalaryCard';
+export { AdditionalIncomeCard } from './components/AdditionalIncomeCard/AdditionalIncomeCard';
+export { ListRow } from './components/ListRow/ListRow';
 export { InputField } from './components/InputField/InputField';
 export { MoneyRow, Divider } from './components/MoneyRow/MoneyRow';
 export { SegmentedControl } from './components/SegmentedControl/SegmentedControl';

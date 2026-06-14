@@ -11,7 +11,7 @@ type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
   args: {
-    children: <p style={{ color: 'var(--text-2)', fontSize: 14 }}>Card content goes here.</p>,
+    children: <p style={{ color: 'var(--netti-color-text-secondary)', fontSize: 14 }}>Card content goes here.</p>,
   },
 };
 
@@ -19,6 +19,6 @@ export const WithHeader: Story = {
   args: {
     title: 'Income',
     subtitle: 'Tax year 2024/25',
-    children: <p style={{ color: 'var(--text-2)', fontSize: 14 }}>Card content goes here.</p>,
+    children: <p style={{ color: 'var(--netti-color-text-secondary)', fontSize: 14 }}>Card content goes here.</p>,
   },
 };

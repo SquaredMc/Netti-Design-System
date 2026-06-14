@@ -1,35 +1,35 @@
 .ds-segmented-control {
   display: flex;
-  gap: var(--space-4);
-  background-color: var(--surface-2);
-  padding: var(--space-4);
+  gap: var(--netti-space-4);
+  background-color: var(--netti-color-surface-2);
+  padding: var(--netti-space-4);
   border-radius: 16px;
   min-height: 42px;
 }
 
 .ds-segment {
   flex: 1;
-  padding: var(--space-6) var(--space-12);
+  padding: var(--netti-space-6) var(--netti-space-12);
   min-height: 34px;
   border: 1px solid transparent;
   border-radius: 12px;
   background-color: transparent;
-  color: var(--text-1);
-  font-family: var(--font-family);
-  font-size: var(--text-sm-size);
-  line-height: var(--text-sm-sb-line);
-  font-weight: var(--weight-medium);
+  color: var(--netti-color-text-primary);
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  line-height: var(--netti-font-line-height-sm-sb);
+  font-weight: var(--netti-font-weight-medium);
   cursor: pointer;
   transition: all 150ms ease;
   text-align: center;
 }
 
-.ds-segment:hover:not(.ds-segment--selected) {
-  background-color: var(--surface-3);
+.ds-segment:hover:not(.ds-segment--netti-color-ui-selected) {
+  background-color: var(--netti-color-surface-3);
 }
 
-.ds-segment--selected {
-  background-color: var(--surface-1);
-  border-color: var(--selected);
-  box-shadow: var(--shadow-card);
+.ds-segment--netti-color-ui-selected {
+  background-color: var(--netti-color-surface-1);
+  border-color: var(--netti-color-ui-selected);
+  box-shadow: var(--netti-shadow-card);
 }

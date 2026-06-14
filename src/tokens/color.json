@@ -26,6 +26,12 @@
     "ui": {
       "selected":  { "$value": "#01236E", "$type": "color", "$description": "Focus rings, selected borders, active states" },
       "link":      { "$value": "#0066FF", "$type": "color", "$description": "Hyperlinks" }
+    },
+
+    "background": {
+      "card":       { "$value": "#010045", "$type": "color", "$description": "Dark card surface — SalaryCard, AdditionalIncomeCard" },
+      "cardBorder": { "$value": "#07205E", "$type": "color", "$description": "Border on dark cards" },
+      "cardSubtle": { "$value": "#0E1868", "$type": "color", "$description": "Toggle / pill background inside dark cards" }
     }
   }
 }

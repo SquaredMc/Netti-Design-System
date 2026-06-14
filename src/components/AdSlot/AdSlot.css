@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-6);
+  gap: var(--netti-space-6);
   height: 50px;
   background: linear-gradient(to right, #fce7f3, #f3e8ff);
   border: 2px solid #fda5d5;
-  border-radius: var(--radius);
+  border-radius: var(--netti-radius-pill);
 }
 
 .ds-ad-slot-icon {
@@ -15,7 +15,7 @@
 }
 
 .ds-ad-slot-text {
-  font-size: var(--text-sm-size);
-  line-height: var(--text-sm-line);
+  font-size: var(--netti-font-size-sm);
+  line-height: var(--netti-font-line-height-sm);
   color: #99A1AF;
 }

@@ -2,21 +2,34 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
+  gap: var(--netti-space-2);
   width: 100%;
-  padding: var(--space-12);
-  background: var(--surface-1);
-  border: 1px solid var(--brand-1);
-  border-radius: var(--space-8);
-  font-family: var(--font-family);
-  font-size: var(--text-sm-sb-size);
-  line-height: var(--text-sm-sb-line);
-  font-weight: var(--weight-semibold);
-  color: var(--text-1);
+  padding: var(--netti-space-12);
+  background: var(--netti-color-surface-1);
+  border: 1px solid var(--netti-color-brand-cyan);
+  border-radius: var(--netti-space-8);
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);
+  line-height: var(--netti-font-line-height-sm-sb);
+  font-weight: var(--netti-font-weight-semibold);
+  color: var(--netti-color-text-primary);
   text-align: center;
   cursor: pointer;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.1);
   transition: opacity 0.15s ease;
+}
+
+/* Pro CTA — cyan fill, navy text (Figma node 27:6086) */
+.ds-button--pro {
+  gap: var(--netti-space-8);
+  padding: var(--netti-space-12) var(--netti-space-16);
+  background: var(--netti-color-brand-cyan);
+  border: none;
+  border-radius: var(--netti-radius-segment);
+  font-size: var(--netti-font-size-md-sb);
+  line-height: var(--netti-font-line-height-md);
+  color: var(--netti-color-brand-navy);
+  box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .ds-button:active {
