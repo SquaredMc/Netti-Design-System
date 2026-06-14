@@ -142,20 +142,23 @@ export const FontWeightRegular = 400;
 export const FontWeightMedium = 500;
 export const FontWeightSemibold = 600;
 export const FontWeightBold = 700;
-export const FontSizeH1 = "36px"; // Page title
-export const FontSizeH2 = "30px"; // Section heading
-export const FontSizeH3 = "12px"; // Card label / eyebrow — uppercase
-export const FontSizeLg = "24px"; // Large body / summary figure
-export const FontSizeMdSb = "18px"; // Medium semibold — strong money rows
-export const FontSizeMd = "16px"; // Base body text
-export const FontSizeSm = "14px"; // Secondary body, labels, buttons
+export const FontSizeH1 = "36px"; // Display — 36/40 Bold
+export const FontSizeH2 = "28px"; // H2 — 28/36 Bold
+export const FontSizeH3 = "22px"; // H3 — 22/28 Semi Bold
+export const FontSizeLg = "24px"; // Large summary figure — 24/32 (totals)
+export const FontSizeMdSb = "18px"; // Body LG — 18/26 Semi Bold
+export const FontSizeMd = "16px"; // Body — 16/24 Regular
+export const FontSizeSm = "14px"; // Label — 14/20 Semi Bold
+export const FontSizeCaption = "12px"; // Caption / eyebrow — 12/16 Medium
 export const FontLineHeightH1 = "40px";
 export const FontLineHeightH2 = "36px";
-export const FontLineHeightH3 = "16px";
+export const FontLineHeightH3 = "28px";
 export const FontLineHeightLg = "32px";
+export const FontLineHeightMdSb = "26px";
 export const FontLineHeightMd = "24px";
 export const FontLineHeightSm = "24px";
 export const FontLineHeightSmSb = "20px";
+export const FontLineHeightCaption = "16px";
 export const TextStyleH1 = {
   fontFamily: [
     "Inter",
@@ -169,7 +172,7 @@ export const TextStyleH1 = {
   fontSize: "36px",
   fontWeight: 700,
   lineHeight: "40px",
-};
+}; // Display — 36/40 Bold
 export const TextStyleH2 = {
   fontFamily: [
     "Inter",
@@ -180,11 +183,81 @@ export const TextStyleH2 = {
     "Arial",
     "sans-serif",
   ],
-  fontSize: "30px",
-  fontWeight: 600,
+  fontSize: "28px",
+  fontWeight: 700,
   lineHeight: "36px",
-};
+}; // H2 — 28/36 Bold
 export const TextStyleH3 = {
+  fontFamily: [
+    "Inter",
+    "system-ui",
+    "-apple-system",
+    "Segoe UI",
+    "Roboto",
+    "Arial",
+    "sans-serif",
+  ],
+  fontSize: "22px",
+  fontWeight: 600,
+  lineHeight: "28px",
+}; // H3 — 22/28 Semi Bold
+export const TextStyleBodyLg = {
+  fontFamily: [
+    "Inter",
+    "system-ui",
+    "-apple-system",
+    "Segoe UI",
+    "Roboto",
+    "Arial",
+    "sans-serif",
+  ],
+  fontSize: "18px",
+  fontWeight: 600,
+  lineHeight: "26px",
+}; // Body LG — 18/26 Semi Bold
+export const TextStyleBodyMd = {
+  fontFamily: [
+    "Inter",
+    "system-ui",
+    "-apple-system",
+    "Segoe UI",
+    "Roboto",
+    "Arial",
+    "sans-serif",
+  ],
+  fontSize: "16px",
+  fontWeight: 400,
+  lineHeight: "24px",
+}; // Body — 16/24 Regular
+export const TextStyleBodySm = {
+  fontFamily: [
+    "Inter",
+    "system-ui",
+    "-apple-system",
+    "Segoe UI",
+    "Roboto",
+    "Arial",
+    "sans-serif",
+  ],
+  fontSize: "14px",
+  fontWeight: 400,
+  lineHeight: "20px",
+}; // Small body — 14/20 Regular
+export const TextStyleLabelSm = {
+  fontFamily: [
+    "Inter",
+    "system-ui",
+    "-apple-system",
+    "Segoe UI",
+    "Roboto",
+    "Arial",
+    "sans-serif",
+  ],
+  fontSize: "14px",
+  fontWeight: 600,
+  lineHeight: "20px",
+}; // Label — 14/20 Semi Bold
+export const TextStyleCaption = {
   fontFamily: [
     "Inter",
     "system-ui",
@@ -199,60 +272,4 @@ export const TextStyleH3 = {
   lineHeight: "16px",
   textTransform: "uppercase",
   letterSpacing: "0.5px",
-}; // Card label / eyebrow — uppercase
-export const TextStyleBodyLg = {
-  fontFamily: [
-    "Inter",
-    "system-ui",
-    "-apple-system",
-    "Segoe UI",
-    "Roboto",
-    "Arial",
-    "sans-serif",
-  ],
-  fontSize: "24px",
-  fontWeight: 400,
-  lineHeight: "32px",
-};
-export const TextStyleBodyMd = {
-  fontFamily: [
-    "Inter",
-    "system-ui",
-    "-apple-system",
-    "Segoe UI",
-    "Roboto",
-    "Arial",
-    "sans-serif",
-  ],
-  fontSize: "16px",
-  fontWeight: 400,
-  lineHeight: "24px",
-}; // Default body text
-export const TextStyleBodySm = {
-  fontFamily: [
-    "Inter",
-    "system-ui",
-    "-apple-system",
-    "Segoe UI",
-    "Roboto",
-    "Arial",
-    "sans-serif",
-  ],
-  fontSize: "14px",
-  fontWeight: 400,
-  lineHeight: "24px",
-};
-export const TextStyleLabelSm = {
-  fontFamily: [
-    "Inter",
-    "system-ui",
-    "-apple-system",
-    "Segoe UI",
-    "Roboto",
-    "Arial",
-    "sans-serif",
-  ],
-  fontSize: "14px",
-  fontWeight: 500,
-  lineHeight: "20px",
-}; // Input labels, secondary labels
+}; // Caption / eyebrow — 12/16 Medium, uppercase

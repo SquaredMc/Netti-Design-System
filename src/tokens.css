@@ -104,25 +104,29 @@
   --netti-font-weight-medium: 500;
   --netti-font-weight-semibold: 600;
   --netti-font-weight-bold: 700;
-  --netti-font-size-h1: 36px; /** Page title */
-  --netti-font-size-h2: 30px; /** Section heading */
-  --netti-font-size-h3: 12px; /** Card label / eyebrow — uppercase */
-  --netti-font-size-lg: 24px; /** Large body / summary figure */
-  --netti-font-size-md-sb: 18px; /** Medium semibold — strong money rows */
-  --netti-font-size-md: 16px; /** Base body text */
-  --netti-font-size-sm: 14px; /** Secondary body, labels, buttons */
+  --netti-font-size-h1: 36px; /** Display — 36/40 Bold */
+  --netti-font-size-h2: 28px; /** H2 — 28/36 Bold */
+  --netti-font-size-h3: 22px; /** H3 — 22/28 Semi Bold */
+  --netti-font-size-lg: 24px; /** Large summary figure — 24/32 (totals) */
+  --netti-font-size-md-sb: 18px; /** Body LG — 18/26 Semi Bold */
+  --netti-font-size-md: 16px; /** Body — 16/24 Regular */
+  --netti-font-size-sm: 14px; /** Label — 14/20 Semi Bold */
+  --netti-font-size-caption: 12px; /** Caption / eyebrow — 12/16 Medium */
   --netti-font-line-height-h1: 40px;
   --netti-font-line-height-h2: 36px;
-  --netti-font-line-height-h3: 16px;
+  --netti-font-line-height-h3: 28px;
   --netti-font-line-height-lg: 32px;
+  --netti-font-line-height-md-sb: 26px;
   --netti-font-line-height-md: 24px;
   --netti-font-line-height-sm: 24px;
   --netti-font-line-height-sm-sb: 20px;
-  --netti-text-style-h1: 700 36px/40px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --netti-text-style-h2: 600 30px/36px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --netti-text-style-h3: 500 12px/16px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** Card label / eyebrow — uppercase */
-  --netti-text-style-body-lg: 400 24px/32px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --netti-text-style-body-md: 400 16px/24px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** Default body text */
-  --netti-text-style-body-sm: 400 14px/24px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --netti-text-style-label-sm: 500 14px/20px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** Input labels, secondary labels */
+  --netti-font-line-height-caption: 16px;
+  --netti-text-style-h1: 700 36px/40px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** Display — 36/40 Bold */
+  --netti-text-style-h2: 700 28px/36px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** H2 — 28/36 Bold */
+  --netti-text-style-h3: 600 22px/28px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** H3 — 22/28 Semi Bold */
+  --netti-text-style-body-lg: 600 18px/26px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** Body LG — 18/26 Semi Bold */
+  --netti-text-style-body-md: 400 16px/24px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** Body — 16/24 Regular */
+  --netti-text-style-body-sm: 400 14px/20px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** Small body — 14/20 Regular */
+  --netti-text-style-label-sm: 600 14px/20px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** Label — 14/20 Semi Bold */
+  --netti-text-style-caption: 500 12px/16px Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; /** Caption / eyebrow — 12/16 Medium, uppercase */
 }

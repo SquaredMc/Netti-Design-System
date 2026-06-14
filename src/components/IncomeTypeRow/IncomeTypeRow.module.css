@@ -1,0 +1,56 @@
+/* ─── IncomeTypeRow ──────────────────────────────────────────────────────────
+   Figma spec (64:11): 56px row, 12px gap, label stack grows, chevron right.
+   Light surface — text/secondary throughout.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--netti-card-gap, 12px);   /* Figma: 12px */
+  width: 100%;
+  height: 56px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;                           /* Figma: 2px */
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.title {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md);   /* Figma: 16/24 Semibold */
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: 24px;
+  color: var(--netti-color-text-secondary);
+}
+
+.subtitle {
+  font-family: var(--netti-font-family-sans);
+  font-size: 13px;                    /* Figma: 13/18 Regular */
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 18px;
+  color: var(--netti-color-text-secondary);
+}
+
+.chevron {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--netti-color-text-muted);
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

@@ -78,7 +78,7 @@
 
 .calloutLabel {
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-h3);
+  font-size: var(--netti-font-size-caption);
   font-weight: var(--netti-font-weight-medium);
   letter-spacing: 0.4px;
   text-transform: uppercase;

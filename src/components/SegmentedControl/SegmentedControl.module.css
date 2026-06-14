@@ -10,7 +10,7 @@
   padding: var(--netti-toggle-padding, 4px);
   border-radius: var(--netti-toggle-border-radius, 16px);
   width: 100%;
-  gap: 0;                           /* Figma Toggle component: no gap; tabs carry px-4 */
+  gap: var(--netti-space-4, 4px);   /* Figma SalaryCard toggle: 4px between segments */
 }
 
 /* ── Context: dark ───────────────────────────────────────────────────────── */
@@ -30,7 +30,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 var(--netti-toggle-padding, 4px);   /* Figma: 4px tab padding */
   border: 1px solid transparent;
   border-radius: var(--netti-toggle-pill-radius, 12px);
   font-family: var(--netti-font-family-sans);
@@ -60,7 +59,7 @@
 .selected {
   background-color: var(--netti-color-action-selected-bg);
   border-color: var(--netti-color-action-selected-border);
-  box-shadow: var(--netti-shadow-card);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);   /* Figma: subtle pill shadow */
   opacity: 1 !important;
 }
 

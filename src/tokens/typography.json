@@ -46,37 +46,42 @@
       "h1": {
         "$value": "36px",
         "$type": "dimension",
-        "$description": "Page title"
+        "$description": "Display — 36/40 Bold"
       },
       "h2": {
-        "$value": "30px",
+        "$value": "28px",
         "$type": "dimension",
-        "$description": "Section heading"
+        "$description": "H2 — 28/36 Bold"
       },
       "h3": {
-        "$value": "12px",
+        "$value": "22px",
         "$type": "dimension",
-        "$description": "Card label / eyebrow — uppercase"
+        "$description": "H3 — 22/28 Semi Bold"
       },
       "lg": {
         "$value": "24px",
         "$type": "dimension",
-        "$description": "Large body / summary figure"
+        "$description": "Large summary figure — 24/32 (totals)"
       },
       "mdSb": {
         "$value": "18px",
         "$type": "dimension",
-        "$description": "Medium semibold — strong money rows"
+        "$description": "Body LG — 18/26 Semi Bold"
       },
       "md": {
         "$value": "16px",
         "$type": "dimension",
-        "$description": "Base body text"
+        "$description": "Body — 16/24 Regular"
       },
       "sm": {
         "$value": "14px",
         "$type": "dimension",
-        "$description": "Secondary body, labels, buttons"
+        "$description": "Label — 14/20 Semi Bold"
+      },
+      "caption": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$description": "Caption / eyebrow — 12/16 Medium"
       }
     },
     "lineHeight": {
@@ -89,11 +94,15 @@
         "$type": "dimension"
       },
       "h3": {
-        "$value": "16px",
+        "$value": "28px",
         "$type": "dimension"
       },
       "lg": {
         "$value": "32px",
+        "$type": "dimension"
+      },
+      "mdSb": {
+        "$value": "26px",
         "$type": "dimension"
       },
       "md": {
@@ -107,6 +116,10 @@
       "smSb": {
         "$value": "20px",
         "$type": "dimension"
+      },
+      "caption": {
+        "$value": "16px",
+        "$type": "dimension"
       }
     }
   },
@@ -118,37 +131,38 @@
         "fontWeight": "{font.weight.bold}",
         "lineHeight": "{font.lineHeight.h1}"
       },
-      "$type": "typography"
+      "$type": "typography",
+      "$description": "Display — 36/40 Bold"
     },
     "h2": {
       "$value": {
         "fontFamily": "{font.family.sans}",
         "fontSize": "{font.size.h2}",
-        "fontWeight": "{font.weight.semibold}",
+        "fontWeight": "{font.weight.bold}",
         "lineHeight": "{font.lineHeight.h2}"
       },
-      "$type": "typography"
+      "$type": "typography",
+      "$description": "H2 — 28/36 Bold"
     },
     "h3": {
       "$value": {
         "fontFamily": "{font.family.sans}",
         "fontSize": "{font.size.h3}",
-        "fontWeight": "{font.weight.medium}",
-        "lineHeight": "{font.lineHeight.h3}",
-        "textTransform": "uppercase",
-        "letterSpacing": "0.5px"
+        "fontWeight": "{font.weight.semibold}",
+        "lineHeight": "{font.lineHeight.h3}"
       },
       "$type": "typography",
-      "$description": "Card label / eyebrow — uppercase"
+      "$description": "H3 — 22/28 Semi Bold"
     },
     "bodyLg": {
       "$value": {
         "fontFamily": "{font.family.sans}",
-        "fontSize": "{font.size.lg}",
-        "fontWeight": "{font.weight.regular}",
-        "lineHeight": "{font.lineHeight.lg}"
+        "fontSize": "{font.size.mdSb}",
+        "fontWeight": "{font.weight.semibold}",
+        "lineHeight": "{font.lineHeight.mdSb}"
       },
-      "$type": "typography"
+      "$type": "typography",
+      "$description": "Body LG — 18/26 Semi Bold"
     },
     "bodyMd": {
       "$value": {
@@ -158,26 +172,39 @@
         "lineHeight": "{font.lineHeight.md}"
       },
       "$type": "typography",
-      "$description": "Default body text"
+      "$description": "Body — 16/24 Regular"
     },
     "bodySm": {
       "$value": {
         "fontFamily": "{font.family.sans}",
         "fontSize": "{font.size.sm}",
         "fontWeight": "{font.weight.regular}",
-        "lineHeight": "{font.lineHeight.sm}"
+        "lineHeight": "{font.lineHeight.smSb}"
       },
-      "$type": "typography"
+      "$type": "typography",
+      "$description": "Small body — 14/20 Regular"
     },
     "labelSm": {
       "$value": {
         "fontFamily": "{font.family.sans}",
         "fontSize": "{font.size.sm}",
-        "fontWeight": "{font.weight.medium}",
+        "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.lineHeight.smSb}"
       },
       "$type": "typography",
-      "$description": "Input labels, secondary labels"
+      "$description": "Label — 14/20 Semi Bold"
+    },
+    "caption": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.caption}",
+        "fontWeight": "{font.weight.medium}",
+        "lineHeight": "{font.lineHeight.caption}",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.5px"
+      },
+      "$type": "typography",
+      "$description": "Caption / eyebrow — 12/16 Medium, uppercase"
     }
   }
 }

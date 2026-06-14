@@ -66,6 +66,30 @@ declare interface CardProps {
     className?: string;
 }
 
+export declare function ConfirmationCard({ label, amountFormatted, frequency, periodLabel, periodAmountFormatted, className, }: ConfirmationCardProps): JSX_2.Element;
+
+/**
+ * ConfirmationCard
+ *
+ * Cyan-tinted summary shown after adding an income item — confirms the gross
+ * amount and its annualised value.
+ *
+ * Figma: node 64:18 (Confirmation Card).
+ */
+export declare interface ConfirmationCardProps {
+    /** Small label above the entered amount. */
+    label?: string;
+    /** The amount the user entered, formatted, e.g. "£3,500". */
+    amountFormatted: string;
+    /** Frequency suffix shown after the amount, e.g. "yearly". */
+    frequency: string;
+    /** Right-hand period label, e.g. "Yearly". */
+    periodLabel: string;
+    /** Right-hand annualised amount, formatted, e.g. "£3,500". */
+    periodAmountFormatted: string;
+    className?: string;
+}
+
 export declare function Divider({ className }: {
     className?: string;
 }): JSX_2.Element;
@@ -122,6 +146,53 @@ export declare interface IncomeItem {
     label: string;
     subLabel?: string;
     amountFormatted: string;
+}
+
+/**
+ * IncomeTypePicker
+ *
+ * Bottom sheet for choosing which kind of additional income to add.
+ * Uses vaul Drawer for native-feeling drag-to-dismiss, mirroring PaywallSheet.
+ *
+ * Figma: node 68:48 (Income Type Picker Sheet).
+ */
+export declare interface IncomeType {
+    id: string;
+    title: string;
+    subtitle?: string;
+}
+
+export declare function IncomeTypePicker({ open, onOpenChange, trigger, title, types, onSelect, }: IncomeTypePickerProps): JSX_2.Element;
+
+export declare interface IncomeTypePickerProps {
+    open: boolean;
+    onOpenChange: (open: boolean) => void;
+    /** Optional element that opens the sheet. */
+    trigger?: ReactNode;
+    /** Sheet heading. */
+    title?: string;
+    /** Income types to choose from, in display order. */
+    types: IncomeType[];
+    /** Called with the chosen type's id. */
+    onSelect: (id: string) => void;
+}
+
+export declare function IncomeTypeRow({ title, subtitle, onClick, className }: IncomeTypeRowProps): JSX_2.Element;
+
+/**
+ * IncomeTypeRow
+ *
+ * A tappable row inside the Income Type Picker sheet.
+ * Title + optional subtitle on the left, chevron affordance on the right.
+ *
+ * Figma: node 64:11 (Income Type Row).
+ */
+export declare interface IncomeTypeRowProps {
+    title: string;
+    /** Supporting description, e.g. "Recurring bonus payment" */
+    subtitle?: string;
+    onClick?: () => void;
+    className?: string;
 }
 
 export declare function InfoSheet({ title, description, children }: InfoSheetProps): JSX_2.Element;

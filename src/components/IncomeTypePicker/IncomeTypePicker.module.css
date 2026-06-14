@@ -1,0 +1,69 @@
+/* ─── IncomeTypePicker ───────────────────────────────────────────────────────
+   Figma spec (68:48): white bottom sheet, 32px top radius, 12px top / 32px
+   bottom padding, centred title, list of Income Type Rows with dividers.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.5);   /* text/primary @ 50% */
+  z-index: 40;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px var(--netti-sheet-padding, 20px) calc(32px + env(safe-area-inset-bottom, 0px));
+  background-color: var(--netti-color-background-surface);
+  border-top-left-radius:  var(--netti-sheet-border-radius, 32px);
+  border-top-right-radius: var(--netti-sheet-border-radius, 32px);
+  box-shadow: var(--netti-shadow-sheet);
+  outline: none;
+  max-height: 92dvh;
+  overflow-y: auto;
+}
+
+/* ── Grabber ─────────────────────────────────────────────────────────────── */
+.grabber {
+  width: 36px;
+  height: 5px;
+  border-radius: var(--netti-radius-full);
+  background-color: var(--netti-color-border-strong);
+  flex-shrink: 0;
+}
+
+/* ── Title bar ───────────────────────────────────────────────────────────── */
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 100%;
+  margin: 0;
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-md-sb);   /* 18/24 Semibold */
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: 24px;
+  color: var(--netti-color-text-primary);
+  text-align: center;
+}
+
+/* ── List ────────────────────────────────────────────────────────────────── */
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: var(--netti-space-16);   /* Figma: 16px above first row */
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: var(--netti-color-border-default);
+}

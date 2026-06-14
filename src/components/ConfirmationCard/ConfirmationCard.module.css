@@ -1,0 +1,79 @@
+/* ─── ConfirmationCard ───────────────────────────────────────────────────────
+   Figma spec (64:18): cyan-tinted card, cyan border, 72px tall, 16px padding,
+   8px radius. Entered amount on the left, annualised value on the right.
+
+   NOTE: the #E5FAFD tint is a raw hex in Figma (not a variable). It should be
+   tokenised in the DS file — flagged in handoff. Using the literal until then.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  padding: var(--netti-space-16);
+  border-radius: var(--netti-button-border-radius-sm, 8px);
+  background-color: #e5fafd;                 /* Figma: raw cyan tint (untokenised) */
+  border: 1px solid var(--netti-color-action-secondary-border);
+  color: var(--netti-color-text-secondary);
+}
+
+/* ── Left — entered amount ───────────────────────────────────────────────── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--netti-space-8);
+  flex: 1;
+  min-width: 0;
+}
+
+.label {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);   /* 14/20 Regular */
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 20px;
+}
+
+.amountRow {
+  display: flex;
+  align-items: center;
+  gap: var(--netti-space-4);
+  line-height: 18px;
+}
+
+.gross {
+  font-family: var(--netti-font-family-sans);
+  font-size: 13px;
+  font-weight: var(--netti-font-weight-bold);
+}
+
+.frequency {
+  font-family: var(--netti-font-family-sans);
+  font-size: 13px;
+  font-weight: var(--netti-font-weight-regular);
+}
+
+/* ── Right — annualised value ────────────────────────────────────────────── */
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+  min-width: 0;
+}
+
+.periodLabel {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm);   /* 14/20 Regular */
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 20px;
+  margin-bottom: -4px;                    /* Figma: tightens to the amount */
+}
+
+.periodAmount {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-lg);   /* 24/32 Bold */
+  font-weight: var(--netti-font-weight-bold);
+  line-height: 32px;
+  text-align: right;
+}

@@ -21,6 +21,9 @@ export type { FeatureRowProps }     from './components/FeatureRow/FeatureRow';
 export { ListRow }                  from './components/ListRow/ListRow';
 export type { ListRowProps }        from './components/ListRow/ListRow';
 
+export { IncomeTypeRow }            from './components/IncomeTypeRow/IncomeTypeRow';
+export type { IncomeTypeRowProps }  from './components/IncomeTypeRow/IncomeTypeRow';
+
 export { SegmentedControl }         from './components/SegmentedControl/SegmentedControl';
 export type { SegmentedControlProps, SegmentOption } from './components/SegmentedControl/SegmentedControl';
 
@@ -45,6 +48,12 @@ export type { AdditionalIncomeCardProps, IncomeItem } from './components/Additio
 
 export { PaywallSheet }             from './components/PaywallSheet/PaywallSheet';
 export type { PaywallSheetProps, PaywallFeature } from './components/PaywallSheet/PaywallSheet';
+
+export { IncomeTypePicker }         from './components/IncomeTypePicker/IncomeTypePicker';
+export type { IncomeTypePickerProps, IncomeType } from './components/IncomeTypePicker/IncomeTypePicker';
+
+export { ConfirmationCard }         from './components/ConfirmationCard/ConfirmationCard';
+export type { ConfirmationCardProps } from './components/ConfirmationCard/ConfirmationCard';
 
 /* ── Surfaces ───────────────────────────────────────────────────────────── */
 export { Card }                     from './components/Card/Card';
