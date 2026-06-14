@@ -6,7 +6,7 @@
   --netti-color-brand-cyan: #26d4eb; /** Primary accent / highlight */
   --netti-color-brand-navy: #010045; /** Primary dark — header, primary buttons */
   --netti-color-brand-navy-deep: #00021b; /** Deepest navy — darkest backgrounds */
-  --netti-color-brand-navy-mid: #0b0e3c; /** Mid navy — toggle bar bg on dark cards */
+  --netti-color-brand-navy-mid: #0e1868; /** Mid navy — toggle bar bg on dark cards */
   --netti-color-brand-navy-card: #07205e; /** Dark card border */
   --netti-color-brand-blue: #01236e; /** Selected / focus state */
   --netti-color-brand-cyan-light: #a8eff7; /** Cyan tint — light accent */
@@ -29,7 +29,7 @@
   --netti-color-ui-link: #0066ff;
   --netti-color-background-screen: #00021b; /** Full-screen gradient base — page background */
   --netti-color-background-card: #010045; /** Dark card surface — Salary Card, Additional Income Card */
-  --netti-color-background-card-subtle: #0b0e3c; /** Toggle bar inside dark cards */
+  --netti-color-background-card-subtle: #0e1868; /** Toggle bar inside dark cards */
   --netti-color-background-card-border: #07205e; /** Border on dark cards */
   --netti-color-background-surface: #ffffff; /** Primary surface — Bottom Sheet, inputs, white cards */
   --netti-color-background-surface-raised: #f3f4f6; /** Raised surface — segmented control bg, callout boxes */
@@ -60,7 +60,7 @@
   --netti-radius-segment: 12px; /** Segmented control items and switch options */
   --netti-radius-container: 16px; /** Segmented control / switch outer container */
   --netti-radius-pill: 24px; /** Cards, inputs, buttons — primary UI radius */
-  --netti-radius-sheet: 28px; /** Bottom sheet top corners */
+  --netti-radius-sheet: 32px; /** Bottom sheet top corners */
   --netti-radius-full: 9999px; /** True pill / circle */
   --netti-layout-screen-margin: 16px; /** Horizontal padding inside screen-width containers */
   --netti-layout-screen-gap: 20px; /** Vertical gap between top-level screen sections */
@@ -80,8 +80,8 @@
   --netti-toggle-pill-radius: 12px; /** Selected pill radius inside toggle */
   --netti-list-row-height: 56px; /** Fixed height of a list row */
   --netti-list-row-padding-x: 16px; /** Horizontal padding of list row content */
-  --netti-shadow-card: 0px 1px 2px 0px rgba(0,0,0,0.10), 0px 1px 3px 0px rgba(0,0,0,0.10); /** Default card elevation and selected interactive item */
-  --netti-shadow-sheet: 0px -12px 30px 0px rgba(0,0,0,0.12); /** Bottom sheet — casts upward */
+  --netti-shadow-card: 0px 1px 2px -1px rgba(0,0,0,0.10), 0px 1px 3px 0px rgba(0,0,0,0.10); /** Default card elevation and selected interactive item */
+  --netti-shadow-sheet: 0px -8px 8px 0px rgba(0,0,0,0.12); /** Bottom sheet — casts upward */
   --netti-shadow-none: 0px 0px 0px 0px rgba(0,0,0,0);
   --netti-elevate-1: rgba(0, 0, 0, 0.03); /** Hover overlay — lightest interaction layer */
   --netti-elevate-2: rgba(0, 0, 0, 0.08); /** Active / pressed overlay */

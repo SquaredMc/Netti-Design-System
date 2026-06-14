@@ -22,7 +22,7 @@
   border: none;
   border-top-left-radius:  var(--netti-sheet-border-radius, 32px); /* Figma: 32px */
   border-top-right-radius: var(--netti-sheet-border-radius, 32px);
-  padding: 20px var(--netti-sheet-padding, 20px) 0;
+  padding: 12px var(--netti-sheet-padding, 20px) 0;   /* Figma: 12px top to grabber */
   box-shadow: var(--netti-shadow-sheet);
   max-height: 92dvh;
   outline: none;

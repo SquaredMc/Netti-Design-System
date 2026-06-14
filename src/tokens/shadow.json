@@ -6,7 +6,7 @@
           "offsetX": "0px",
           "offsetY": "1px",
           "blur": "2px",
-          "spread": "0px",
+          "spread": "-1px",
           "color": "rgba(0,0,0,0.10)"
         },
         {
@@ -24,8 +24,8 @@
       "$value": [
         {
           "offsetX": "0px",
-          "offsetY": "-12px",
-          "blur": "30px",
+          "offsetY": "-8px",
+          "blur": "8px",
           "spread": "0px",
           "color": "rgba(0,0,0,0.12)"
         }

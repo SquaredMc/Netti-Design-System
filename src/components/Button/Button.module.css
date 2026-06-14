@@ -8,7 +8,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--netti-space-8);
   border: 1px solid transparent;
   border-radius: var(--netti-button-border-radius-lg, 12px);
   font-family: var(--netti-font-family-sans);
@@ -36,6 +35,7 @@
   border-radius: var(--netti-button-border-radius-lg, 12px);
   font-size: 18px; /* Figma: 18px Semi Bold */
   line-height: 26px;
+  gap: var(--netti-space-8, 8px);   /* Figma: 8px icon→label on large CTA */
 }
 
 .sizeMd {
@@ -44,6 +44,7 @@
   border-radius: var(--netti-button-border-radius-sm, 8px);
   font-size: 14px; /* Figma: 14px Semi Bold */
   line-height: 20px;
+  gap: var(--netti-space-4, 4px);   /* Figma: 4px icon→label on medium button */
 }
 
 /* ── Variants ─────────────────────────────────────────────────────────────── */

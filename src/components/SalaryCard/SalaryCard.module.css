@@ -14,8 +14,7 @@
   align-items: center;
   width: 100%;
   padding: var(--netti-card-padding, 20px);
-  padding-bottom: var(--netti-space-16);
-  gap: 0;                         /* gaps defined per-element below */
+  gap: var(--netti-card-gap, 12px);   /* Figma: uniform 12px between all items */
   border-radius: var(--netti-card-border-radius, 12px);
   background-color: var(--netti-color-background-card);
   border: 1px solid var(--netti-color-background-card-border);
@@ -32,7 +31,8 @@
   text-transform: uppercase;
   color: var(--netti-color-text-inverse);
   opacity: 0.7;
-  margin-bottom: 8px;             /* Figma: 8px gap eyebrow→amount */
+  width: 100%;                    /* Figma: w-full, text centred */
+  text-align: center;
 }
 
 /* ── Salary amount ────────────────────────────────────────────────────────── */
@@ -42,7 +42,8 @@
   font-weight: var(--netti-font-weight-bold);
   line-height: 40px;              /* Figma display/line-height */
   color: var(--netti-color-text-inverse);
-  margin-bottom: 12px;            /* gap to badge or toggle */
+  width: 100%;                    /* Figma: w-full, text centred */
+  text-align: center;
 }
 
 /* ── Pro badge ────────────────────────────────────────────────────────────── */
@@ -62,7 +63,6 @@
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 12px;            /* gap badge→toggle */
 }
 
 /* ── Toggle — full width ─────────────────────────────────────────────────── */

@@ -5,7 +5,7 @@
 export const ColorBrandCyan = "#26d4eb"; // Primary accent / highlight
 export const ColorBrandNavy = "#010045"; // Primary dark — header, primary buttons
 export const ColorBrandNavyDeep = "#00021b"; // Deepest navy — darkest backgrounds
-export const ColorBrandNavyMid = "#0b0e3c"; // Mid navy — toggle bar bg on dark cards
+export const ColorBrandNavyMid = "#0e1868"; // Mid navy — toggle bar bg on dark cards
 export const ColorBrandNavyCard = "#07205e"; // Dark card border
 export const ColorBrandBlue = "#01236e"; // Selected / focus state
 export const ColorBrandCyanLight = "#a8eff7"; // Cyan tint — light accent
@@ -28,7 +28,7 @@ export const ColorUiSelected = "#01236e";
 export const ColorUiLink = "#0066ff";
 export const ColorBackgroundScreen = "#00021b"; // Full-screen gradient base — page background
 export const ColorBackgroundCard = "#010045"; // Dark card surface — Salary Card, Additional Income Card
-export const ColorBackgroundCardSubtle = "#0b0e3c"; // Toggle bar inside dark cards
+export const ColorBackgroundCardSubtle = "#0e1868"; // Toggle bar inside dark cards
 export const ColorBackgroundCardBorder = "#07205e"; // Border on dark cards
 export const ColorBackgroundSurface = "#ffffff"; // Primary surface — Bottom Sheet, inputs, white cards
 export const ColorBackgroundSurfaceRaised = "#f3f4f6"; // Raised surface — segmented control bg, callout boxes
@@ -59,7 +59,7 @@ export const RadiusLg = "9px";
 export const RadiusSegment = "12px"; // Segmented control items and switch options
 export const RadiusContainer = "16px"; // Segmented control / switch outer container
 export const RadiusPill = "24px"; // Cards, inputs, buttons — primary UI radius
-export const RadiusSheet = "28px"; // Bottom sheet top corners
+export const RadiusSheet = "32px"; // Bottom sheet top corners
 export const RadiusFull = "9999px"; // True pill / circle
 export const LayoutScreenMargin = "16px"; // Horizontal padding inside screen-width containers
 export const LayoutScreenGap = "20px"; // Vertical gap between top-level screen sections
@@ -84,7 +84,7 @@ export const ShadowCard = [
     offsetX: "0px",
     offsetY: "1px",
     blur: "2px",
-    spread: "0px",
+    spread: "-1px",
     color: "rgba(0,0,0,0.10)",
   },
   {
@@ -98,8 +98,8 @@ export const ShadowCard = [
 export const ShadowSheet = [
   {
     offsetX: "0px",
-    offsetY: "-12px",
-    blur: "30px",
+    offsetY: "-8px",
+    blur: "8px",
     spread: "0px",
     color: "rgba(0,0,0,0.12)",
   },

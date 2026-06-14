@@ -3,7 +3,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(10, 10, 10, 0.5);   /* Figma: text/primary @ 50% */
   z-index: 40;
 }
 
@@ -17,7 +17,7 @@
   flex-direction: column;
   align-items: center;
   gap: var(--netti-space-16);
-  padding: 0 var(--netti-sheet-padding, 20px) calc(28px + env(safe-area-inset-bottom));
+  padding: 0 var(--netti-sheet-padding, 20px) calc(32px + env(safe-area-inset-bottom));
   background-color: var(--netti-color-background-surface);
   border-top-left-radius:  var(--netti-sheet-border-radius, 32px);
   border-top-right-radius: var(--netti-sheet-border-radius, 32px);
@@ -147,7 +147,7 @@
 
 .priceNote {
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-sm);
+  font-size: 13px;                  /* Figma: 13px caption */
   font-weight: var(--netti-font-weight-regular);
   line-height: 18px;
   color: var(--netti-color-text-muted);
@@ -160,7 +160,7 @@
   border: none;
   padding: 0;
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-sm);
+  font-size: 13px;                  /* Figma: 13px caption */
   font-weight: var(--netti-font-weight-regular);
   line-height: 18px;
   color: var(--netti-color-text-muted);

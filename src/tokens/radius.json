@@ -32,7 +32,7 @@
       "$description": "Cards, inputs, buttons — primary UI radius"
     },
     "sheet": {
-      "$value": "28px",
+      "$value": "32px",
       "$type": "dimension",
       "$description": "Bottom sheet top corners"
     },

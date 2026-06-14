@@ -18,7 +18,7 @@
   font-family: var(--netti-font-family-sans);
   font-size: var(--netti-font-size-sm);
   line-height: var(--netti-font-line-height-sm);
-  font-weight: var(--netti-font-weight-medium);
+  font-weight: var(--netti-font-weight-semibold);   /* Figma: amounts are Semibold */
   color: var(--netti-color-text-primary);
   text-align: right;
 }
@@ -34,7 +34,7 @@
   padding: var(--netti-space-12) 0;
 }
 .strong .label {
-  font-size: var(--netti-font-size-md);
+  font-size: var(--netti-font-size-md-sb);   /* Figma: Total label 18/24 Semibold */
   line-height: var(--netti-font-line-height-md);
   font-weight: var(--netti-font-weight-semibold);
   color: var(--netti-color-text-primary);

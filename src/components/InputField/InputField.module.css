@@ -23,11 +23,6 @@
   transition: color 150ms ease;
 }
 
-/* Label turns cyan when focused */
-.state_focused .label {
-  color: var(--netti-color-action-primary-bg);
-}
-
 /* ══════════════════════════════════════════════════════════
    STANDARD VARIANT — bordered input box
    ══════════════════════════════════════════════════════════ */
@@ -54,7 +49,7 @@
 /* Focused: cyan border + subtle glow */
 .state_focused .inputBox {
   border-color: var(--netti-color-border-focus);
-  box-shadow: 0 0 0 3px rgba(38, 212, 235, 0.15);
+  box-shadow: 0 0 3px rgba(38, 212, 235, 0.2); /* Figma: 3px blur @ 20% */
 }
 
 /* Filled: slightly stronger border */

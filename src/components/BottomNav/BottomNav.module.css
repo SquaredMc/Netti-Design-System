@@ -3,7 +3,7 @@
 .nav {
   display: flex;
   align-items: stretch;
-  height: 83px;
+  height: 69px;                        /* Figma: Toolbar 69px */
   background-color: var(--netti-color-background-surface);
   border-top: 1px solid var(--netti-color-border-default);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -19,7 +19,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  padding: var(--netti-space-8) var(--netti-space-4);
+  padding: var(--netti-space-12) var(--netti-space-4);   /* Figma: 12px vertical */
   color: var(--netti-color-text-muted);
   transition: color 150ms ease;
   -webkit-tap-highlight-color: transparent;
@@ -45,7 +45,7 @@
 
 .label {
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-sm);
+  font-size: 12px;                     /* Figma: Caption 12/16 Medium */
   font-weight: var(--netti-font-weight-medium);
   line-height: 16px;
 }

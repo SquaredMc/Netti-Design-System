@@ -29,7 +29,7 @@
 
 .description {
   font-family: var(--netti-font-family-sans);
-  font-size: var(--netti-font-size-sm);
+  font-size: 13px;                  /* Figma: 13px caption */
   font-weight: var(--netti-font-weight-regular);
   line-height: 18px;
   color: var(--netti-color-text-muted);

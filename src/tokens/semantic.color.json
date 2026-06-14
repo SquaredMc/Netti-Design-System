@@ -12,7 +12,7 @@
         "$description": "Dark card surface — Salary Card, Additional Income Card"
       },
       "cardSubtle": {
-        "$value": "#0B0E3C",
+        "$value": "#0E1868",
         "$type": "color",
         "$description": "Toggle bar inside dark cards"
       },
