@@ -1,124 +1,98 @@
 {
   "color": {
-    "brand": {
-      "cyan": {
-        "$value": "#26D4EB",
-        "$type": "color",
-        "$description": "Primary accent / highlight"
-      },
-      "navy": {
-        "$value": "#010045",
-        "$type": "color",
-        "$description": "Primary dark — header, primary buttons"
-      },
-      "navyDeep": {
+    "navy": {
+      "900": {
         "$value": "#00021B",
         "$type": "color",
         "$description": "Deepest navy — darkest backgrounds"
       },
-      "navyMid": {
+      "800": {
+        "$value": "#010045",
+        "$type": "color",
+        "$description": "Primary dark — header, primary buttons"
+      },
+      "700": {
         "$value": "#0E1868",
         "$type": "color",
         "$description": "Mid navy — toggle bar bg on dark cards"
       },
-      "navyCard": {
+      "600": {
         "$value": "#07205E",
         "$type": "color",
         "$description": "Dark card border"
-      },
-      "blue": {
-        "$value": "#01236E",
+      }
+    },
+    "cyan": {
+      "400": {
+        "$value": "#26D4EB",
         "$type": "color",
-        "$description": "Selected / focus state"
+        "$description": "Primary accent / highlight"
       },
-      "cyanLight": {
+      "200": {
         "$value": "#A8EFF7",
         "$type": "color",
         "$description": "Cyan tint — light accent"
       }
     },
-    "neutral": {
-      "0": {
-        "$value": "#FFFFFF",
-        "$type": "color"
-      },
-      "50": {
-        "$value": "#F3F4F6",
+    "blue": {
+      "800": {
+        "$value": "#01236E",
+        "$type": "color",
+        "$description": "Selected / focus state"
+      }
+    },
+    "green": {
+      "500": {
+        "$value": "#00A63E",
         "$type": "color"
       },
       "100": {
-        "$value": "#E5E7EB",
+        "$value": "#DCFCE7",
         "$type": "color"
-      },
-      "200": {
-        "$value": "#EEEEEE",
-        "$type": "color"
-      },
-      "500": {
-        "$value": "#6B7280",
+      }
+    },
+    "red": {
+      "600": {
+        "$value": "#E1000A",
         "$type": "color",
-        "$description": "WCAG AA 4.63:1 on white — use for muted text"
+        "$description": "Errors, destructive — code extension, not in the Figma DS"
+      },
+      "100": {
+        "$value": "#FEE2E2",
+        "$type": "color",
+        "$description": "Error background — code extension, not in the Figma DS"
+      }
+    },
+    "grey": {
+      "950": {
+        "$value": "#0A0A0A",
+        "$type": "color"
       },
       "700": {
         "$value": "#4A5565",
         "$type": "color"
       },
-      "950": {
-        "$value": "#0A0A0A",
-        "$type": "color"
-      }
-    },
-    "green": {
-      "100": {
-        "$value": "#DCFCE7",
-        "$type": "color"
-      },
       "500": {
-        "$value": "#00A63E",
-        "$type": "color"
-      }
-    },
-    "red": {
-      "100": {
-        "$value": "#FEE2E2",
-        "$type": "color"
-      },
-      "600": {
-        "$value": "#E1000A",
-        "$type": "color"
-      }
-    },
-    "surface": {
-      "1": {
-        "$value": "#FFFFFF",
+        "$value": "#6B7280",
         "$type": "color",
-        "$description": "Primary surface"
+        "$description": "Muted text — WCAG AA ≥ 4.5:1 on white"
       },
-      "2": {
-        "$value": "#F3F4F6",
-        "$type": "color",
-        "$description": "Secondary surface"
-      },
-      "3": {
-        "$value": "#E5E7EB",
-        "$type": "color",
-        "$description": "Dividers, page bg"
-      },
-      "4": {
+      "200": {
         "$value": "#EEEEEE",
-        "$type": "color",
-        "$description": "Subtle fills"
-      }
-    },
-    "ui": {
-      "selected": {
-        "$value": "#01236E",
         "$type": "color"
       },
-      "link": {
-        "$value": "#0066FF",
+      "100": {
+        "$value": "#E5E7EB",
+        "$type": "color"
+      },
+      "50": {
+        "$value": "#F3F4F6",
         "$type": "color"
       }
+    },
+    "white": {
+      "$value": "#FFFFFF",
+      "$type": "color"
     }
   }
 }

@@ -2,30 +2,24 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-export const ColorBrandCyan = "#26d4eb"; // Primary accent / highlight
-export const ColorBrandNavy = "#010045"; // Primary dark — header, primary buttons
-export const ColorBrandNavyDeep = "#00021b"; // Deepest navy — darkest backgrounds
-export const ColorBrandNavyMid = "#0e1868"; // Mid navy — toggle bar bg on dark cards
-export const ColorBrandNavyCard = "#07205e"; // Dark card border
-export const ColorBrandBlue = "#01236e"; // Selected / focus state
-export const ColorBrandCyanLight = "#a8eff7"; // Cyan tint — light accent
-export const ColorNeutral0 = "#ffffff";
-export const ColorNeutral50 = "#f3f4f6";
-export const ColorNeutral100 = "#e5e7eb";
-export const ColorNeutral200 = "#eeeeee";
-export const ColorNeutral500 = "#6b7280"; // WCAG AA 4.63:1 on white — use for muted text
-export const ColorNeutral700 = "#4a5565";
-export const ColorNeutral950 = "#0a0a0a";
+export const ColorNavy600 = "#07205e"; // Dark card border
+export const ColorNavy700 = "#0e1868"; // Mid navy — toggle bar bg on dark cards
+export const ColorNavy800 = "#010045"; // Primary dark — header, primary buttons
+export const ColorNavy900 = "#00021b"; // Deepest navy — darkest backgrounds
+export const ColorCyan200 = "#a8eff7"; // Cyan tint — light accent
+export const ColorCyan400 = "#26d4eb"; // Primary accent / highlight
+export const ColorBlue800 = "#01236e"; // Selected / focus state
 export const ColorGreen100 = "#dcfce7";
 export const ColorGreen500 = "#00a63e";
-export const ColorRed100 = "#fee2e2";
-export const ColorRed600 = "#e1000a";
-export const ColorSurface1 = "#ffffff"; // Primary surface
-export const ColorSurface2 = "#f3f4f6"; // Secondary surface
-export const ColorSurface3 = "#e5e7eb"; // Dividers, page bg
-export const ColorSurface4 = "#eeeeee"; // Subtle fills
-export const ColorUiSelected = "#01236e";
-export const ColorUiLink = "#0066ff";
+export const ColorRed100 = "#fee2e2"; // Error background — code extension, not in the Figma DS
+export const ColorRed600 = "#e1000a"; // Errors, destructive — code extension, not in the Figma DS
+export const ColorGrey50 = "#f3f4f6";
+export const ColorGrey100 = "#e5e7eb";
+export const ColorGrey200 = "#eeeeee";
+export const ColorGrey500 = "#6b7280"; // Muted text — WCAG AA ≥ 4.5:1 on white
+export const ColorGrey700 = "#4a5565";
+export const ColorGrey950 = "#0a0a0a";
+export const ColorWhite = "#ffffff";
 export const ColorBackgroundScreen = "#00021b"; // Full-screen gradient base — page background
 export const ColorBackgroundCard = "#010045"; // Dark card surface — Salary Card, Additional Income Card
 export const ColorBackgroundCardSubtle = "#0e1868"; // Toggle bar inside dark cards

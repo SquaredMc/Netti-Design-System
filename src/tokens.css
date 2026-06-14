@@ -3,30 +3,24 @@
  */
 
 :root {
-  --netti-color-brand-cyan: #26d4eb; /** Primary accent / highlight */
-  --netti-color-brand-navy: #010045; /** Primary dark — header, primary buttons */
-  --netti-color-brand-navy-deep: #00021b; /** Deepest navy — darkest backgrounds */
-  --netti-color-brand-navy-mid: #0e1868; /** Mid navy — toggle bar bg on dark cards */
-  --netti-color-brand-navy-card: #07205e; /** Dark card border */
-  --netti-color-brand-blue: #01236e; /** Selected / focus state */
-  --netti-color-brand-cyan-light: #a8eff7; /** Cyan tint — light accent */
-  --netti-color-neutral-0: #ffffff;
-  --netti-color-neutral-50: #f3f4f6;
-  --netti-color-neutral-100: #e5e7eb;
-  --netti-color-neutral-200: #eeeeee;
-  --netti-color-neutral-500: #6b7280; /** WCAG AA 4.63:1 on white — use for muted text */
-  --netti-color-neutral-700: #4a5565;
-  --netti-color-neutral-950: #0a0a0a;
+  --netti-color-navy-600: #07205e; /** Dark card border */
+  --netti-color-navy-700: #0e1868; /** Mid navy — toggle bar bg on dark cards */
+  --netti-color-navy-800: #010045; /** Primary dark — header, primary buttons */
+  --netti-color-navy-900: #00021b; /** Deepest navy — darkest backgrounds */
+  --netti-color-cyan-200: #a8eff7; /** Cyan tint — light accent */
+  --netti-color-cyan-400: #26d4eb; /** Primary accent / highlight */
+  --netti-color-blue-800: #01236e; /** Selected / focus state */
   --netti-color-green-100: #dcfce7;
   --netti-color-green-500: #00a63e;
-  --netti-color-red-100: #fee2e2;
-  --netti-color-red-600: #e1000a;
-  --netti-color-surface-1: #ffffff; /** Primary surface */
-  --netti-color-surface-2: #f3f4f6; /** Secondary surface */
-  --netti-color-surface-3: #e5e7eb; /** Dividers, page bg */
-  --netti-color-surface-4: #eeeeee; /** Subtle fills */
-  --netti-color-ui-selected: #01236e;
-  --netti-color-ui-link: #0066ff;
+  --netti-color-red-100: #fee2e2; /** Error background — code extension, not in the Figma DS */
+  --netti-color-red-600: #e1000a; /** Errors, destructive — code extension, not in the Figma DS */
+  --netti-color-grey-50: #f3f4f6;
+  --netti-color-grey-100: #e5e7eb;
+  --netti-color-grey-200: #eeeeee;
+  --netti-color-grey-500: #6b7280; /** Muted text — WCAG AA ≥ 4.5:1 on white */
+  --netti-color-grey-700: #4a5565;
+  --netti-color-grey-950: #0a0a0a;
+  --netti-color-white: #ffffff;
   --netti-color-background-screen: #00021b; /** Full-screen gradient base — page background */
   --netti-color-background-card: #010045; /** Dark card surface — Salary Card, Additional Income Card */
   --netti-color-background-card-subtle: #0e1868; /** Toggle bar inside dark cards */

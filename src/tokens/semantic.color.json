@@ -2,140 +2,140 @@
   "color": {
     "background": {
       "screen": {
-        "$value": "#00021B",
+        "$value": "{color.navy.900}",
         "$type": "color",
         "$description": "Full-screen gradient base — page background"
       },
       "card": {
-        "$value": "#010045",
+        "$value": "{color.navy.800}",
         "$type": "color",
         "$description": "Dark card surface — Salary Card, Additional Income Card"
       },
       "cardSubtle": {
-        "$value": "#0E1868",
+        "$value": "{color.navy.700}",
         "$type": "color",
         "$description": "Toggle bar inside dark cards"
       },
       "cardBorder": {
-        "$value": "#07205E",
+        "$value": "{color.navy.600}",
         "$type": "color",
         "$description": "Border on dark cards"
       },
       "surface": {
-        "$value": "#FFFFFF",
+        "$value": "{color.white}",
         "$type": "color",
         "$description": "Primary surface — Bottom Sheet, inputs, white cards"
       },
       "surfaceRaised": {
-        "$value": "#F3F4F6",
+        "$value": "{color.grey.50}",
         "$type": "color",
         "$description": "Raised surface — segmented control bg, callout boxes"
       }
     },
     "text": {
       "primary": {
-        "$value": "#0A0A0A",
+        "$value": "{color.grey.950}",
         "$type": "color",
         "$description": "Primary body text on light surfaces"
       },
       "secondary": {
-        "$value": "#4A5565",
+        "$value": "{color.grey.700}",
         "$type": "color",
         "$description": "Secondary labels, captions"
       },
       "muted": {
-        "$value": "#6B7280",
+        "$value": "{color.grey.500}",
         "$type": "color",
         "$description": "Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white."
       },
       "inverse": {
-        "$value": "#FFFFFF",
+        "$value": "{color.white}",
         "$type": "color",
         "$description": "Text on dark card surfaces"
       },
       "positive": {
-        "$value": "#00A63E",
+        "$value": "{color.green.500}",
         "$type": "color",
         "$description": "Take-home pay, positive amounts, success"
       },
       "negative": {
-        "$value": "#E1000A",
+        "$value": "{color.red.600}",
         "$type": "color",
         "$description": "Errors, destructive actions, negative amounts"
       },
       "brand": {
-        "$value": "#010045",
+        "$value": "{color.navy.800}",
         "$type": "color",
         "$description": "Brand text — used on cyan backgrounds (Pro button)"
       }
     },
     "action": {
       "primaryBg": {
-        "$value": "#26D4EB",
+        "$value": "{color.cyan.400}",
         "$type": "color",
         "$description": "Pro / primary CTA fill — cyan"
       },
       "primaryText": {
-        "$value": "#010045",
+        "$value": "{color.navy.800}",
         "$type": "color",
         "$description": "Text on cyan CTA — navy"
       },
       "secondaryBorder": {
-        "$value": "#26D4EB",
+        "$value": "{color.cyan.400}",
         "$type": "color",
         "$description": "Outlined secondary button border"
       },
       "selectedBorder": {
-        "$value": "#01236E",
+        "$value": "{color.blue.800}",
         "$type": "color",
         "$description": "Selected toggle pill border, focus rings"
       },
       "selectedBg": {
-        "$value": "#FFFFFF",
+        "$value": "{color.white}",
         "$type": "color",
         "$description": "Selected toggle pill fill"
       }
     },
     "border": {
       "default": {
-        "$value": "#EEEEEE",
+        "$value": "{color.grey.200}",
         "$type": "color",
         "$description": "Dividers, card outlines on light surfaces"
       },
       "strong": {
-        "$value": "#E5E7EB",
+        "$value": "{color.grey.100}",
         "$type": "color",
         "$description": "Stronger dividers, grabber handle"
       },
       "inverse": {
-        "$value": "#07205E",
+        "$value": "{color.navy.600}",
         "$type": "color",
         "$description": "Border on dark card surfaces"
       },
       "focus": {
-        "$value": "#26D4EB",
+        "$value": "{color.cyan.400}",
         "$type": "color",
         "$description": "Focus ring — accessibility"
       }
     },
     "status": {
       "positiveText": {
-        "$value": "#00A63E",
+        "$value": "{color.green.500}",
         "$type": "color",
         "$description": "Success text and icons"
       },
       "positiveBg": {
-        "$value": "#DCFCE7",
+        "$value": "{color.green.100}",
         "$type": "color",
         "$description": "Success background — Tick active state"
       },
       "negativeText": {
-        "$value": "#E1000A",
+        "$value": "{color.red.600}",
         "$type": "color",
         "$description": "Error text and icons"
       },
       "negativeBg": {
-        "$value": "#FEE2E2",
+        "$value": "{color.red.100}",
         "$type": "color",
         "$description": "Error background"
       }
