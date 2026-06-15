@@ -1,31 +1,31 @@
 /* ─── AdditionalIncomeCard ───────────────────────────────────────────────────
-   Figma spec — two states:
-   Empty:     navy card, Ghost button fills width, padding 7px (56px total).
-   Has Items: navy card, header row inline with Add button, rows below.
+   Figma spec — two states (node 80:65):
+   Empty:     NO card chrome — just the full-width Ghost button (42px), node 80:35.
+   Has Items: navy card, header row inline with Add button, rows below, node 80:39.
    ──────────────────────────────────────────────────────────────────────────── */
 
 .card {
   width: 100%;
   border-radius: var(--netti-card-border-radius, 12px);
-  background-color: var(--netti-color-background-card);
-  border: 1px solid var(--netti-color-background-card-border);
-  box-shadow: var(--netti-shadow-card);
-  overflow: hidden;
 }
 
-/* ── Empty — Ghost CTA fills the card ───────────────────────────────────── */
-/* Figma: card is 56px total (42px button + 7px padding top/bottom) */
+/* ── Empty — Ghost CTA on its own, no navy box (Figma 80:35) ─────────────── */
+/* Figma: py-0, no fill, no border; just a subtle drop-shadow on the button. */
 .empty {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 7px;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.1));
 }
 
-/* ── Has Items ────────────────────────────────────────────────────────────── */
+/* ── Has Items — navy card box ───────────────────────────────────────────── */
 .hasItems {
   display: flex;
   flex-direction: column;
+  background-color: var(--netti-color-background-card);
+  border: 1px solid var(--netti-color-background-card-border);
+  box-shadow: var(--netti-shadow-card);
+  overflow: hidden;
 }
 
 /* ── Header — "ADDITIONAL INCOME" + Ghost button inline ─────────────────── */
