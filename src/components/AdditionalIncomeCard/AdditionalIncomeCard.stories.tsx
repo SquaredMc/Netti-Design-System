@@ -48,13 +48,31 @@ export const Empty: Story = {
 };
 
 export const WithItems: Story = {
+  render: () => wrap(
+    <AdditionalIncomeCard
+      items={SAMPLE}
+      onAdd={() => alert('Add income')}
+    />
+  ),
+};
+
+/** Tappable rows — `onItemClick` makes each row a button that opens its edit screen. */
+export const TappableRows: Story = {
   render: () => {
-    const [items, setItems] = useState<IncomeItem[]>(SAMPLE);
+    const [lastTapped, setLastTapped] = useState<string | null>(null);
     return wrap(
-      <AdditionalIncomeCard
-        items={items}
-        onAdd={() => alert('Add income')}
-      />
+      <>
+        <AdditionalIncomeCard
+          items={SAMPLE}
+          onAdd={() => alert('Add income')}
+          onItemClick={(id) => setLastTapped(id)}
+        />
+        {lastTapped && (
+          <p style={{ color: '#fff', fontSize: 13, marginTop: 12 }}>
+            Tapped item id: <strong>{lastTapped}</strong> → would open its edit screen
+          </p>
+        )}
+      </>
     );
   },
 };

@@ -13,9 +13,9 @@ import styles from './AdditionalIncomeCard.module.css';
  * Has-items state:
  *   Header row: "ADDITIONAL INCOME" label + "Add income" Ghost button inline (right).
  *   Income rows below — no remove buttons in this view.
- *   Remove happens via the individual item edit screen.
+ *   Tapping a row (onItemClick) opens its edit screen, where removal happens.
  *
- * Figma: node 80:65 (Has Items) and 80:35 (Empty).
+ * Figma: node 80:65 (Has Items) and 80:35 (Empty); edit flow node 38:6255.
  */
 
 export interface IncomeItem {
@@ -28,6 +28,8 @@ export interface IncomeItem {
 export interface AdditionalIncomeCardProps {
   items: IncomeItem[];
   onAdd: () => void;
+  /** Tap handler for an income row — opens that item's edit screen. */
+  onItemClick?: (id: string) => void;
   onRemove?: (id: string) => void;
   className?: string;
 }
@@ -35,6 +37,7 @@ export interface AdditionalIncomeCardProps {
 export function AdditionalIncomeCard({
   items,
   onAdd,
+  onItemClick,
   className,
 }: AdditionalIncomeCardProps) {
   const hasItems = items.length > 0;
@@ -75,6 +78,8 @@ export function AdditionalIncomeCard({
                 label={item.label}
                 subLabel={item.subLabel}
                 amountFormatted={item.amountFormatted}
+                onClick={onItemClick ? () => onItemClick(item.id) : undefined}
+                rowLabel={onItemClick ? `Edit ${item.label}` : undefined}
                 hasRemove={false}
                 hasDivider={index < items.length - 1}
               />

@@ -21,6 +21,30 @@
   flex-shrink: 0;
 }
 
+/* ── Interactive row — tappable (opens edit screen) ──────────────────────── */
+.interactive {
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.interactive:active {
+  opacity: 0.6;   /* press feedback on dark surface */
+}
+
+.interactive:focus-visible {
+  outline: 2px solid var(--netti-color-border-focus);
+  outline-offset: -2px;
+  border-radius: 8px;
+}
+
 /* ── Labels (left, grows) ────────────────────────────────────────────────── */
 .labels {
   display: flex;

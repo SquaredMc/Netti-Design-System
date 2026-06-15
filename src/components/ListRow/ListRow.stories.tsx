@@ -53,6 +53,20 @@ export const LastRow: Story = {
   ),
 };
 
+/** Tappable — onClick makes the whole row a button (opens an edit screen). */
+export const Tappable: Story = {
+  render: () => card(
+    <ListRow
+      label="Bonus"
+      subLabel="(yearly)"
+      amountFormatted="£5,000"
+      onClick={() => alert('Open edit screen')}
+      rowLabel="Edit Bonus"
+      hasDivider={false}
+    />
+  ),
+};
+
 /** Edit context — remove button visible. */
 export const WithRemove: Story = {
   render: () => card(

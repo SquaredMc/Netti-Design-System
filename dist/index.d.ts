@@ -4,11 +4,13 @@ import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { ReactNode } from 'react';
 import { ReactPortal } from 'react';
 
-export declare function AdditionalIncomeCard({ items, onAdd, className, }: AdditionalIncomeCardProps): JSX_2.Element;
+export declare function AdditionalIncomeCard({ items, onAdd, onItemClick, className, }: AdditionalIncomeCardProps): JSX_2.Element;
 
 export declare interface AdditionalIncomeCardProps {
     items: IncomeItem[];
     onAdd: () => void;
+    /** Tap handler for an income row — opens that item's edit screen. */
+    onItemClick?: (id: string) => void;
     onRemove?: (id: string) => void;
     className?: string;
 }
@@ -137,9 +139,9 @@ declare interface FullScreenSheetProps {
  * Has-items state:
  *   Header row: "ADDITIONAL INCOME" label + "Add income" Ghost button inline (right).
  *   Income rows below — no remove buttons in this view.
- *   Remove happens via the individual item edit screen.
+ *   Tapping a row (onItemClick) opens its edit screen, where removal happens.
  *
- * Figma: node 80:65 (Has Items) and 80:35 (Empty).
+ * Figma: node 80:65 (Has Items) and 80:35 (Empty); edit flow node 38:6255.
  */
 export declare interface IncomeItem {
     id: string;
@@ -236,7 +238,7 @@ export declare interface InputFieldProps extends Omit<InputHTMLAttributes<HTMLIn
  */
 export declare type InputFieldVariant = 'standard' | 'largeAmount';
 
-export declare function ListRow({ label, subLabel, amountFormatted, hasRemove, onRemove, removeLabel, hasDivider, badge, className, }: ListRowProps): JSX_2.Element;
+export declare function ListRow({ label, subLabel, amountFormatted, onClick, rowLabel, hasRemove, onRemove, removeLabel, hasDivider, badge, className, }: ListRowProps): JSX_2.Element;
 
 /**
  * ListRow
@@ -250,6 +252,10 @@ export declare function ListRow({ label, subLabel, amountFormatted, hasRemove, o
  * hasRemove defaults to false — the remove button is only shown
  * when the user is actively editing an item, not in the default list view.
  * This matches the Figma spec where removal happens via the edit screen.
+ *
+ * Pass `onClick` to make the whole row tappable (e.g. open an edit screen).
+ * The row then renders as a <button>; `onClick` and `hasRemove` are mutually
+ * exclusive — a tappable row never nests the remove button.
  */
 export declare interface ListRowProps {
     label: string;
@@ -257,6 +263,10 @@ export declare interface ListRowProps {
     subLabel?: string;
     /** Formatted amount string, e.g. "£5,000" */
     amountFormatted?: string;
+    /** Tap handler for the whole row — makes it a <button> (e.g. open edit screen). */
+    onClick?: () => void;
+    /** Accessible label for the tappable row. Defaults to the visible content. */
+    rowLabel?: string;
     /**
      * Show the remove (−) button.
      * False by default — only shown in edit/detail context, not in the card list.
