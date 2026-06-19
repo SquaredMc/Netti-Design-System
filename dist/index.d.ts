@@ -355,14 +355,21 @@ declare interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElem
     children: ReactNode;
 }
 
-export declare function SalaryCard({ salaryFormatted, period, onPeriodChange, additionalIncomeSummary, className, }: SalaryCardProps): JSX_2.Element;
+export declare function SalaryCard({ salaryFormatted, period, onPeriodChange, additionalIncomeSummary, className, editable, value, onValueChange, }: SalaryCardProps): JSX_2.Element;
 
 export declare interface SalaryCardProps {
+    /** Formatted amount for display-only mode, e.g. "£35,000". */
     salaryFormatted: string;
     period: Period;
     onPeriodChange: (period: Period) => void;
     additionalIncomeSummary?: string;
     className?: string;
+    /** When true, the amount renders as an inline editable input instead of a span. */
+    editable?: boolean;
+    /** Controlled raw value for editable mode, e.g. "35000". */
+    value?: string;
+    /** Called with the raw input value as the user types. */
+    onValueChange?: (value: string) => void;
 }
 
 export declare function SegmentedControl({ options, value, onChange, context, className, 'aria-label': ariaLabel, }: SegmentedControlProps): JSX_2.Element;

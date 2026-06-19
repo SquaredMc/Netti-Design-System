@@ -28,3 +28,23 @@ function Controlled(props: Partial<React.ComponentProps<typeof SalaryCard>>) {
 
 export const Free: Story = { render: () => <Controlled /> };
 export const Pro: Story = { render: () => <Controlled additionalIncomeSummary="+ £5,000 bonus · £8,000 overtime" /> };
+
+/** Editable amount — tap the figure and type. Controlled via value/onValueChange. */
+export const Editable: Story = {
+  render: () => {
+    const [period, setPeriod] = useState<Period>('yearly');
+    const [value, setValue] = useState('35000');
+    return (
+      <div style={{ width: 361, padding: 16, background: 'linear-gradient(160deg, #00021B 0%, #010045 50%, #26D4EB 100%)', borderRadius: 16 }}>
+        <SalaryCard
+          salaryFormatted={`£${value}`}
+          period={period}
+          onPeriodChange={setPeriod}
+          editable
+          value={value}
+          onValueChange={(v) => setValue(v.replace(/[^0-9.]/g, ''))}
+        />
+      </div>
+    );
+  },
+};
