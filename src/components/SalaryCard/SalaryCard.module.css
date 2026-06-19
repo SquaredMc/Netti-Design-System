@@ -46,6 +46,37 @@
   text-align: center;
 }
 
+/* ── Salary amount — editable ─────────────────────────────────────────────── */
+/* Visually identical to .amount; £ prefix + content-hugging input, centred. */
+.amountEdit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.amountPrefix,
+.amountInput {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-h1);   /* 36px — display */
+  font-weight: var(--netti-font-weight-bold);
+  line-height: 40px;
+  color: var(--netti-color-text-inverse);
+}
+
+.amountInput {
+  min-width: 1ch;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: left;
+  caret-color: var(--netti-color-text-inverse);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
 /* ── Pro badge ────────────────────────────────────────────────────────────── */
 /* Figma: cyan pill, 11px Semibold, navy text, pill radius, margin-bottom 12px */
 .badge {
