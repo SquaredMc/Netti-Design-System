@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
+import { CSSProperties } from 'react';
 import { InputHTMLAttributes } from 'react';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { ReactNode } from 'react';
@@ -416,6 +417,53 @@ export declare interface SelectProps {
     className?: string;
     disabled?: boolean;
     'data-testid'?: string;
+}
+
+export declare function Sheet({ open: controlledOpen, onOpenChange, trigger, header, children, footer, showHandle, 'aria-label': ariaLabel, className, style, }: SheetProps): JSX_2.Element;
+
+/**
+ * Sheet
+ *
+ * A product-agnostic bottom sheet primitive. Unlike BottomSheet (which is
+ * Netti-flavoured with a prescribed title bar), Sheet is pure slots:
+ * `header`, `children` (body) and `footer` — compose whatever you need.
+ *
+ * Theming is via `--sheet-*` CSS custom properties, each falling back to the
+ * Netti token, then a hard-coded default — so it works standalone, inside
+ * Netti, or fully re-themed:
+ *   --sheet-surface, --sheet-overlay, --sheet-radius, --sheet-shadow,
+ *   --sheet-handle, --sheet-padding-x, --sheet-padding-top,
+ *   --sheet-padding-bottom, --sheet-gap, --sheet-max-height
+ *
+ * Controlled (`open` + `onOpenChange`) or uncontrolled (via `trigger`).
+ * Built on vaul for drag-to-dismiss.
+ */
+export declare interface SheetProps {
+    /** Controlled open state. Omit to run uncontrolled (driven by `trigger`). */
+    open?: boolean;
+    /** Called when the open state changes. */
+    onOpenChange?: (open: boolean) => void;
+    /** Element that opens the sheet (uncontrolled, or alongside controlled). */
+    trigger?: ReactNode;
+    /** Top slot — title bar, close button, etc. Pinned above the body. */
+    header?: ReactNode;
+    /** Main content — scrolls when it overflows. */
+    children?: ReactNode;
+    /** Bottom slot — actions. Pinned below the scrolling body. */
+    footer?: ReactNode;
+    /** Show the drag handle. Default true. */
+    showHandle?: boolean;
+    /** Accessible name for the dialog (a visually-hidden title). */
+    'aria-label'?: string;
+    /** Extra class on the content panel. */
+    className?: string;
+    /**
+     * Theming / inline styles. Applied to BOTH the overlay and the content so
+     * `--sheet-*` custom properties resolve through vaul's portal (which renders
+     * to document.body, escaping React-tree variable scope). Intended for the
+     * `--sheet-*` theming variables.
+     */
+    style?: CSSProperties;
 }
 
 export declare function Tick({ state, className, 'aria-label': ariaLabel, }: TickProps): JSX_2.Element;

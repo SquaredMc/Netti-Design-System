@@ -57,6 +57,11 @@ export type { ConfirmationCardProps } from './components/ConfirmationCard/Confir
 
 /* ── Surfaces ───────────────────────────────────────────────────────────── */
 export { Card }                     from './components/Card/Card';
+
+/** Product-agnostic, slot-based bottom sheet (header/body/footer). */
+export { Sheet }                    from './components/Sheet/Sheet';
+export type { SheetProps }          from './components/Sheet/Sheet';
+
 export { BottomSheet }              from './components/BottomSheet/BottomSheet';
 export { FullScreenSheet }          from './components/FullScreenSheet/FullScreenSheet';
 export { InfoSheet }                from './components/InfoSheet/InfoSheet';
