@@ -1,0 +1,34 @@
+{
+  "color": {
+    "surface": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Themed card/page surface (light mode)"
+    },
+    "surfaceRaised": {
+      "$value": "{color.grey.50}",
+      "$type": "color",
+      "$description": "Themed raised surface — toggle bar, insets (light mode)"
+    },
+    "surfaceBorder": {
+      "$value": "{color.grey.200}",
+      "$type": "color",
+      "$description": "Themed border on a surface (light mode)"
+    },
+    "onSurface": {
+      "$value": "{color.grey.950}",
+      "$type": "color",
+      "$description": "Themed primary text on a surface (light mode)"
+    },
+    "onSurfaceMuted": {
+      "$value": "{color.grey.700}",
+      "$type": "color",
+      "$description": "Themed secondary text on a surface (light mode)"
+    },
+    "onSurfaceFaint": {
+      "$value": "{color.grey.500}",
+      "$type": "color",
+      "$description": "Themed tertiary / hint text on a surface (light mode)"
+    }
+  }
+}

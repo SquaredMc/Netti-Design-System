@@ -54,11 +54,27 @@ export declare type ButtonSize = 'lg' | 'md';
 
 export declare type ButtonVariant = 'pro' | 'primary' | 'secondary' | 'ghost' | 'text';
 
-export declare function Card({ children, title, subtitle, className }: CardProps): JSX_2.Element;
+export declare function Card({ children, theme, title, subtitle, className }: CardProps): JSX_2.Element;
 
+/**
+ * Card
+ *
+ * The themed, slot-based core surface (Figma: Card, node 261:908). Renders as a
+ * light or dark card and is the base for SalaryCard / AdditionalIncomeCard (dark)
+ * and light settings surfaces.
+ *
+ * Theming is global: `theme` sets `data-theme` on the card, so the card AND its
+ * content resolve the themed `--netti-color-{surface,on-surface,...}` tokens.
+ * Because it's an attribute, themes nest — a dark Card sits happily on a light
+ * screen.
+ */
 declare interface CardProps {
     children: ReactNode;
+    /** Visual theme. Sets data-theme so the card and its content adapt. Default 'light'. */
+    theme?: 'light' | 'dark';
+    /** Optional convenience eyebrow title. */
     title?: string;
+    /** Optional convenience subtitle. */
     subtitle?: string;
     className?: string;
 }

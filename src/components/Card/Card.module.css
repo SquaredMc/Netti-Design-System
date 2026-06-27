@@ -1,33 +1,42 @@
 /* ─── Card ───────────────────────────────────────────────────────────────────
-   Generic white surface card. Used for light-surface sections.
+   Themed core surface. Uses the global theme tokens (--netti-color-surface,
+   --netti-color-on-surface, …) which flip under [data-theme="dark"], set by the
+   `theme` prop. Light = white/dark text; Dark = navy/white text.
    ──────────────────────────────────────────────────────────────────────────── */
 
 .card {
-  background-color: var(--netti-color-background-surface);
-  border-radius: var(--netti-card-border-radius, 12px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--netti-card-gap, 12px);
   padding: var(--netti-card-padding, 20px);
+  border-radius: var(--netti-card-border-radius, 12px);
+  background-color: var(--netti-color-surface);
+  border: 1px solid var(--netti-color-surface-border);
   box-shadow: var(--netti-shadow-card);
-  border: 1px solid var(--netti-color-border-default);
+  color: var(--netti-color-on-surface);
 }
 
 .header {
-  margin-bottom: var(--netti-card-gap, 12px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--netti-space-4);
 }
 
 .title {
+  margin: 0;
   font-family: var(--netti-font-family-sans);
-  font-size: 12px;                        /* Figma h3/size */
-  line-height: 16px;
+  font-size: 12px;
   font-weight: var(--netti-font-weight-medium);
-  text-transform: uppercase;
+  line-height: 16px;
   letter-spacing: 0.5px;
-  color: var(--netti-color-text-secondary);
+  text-transform: uppercase;
+  color: var(--netti-color-on-surface-muted);
 }
 
 .subtitle {
+  margin: 0;
   font-family: var(--netti-font-family-sans);
   font-size: 14px;
   line-height: 20px;
-  color: var(--netti-color-text-secondary);
-  margin-top: var(--netti-space-4);
+  color: var(--netti-color-on-surface-muted);
 }

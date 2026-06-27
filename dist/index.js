@@ -3235,20 +3235,27 @@ function lc({
     ] })
   ] });
 }
-const yl = "_card_sdoab_5", wl = "_header_sdoab_13", bl = "_title_sdoab_17", Cl = "_subtitle_sdoab_27", at = {
+const yl = "_card_13yqi_7", wl = "_header_13yqi_19", bl = "_title_13yqi_25", Cl = "_subtitle_13yqi_36", at = {
   card: yl,
   header: wl,
   title: bl,
   subtitle: Cl
 };
-function cc({ children: e, title: t, subtitle: n, className: r }) {
-  return /* @__PURE__ */ C("div", { className: [at.card, r ?? ""].filter(Boolean).join(" "), children: [
-    (t || n) && /* @__PURE__ */ C("div", { className: at.header, children: [
-      t && /* @__PURE__ */ s("h2", { className: at.title, children: t }),
-      n && /* @__PURE__ */ s("p", { className: at.subtitle, children: n })
-    ] }),
-    e
-  ] });
+function cc({ children: e, theme: t = "light", title: n, subtitle: r, className: a }) {
+  return /* @__PURE__ */ C(
+    "div",
+    {
+      "data-theme": t,
+      className: [at.card, a ?? ""].filter(Boolean).join(" "),
+      children: [
+        (n || r) && /* @__PURE__ */ C("div", { className: at.header, children: [
+          n && /* @__PURE__ */ s("h2", { className: at.title, children: n }),
+          r && /* @__PURE__ */ s("p", { className: at.subtitle, children: r })
+        ] }),
+        e
+      ]
+    }
+  );
 }
 const El = "_overlay_1ybzo_7", Sl = "_content_1ybzo_14", Nl = "_handle_1ybzo_35", Rl = "_header_1ybzo_45", Tl = "_body_1ybzo_49", Dl = "_footer_1ybzo_56", xl = "_srOnly_1ybzo_62", we = {
   overlay: El,
