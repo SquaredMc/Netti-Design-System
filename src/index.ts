@@ -27,11 +27,14 @@ export type { IncomeTypeRowProps }  from './components/IncomeTypeRow/IncomeTypeR
 export { SegmentedControl }         from './components/SegmentedControl/SegmentedControl';
 export type { SegmentedControlProps, SegmentOption } from './components/SegmentedControl/SegmentedControl';
 
-export { InputField }               from './components/InputField/InputField';
-export type { InputFieldProps, InputFieldVariant } from './components/InputField/InputField';
+export { Switch }                   from './components/Switch/Switch';
+export type { SwitchProps }         from './components/Switch/Switch';
 
 export { MoneyRow, Divider }        from './components/MoneyRow/MoneyRow';
 export type { MoneyRowProps }       from './components/MoneyRow/MoneyRow';
+
+export { InputField }               from './components/InputField/InputField';
+export type { InputFieldProps, InputFieldVariant } from './components/InputField/InputField';
 
 export { Select }                   from './components/Select/Select';
 export type { SelectProps, SelectOption } from './components/Select/Select';
