@@ -81,16 +81,16 @@
   background-color: var(--netti-color-background-surface-raised);
 }
 
-/* Ghost — translucent white on dark surfaces — pill radius */
+/* Ghost — themed translucent fill (light or dark surface) — pill radius */
 .variantGhost {
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: var(--netti-color-surface-overlay);
   color: var(--netti-color-action-primary-bg);
   border-color: transparent;
   border-radius: var(--netti-radius-full);
   box-shadow: none;
 }
 .variantGhost:hover:not(:disabled) {
-  background-color: rgba(255, 255, 255, 0.18);
+  filter: brightness(1.3);
 }
 
 /* Text — no fill or border */

@@ -22,7 +22,7 @@
   font-weight: var(--netti-font-weight-semibold, 600);
   line-height: 16px;
   letter-spacing: 0.5px;
-  color: var(--netti-color-text-primary, #0a0a0a);
+  color: var(--netti-color-on-surface, #0a0a0a);
 }
 
 .spacer {
@@ -38,7 +38,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: var(--netti-color-text-secondary, #4a5565);
+  color: var(--netti-color-on-surface-muted, #4a5565);
 }
 
 .icon svg,

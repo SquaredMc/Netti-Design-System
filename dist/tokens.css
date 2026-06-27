@@ -53,6 +53,8 @@
   --netti-color-on-surface: #0a0a0a; /** Themed primary text on a surface (light mode) */
   --netti-color-on-surface-muted: #4a5565; /** Themed secondary text on a surface (light mode) */
   --netti-color-on-surface-faint: #6b7280; /** Themed tertiary / hint text on a surface (light mode) */
+  --netti-color-divider: #eeeeee; /** Themed divider/separator on a surface (light mode) */
+  --netti-color-surface-overlay: rgba(0, 0, 0, 0.06); /** Themed subtle fill on a surface — chips, hover, remove (light mode) */
   --netti-radius-none: 0px;
   --netti-radius-sm: 3px;
   --netti-radius-md: 6px;
@@ -138,4 +140,6 @@
   --netti-color-on-surface: #ffffff; /** Themed primary text on a surface (dark mode) */
   --netti-color-on-surface-muted: rgba(255, 255, 255, 0.7); /** Themed secondary text on a surface (dark mode) */
   --netti-color-on-surface-faint: rgba(255, 255, 255, 0.5); /** Themed tertiary / hint text on a surface (dark mode) */
+  --netti-color-divider: rgba(255, 255, 255, 0.1); /** Themed divider/separator on a surface (dark mode) */
+  --netti-color-surface-overlay: rgba(255, 255, 255, 0.12); /** Themed subtle fill on a surface — chips, hover, remove (dark mode) */
 }

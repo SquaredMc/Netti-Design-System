@@ -11,7 +11,7 @@
   font-family: var(--netti-font-family-sans);
   font-size: var(--netti-font-size-sm);
   line-height: var(--netti-font-line-height-sm);
-  color: var(--netti-color-text-secondary);
+  color: var(--netti-color-on-surface-muted);
 }
 
 .amount {
@@ -19,7 +19,7 @@
   font-size: var(--netti-font-size-sm);
   line-height: var(--netti-font-line-height-sm);
   font-weight: var(--netti-font-weight-semibold);   /* Figma: amounts are Semibold */
-  color: var(--netti-color-text-primary);
+  color: var(--netti-color-on-surface);
   text-align: right;
 }
 
@@ -57,7 +57,7 @@
   font-size: var(--netti-font-size-md-sb);   /* Figma: Total label 18/24 Semibold */
   line-height: var(--netti-font-line-height-md);
   font-weight: var(--netti-font-weight-semibold);
-  color: var(--netti-color-text-primary);
+  color: var(--netti-color-on-surface);
 }
 .strong .amount {
   font-size: var(--netti-font-size-lg);
@@ -68,6 +68,6 @@
 /* Divider */
 .divider {
   height: 1px;
-  background-color: var(--netti-color-border-strong);
+  background-color: var(--netti-color-divider);
   margin: var(--netti-space-6) 0;
 }

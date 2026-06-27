@@ -29,6 +29,16 @@
       "$value": "rgba(255, 255, 255, 0.5)",
       "$type": "color",
       "$description": "Themed tertiary / hint text on a surface (dark mode)"
+    },
+    "divider": {
+      "$value": "rgba(255, 255, 255, 0.1)",
+      "$type": "color",
+      "$description": "Themed divider/separator on a surface (dark mode)"
+    },
+    "surfaceOverlay": {
+      "$value": "rgba(255, 255, 255, 0.12)",
+      "$type": "color",
+      "$description": "Themed subtle fill on a surface — chips, hover, remove (dark mode)"
     }
   }
 }

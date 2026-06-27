@@ -60,7 +60,7 @@
   font-size: 16px;                    /* Figma: body/md */
   font-weight: var(--netti-font-weight-semibold);
   line-height: 24px;
-  color: var(--netti-color-text-inverse);
+  color: var(--netti-color-on-surface);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -71,8 +71,7 @@
   font-size: 13px;
   font-weight: var(--netti-font-weight-regular);
   line-height: 18px;
-  color: var(--netti-color-text-inverse);
-  opacity: 0.5;                       /* Figma: white 50% */
+  color: var(--netti-color-on-surface-faint);   /* themed (dark = white 50%) */
 }
 
 /* ── Right slot ──────────────────────────────────────────────────────────── */
@@ -88,7 +87,7 @@
   font-size: 16px;
   font-weight: var(--netti-font-weight-semibold);
   line-height: 24px;
-  color: var(--netti-color-text-inverse);
+  color: var(--netti-color-on-surface);
   white-space: nowrap;
 }
 
@@ -102,8 +101,8 @@
   height: 28px;
   border-radius: var(--netti-radius-full);
   border: none;
-  background-color: rgba(255, 255, 255, 0.12);
-  color: var(--netti-color-text-inverse);
+  background-color: var(--netti-color-surface-overlay);   /* themed subtle fill */
+  color: var(--netti-color-on-surface);
   font-family: var(--netti-font-family-sans);
   font-size: 16px;
   font-weight: var(--netti-font-weight-bold);
@@ -115,7 +114,7 @@
 }
 
 .remove:hover {
-  background-color: rgba(255, 255, 255, 0.22);
+  filter: brightness(1.4);
 }
 
 .remove:focus-visible {
@@ -123,11 +122,10 @@
   outline-offset: 2px;
 }
 
-/* ── Bottom divider — 1px rgba white ────────────────────────────────────── */
-/* Figma: rgba(255,255,255,0.10) */
+/* ── Bottom divider — themed (dark = white 10%) ─────────────────────────── */
 .divider {
   height: 1px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: var(--netti-color-divider);
   flex-shrink: 0;
 }

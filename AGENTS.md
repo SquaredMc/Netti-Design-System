@@ -83,6 +83,41 @@ Body 16/24 Regular · Label 14/20 SemiBold · Caption 12/16 Medium`
 
 ---
 
+## Theming (light/dark)
+
+Theming is **global and nestable**, driven by a `data-theme` attribute — set it on any
+wrapper and everything inside adapts:
+
+```tsx
+<div data-theme="dark">…</div>        // theme a screen / subtree
+<Card theme="dark">…</Card>           // Card sets data-theme for you
+```
+
+**Themed role tokens** (`src/tokens/theme/{light,dark}.json`; mirrored by the Figma
+`Semantic/Theme` collection's Light/Dark modes):
+
+| Token | Light | Dark |
+|---|---|---|
+| `--netti-color-surface` | white | navy/800 |
+| `--netti-color-surface-raised` | grey/50 | navy/700 |
+| `--netti-color-surface-border` | grey/200 | navy/600 |
+| `--netti-color-on-surface` | grey/950 | white |
+| `--netti-color-on-surface-muted` | grey/700 | white 70% |
+| `--netti-color-on-surface-faint` | grey/500 | white 50% |
+| `--netti-color-divider` | grey/200 | white 10% |
+| `--netti-color-surface-overlay` | black 6% | white 12% |
+
+The build emits `:root` (light defaults) + an appended `[data-theme="dark"]` block, so the
+tokens flip by theme and **themes nest** (a dark Card on a light screen).
+
+**THE THEMING RULE:** a component that should adapt to light/dark uses the **role tokens**
+(`--netti-color-surface`, `--netti-color-on-surface`, …) — never the fixed `text-primary` /
+`text-inverse` / `background-card` tokens. Fixed brand colours (cyan focus, red error,
+green positive) stay as-is. To add a themed value, edit **both** `theme/light.json` and
+`theme/dark.json` (and the Figma `Semantic/Theme` collection).
+
+---
+
 ## Working with components
 
 - One folder per component: `tsx` + `module.css` + `stories.tsx`. CSS Modules only.
