@@ -69,3 +69,19 @@ export const TaxBreakdown: Story = {
     </>
   ),
 };
+
+/** Title & subtitle — label-only section headers (Figma Breakdown Row variants). */
+export const Sections: Story = {
+  render: () => (
+    <>
+      <MoneyRow label="Earnings"           variant="title" />
+      <MoneyRow label="Gross Salary"       amount={50000} showSign={false} />
+      <MoneyRow label="Bonus"              amount={5000} />
+      <MoneyRow label="Deductions"         variant="subtitle" />
+      <MoneyRow label="Income Tax"         amount={-7540} />
+      <MoneyRow label="National Insurance" amount={-3760} />
+      <Divider />
+      <MoneyRow label="Take-Home Pay"      amount={37350} strong />
+    </>
+  ),
+};

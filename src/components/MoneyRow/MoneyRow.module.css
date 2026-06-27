@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--netti-space-6) 0;
+  padding: var(--netti-space-2, 2px) var(--netti-space-16);   /* Figma: py-2 px-16 */
 }
 
 .label {
@@ -29,9 +29,29 @@
 /* Negative — tax / deductions */
 .negative .amount { color: var(--netti-color-text-negative); }
 
+/* Title — label-only section header, 18px (Figma: Title variant) */
+.title {
+  padding: 0;
+}
+.title .label {
+  font-size: var(--netti-font-size-md-sb);   /* 18px */
+  line-height: 20px;
+  font-weight: var(--netti-font-weight-semibold);
+}
+
+/* Subtitle — label-only section header, 14px (Figma: Subtitle variant) */
+.subtitle {
+  padding: 0;
+}
+.subtitle .label {
+  font-size: var(--netti-font-size-sm);      /* 14px */
+  line-height: 20px;
+  font-weight: var(--netti-font-weight-semibold);
+}
+
 /* Strong — total row */
 .strong {
-  padding: var(--netti-space-12) 0;
+  padding: var(--netti-space-4) 0;   /* Figma Total: py-4 px-0 */
 }
 .strong .label {
   font-size: var(--netti-font-size-md-sb);   /* Figma: Total label 18/24 Semibold */

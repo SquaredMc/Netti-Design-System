@@ -1,8 +1,19 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { Drawer } from 'vaul';
-import styles from './BottomSheet.module.css';
+import styles from './TakeHomePaySheet.module.css';
 
-export interface BottomSheetProps {
+/**
+ * TakeHomePaySheet
+ *
+ * The Netti-flavoured sheet (Figma: "Take home pay sheet", node 51:153) — a
+ * title bar with optional back button, a scrolling body and a pinned footer.
+ *
+ * For a product-agnostic, fully slot-based sheet use `Sheet` instead.
+ *
+ * Renamed from `BottomSheet`; `BottomSheet` remains exported as a deprecated alias.
+ */
+
+export interface TakeHomePaySheetProps {
   title?: string;
   description?: string;
   trigger?: ReactNode;
@@ -15,7 +26,7 @@ export interface BottomSheetProps {
   onClose?: () => void;
 }
 
-export function BottomSheet({
+export function TakeHomePaySheet({
   title,
   description,
   trigger,
@@ -26,7 +37,7 @@ export function BottomSheet({
   onBack,
   onOpen,
   onClose,
-}: BottomSheetProps) {
+}: TakeHomePaySheetProps) {
   const [internalOpen, setInternalOpen] = useState(false);
   const isControlled = controlledOpen !== undefined;
   const open = isControlled ? controlledOpen : internalOpen;
@@ -85,3 +96,11 @@ export function BottomSheet({
     </Drawer.Root>
   );
 }
+
+/**
+ * @deprecated Renamed to `TakeHomePaySheet`. This alias will be removed in a
+ * future major version.
+ */
+export const BottomSheet = TakeHomePaySheet;
+/** @deprecated Use `TakeHomePaySheetProps`. */
+export type BottomSheetProps = TakeHomePaySheetProps;

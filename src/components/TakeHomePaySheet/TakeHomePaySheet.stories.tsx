@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { BottomSheet } from './BottomSheet';
+import { TakeHomePaySheet } from './TakeHomePaySheet';
 import '../../tokens.css';
 
-const meta: Meta<typeof BottomSheet> = {
-  title: 'Components/BottomSheet',
-  component: BottomSheet,
+const meta: Meta<typeof TakeHomePaySheet> = {
+  title: 'Components/TakeHomePaySheet',
+  component: TakeHomePaySheet,
 };
 export default meta;
 
-type Story = StoryObj<typeof BottomSheet>;
+type Story = StoryObj<typeof TakeHomePaySheet>;
 
 const triggerStyle: React.CSSProperties = {
   padding: '12px 24px',
@@ -21,20 +21,20 @@ const triggerStyle: React.CSSProperties = {
 
 export const WithTrigger: Story = {
   render: () => (
-    <BottomSheet
+    <TakeHomePaySheet
       title="Tax Breakdown"
       trigger={<button style={triggerStyle}>Open Sheet</button>}
     >
       <p style={{ color: 'var(--netti-color-text-secondary)', fontSize: 14, lineHeight: '24px' }}>
         Your tax breakdown summary goes here.
       </p>
-    </BottomSheet>
+    </TakeHomePaySheet>
   ),
 };
 
 export const WithFooter: Story = {
   render: () => (
-    <BottomSheet
+    <TakeHomePaySheet
       title="Add Income"
       trigger={<button style={triggerStyle}>Open Sheet</button>}
       footer={
@@ -56,6 +56,6 @@ export const WithFooter: Story = {
       <p style={{ color: 'var(--netti-color-text-secondary)', fontSize: 14 }}>
         Sheet content goes here.
       </p>
-    </BottomSheet>
+    </TakeHomePaySheet>
   ),
 };

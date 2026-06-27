@@ -62,7 +62,17 @@ export { Card }                     from './components/Card/Card';
 export { Sheet }                    from './components/Sheet/Sheet';
 export type { SheetProps }          from './components/Sheet/Sheet';
 
-export { BottomSheet }              from './components/BottomSheet/BottomSheet';
+/** Centred sheet title + optional trailing icon — for the Sheet header slot. */
+export { SheetHeader }              from './components/SheetHeader/SheetHeader';
+export type { SheetHeaderProps }    from './components/SheetHeader/SheetHeader';
+
+/** Netti "Take home pay" sheet (was BottomSheet). */
+export { TakeHomePaySheet }         from './components/TakeHomePaySheet/TakeHomePaySheet';
+export type { TakeHomePaySheetProps } from './components/TakeHomePaySheet/TakeHomePaySheet';
+/** @deprecated Renamed to TakeHomePaySheet. */
+export { BottomSheet }              from './components/TakeHomePaySheet/TakeHomePaySheet';
+/** @deprecated Use TakeHomePaySheetProps. */
+export type { BottomSheetProps }    from './components/TakeHomePaySheet/TakeHomePaySheet';
 export { FullScreenSheet }          from './components/FullScreenSheet/FullScreenSheet';
 export { InfoSheet }                from './components/InfoSheet/InfoSheet';
 

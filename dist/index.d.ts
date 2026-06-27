@@ -31,20 +31,14 @@ export declare interface BottomNavProps {
     className?: string;
 }
 
-export declare function BottomSheet({ title, description, trigger, children, footer, open: controlledOpen, onOpenChange, onBack, onOpen, onClose, }: BottomSheetProps): JSX_2.Element;
+/**
+ * @deprecated Renamed to `TakeHomePaySheet`. This alias will be removed in a
+ * future major version.
+ */
+export declare const BottomSheet: typeof TakeHomePaySheet;
 
-declare interface BottomSheetProps {
-    title?: string;
-    description?: string;
-    trigger?: ReactNode;
-    children?: ReactNode;
-    footer?: ReactNode;
-    open?: boolean;
-    onOpenChange?: (open: boolean) => void;
-    onBack?: () => void;
-    onOpen?: () => void;
-    onClose?: () => void;
-}
+/** @deprecated Use `TakeHomePaySheetProps`. */
+export declare type BottomSheetProps = TakeHomePaySheetProps;
 
 export declare function Button({ variant, size, icon, fullWidth, children, className, disabled, ...rest }: ButtonProps): JSX_2.Element;
 
@@ -284,12 +278,17 @@ export declare interface ListRowProps {
     className?: string;
 }
 
-export declare function MoneyRow({ label, amount, strong, showPositive, className, currency, locale, }: MoneyRowProps): JSX_2.Element;
+export declare function MoneyRow({ label, amount, variant, strong, showPositive, className, currency, locale, }: MoneyRowProps): JSX_2.Element;
 
 export declare interface MoneyRowProps {
     label: string;
-    /** Raw numeric amount. Formatted automatically with Intl. */
-    amount: number;
+    /** Raw numeric amount. Formatted automatically with Intl. Omit for title/subtitle. */
+    amount?: number;
+    /**
+     * Label-only section headers within a breakdown (no amount):
+     * `title` — 18px, `subtitle` — 14px. Maps to Figma Breakdown Row variants.
+     */
+    variant?: 'title' | 'subtitle';
     /** Makes the row larger and bolder — use for totals */
     strong?: boolean;
     /** Colour-code positive amounts green */
@@ -421,6 +420,28 @@ export declare interface SelectProps {
 
 export declare function Sheet({ open: controlledOpen, onOpenChange, trigger, header, children, footer, showHandle, 'aria-label': ariaLabel, className, style, }: SheetProps): JSX_2.Element;
 
+export declare function SheetHeader({ title, icon, onIconClick, iconLabel, className, }: SheetHeaderProps): JSX_2.Element;
+
+/**
+ * SheetHeader
+ *
+ * A centred sheet title with an optional trailing icon — drop into the
+ * `header` slot of `Sheet`. A balancing spacer keeps the title centred when
+ * the icon is present.
+ *
+ * Figma: node 258:841 (Sheet Header).
+ */
+export declare interface SheetHeaderProps {
+    title: string;
+    /** Trailing icon node (e.g. an info glyph). Omit for a plain centred title. */
+    icon?: ReactNode;
+    /** When provided, the icon renders as a button calling this handler. */
+    onIconClick?: () => void;
+    /** Accessible label for the icon button. */
+    iconLabel?: string;
+    className?: string;
+}
+
 /**
  * Sheet
  *
@@ -464,6 +485,31 @@ export declare interface SheetProps {
      * `--sheet-*` theming variables.
      */
     style?: CSSProperties;
+}
+
+export declare function TakeHomePaySheet({ title, description, trigger, children, footer, open: controlledOpen, onOpenChange, onBack, onOpen, onClose, }: TakeHomePaySheetProps): JSX_2.Element;
+
+/**
+ * TakeHomePaySheet
+ *
+ * The Netti-flavoured sheet (Figma: "Take home pay sheet", node 51:153) — a
+ * title bar with optional back button, a scrolling body and a pinned footer.
+ *
+ * For a product-agnostic, fully slot-based sheet use `Sheet` instead.
+ *
+ * Renamed from `BottomSheet`; `BottomSheet` remains exported as a deprecated alias.
+ */
+export declare interface TakeHomePaySheetProps {
+    title?: string;
+    description?: string;
+    trigger?: ReactNode;
+    children?: ReactNode;
+    footer?: ReactNode;
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
+    onBack?: () => void;
+    onOpen?: () => void;
+    onClose?: () => void;
 }
 
 export declare function Tick({ state, className, 'aria-label': ariaLabel, }: TickProps): JSX_2.Element;
