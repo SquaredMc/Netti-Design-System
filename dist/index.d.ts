@@ -487,6 +487,21 @@ export declare interface SheetProps {
     style?: CSSProperties;
 }
 
+export declare function Switch({ checked, onChange, label, offLabel, onLabel, className, 'aria-label': ariaLabel, }: SwitchProps): JSX_2.Element;
+
+export declare interface SwitchProps {
+    /** Whether the "On" option is selected. */
+    checked: boolean;
+    onChange: (checked: boolean) => void;
+    /** Optional label displayed to the left of the switch. */
+    label?: string;
+    offLabel?: string;
+    onLabel?: string;
+    className?: string;
+    /** Accessible label for the switch group (used when no visible label is provided). */
+    'aria-label'?: string;
+}
+
 export declare function TakeHomePaySheet({ title, description, trigger, children, footer, open: controlledOpen, onOpenChange, onBack, onOpen, onClose, }: TakeHomePaySheetProps): JSX_2.Element;
 
 /**

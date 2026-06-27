@@ -55,12 +55,18 @@
   box-sizing: border-box;
   transition: background 120ms ease, color 120ms ease, border-color 120ms ease,
     box-shadow 120ms ease;
-  box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
+  /* No shadow on the base pill — only the active pill is elevated (see below). */
 }
 
 .pill:focus-visible {
   outline: 2px solid var(--netti-color-border-focus);
   outline-offset: 2px;
+}
+
+/* Active pill — elevated. Shadow lives only here, not on the inactive side. */
+.pill.offActive,
+.pill.onActive {
+  box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 /* Off-active (checked = false → Off pill is active) */
