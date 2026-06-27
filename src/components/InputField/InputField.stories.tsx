@@ -43,6 +43,17 @@ function StandardControlled(props: Partial<React.ComponentProps<typeof InputFiel
   );
 }
 
+/** Theme-aware — the same input inside a dark surface adapts (navy box, white text). */
+export const ThemedDark: Story = {
+  render: () => (
+    <div data-theme="dark" style={{ width: 393, padding: 24, background: '#00021b' }}>
+      <div style={{ background: '#010045', padding: 20, borderRadius: 12 }}>
+        <StandardControlled label="Hours worked" value="16" />
+      </div>
+    </div>
+  ),
+};
+
 export const StandardEmpty: Story = {
   render: () => <StandardControlled value="" />,
 };

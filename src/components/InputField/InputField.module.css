@@ -2,6 +2,10 @@
    Two variants:
    .fieldStandard   — bordered box, 42px height
    .fieldLarge      — large amount display with underline cursor, no box
+
+   Theme-aware: surfaces/text use the global --netti-color-{surface,on-surface,…}
+   role tokens, so the field adapts to the nearest data-theme (light or dark).
+   Focus (cyan) and error (red) stay as fixed brand colours.
    ──────────────────────────────────────────────────────────────────────────── */
 
 .field {
@@ -18,7 +22,7 @@
   font-size: var(--netti-font-size-sm);
   font-weight: var(--netti-font-weight-regular);
   line-height: 20px;
-  color: var(--netti-color-text-secondary);
+  color: var(--netti-color-on-surface-muted);
   margin-bottom: 4px;
   transition: color 150ms ease;
 }
@@ -40,8 +44,8 @@
   align-items: center;
   height: 42px;
   padding: 4px 16px;
-  background-color: var(--netti-color-background-surface);
-  border: 1px solid var(--netti-color-border-default); /* Figma: border/default in empty state */
+  background-color: var(--netti-color-surface);
+  border: 1px solid var(--netti-color-surface-border); /* Figma: border in empty state */
   border-radius: var(--netti-button-border-radius-sm, 8px);
   transition: border-color 150ms ease, box-shadow 150ms ease;
 }
@@ -54,7 +58,7 @@
 
 /* Filled: slightly stronger border */
 .state_filled .inputBox {
-  border-color: var(--netti-color-text-secondary);
+  border-color: var(--netti-color-on-surface-muted);
 }
 
 .input {
@@ -66,13 +70,13 @@
   font-size: var(--netti-font-size-md-sb);
   font-weight: var(--netti-font-weight-semibold);
   line-height: 24px;
-  color: var(--netti-color-text-primary);
+  color: var(--netti-color-on-surface);
   text-align: right;
   outline: none;
 }
 
 .input::placeholder {
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
   font-weight: var(--netti-font-weight-semibold);
 }
 
@@ -101,7 +105,7 @@
   font-size: 30px;
   font-weight: var(--netti-font-weight-bold);
   line-height: 36px;
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
   flex-shrink: 0;
   /* Visually baseline-align with the larger input */
   margin-bottom: 2px;
@@ -117,7 +121,7 @@
   font-size: 36px;
   font-weight: var(--netti-font-weight-bold);
   line-height: 40px;
-  color: var(--netti-color-text-primary);
+  color: var(--netti-color-on-surface);
   outline: none;
   padding: 0;
   /* Show cursor at end of number */
@@ -125,19 +129,19 @@
 }
 
 .largeInput::placeholder {
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
 }
 
 /* Empty state — muted value colour */
 .state_empty .largeInput {
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
 }
 
 /* Underline cursor — 2px bar below the amount row */
 .underline {
   height: 2px;
   width: 100%;
-  background-color: var(--netti-color-border-strong);
+  background-color: var(--netti-color-surface-border);
   margin-top: 6px;
   transition: background-color 150ms ease;
 }

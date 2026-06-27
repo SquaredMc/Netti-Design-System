@@ -39,6 +39,7 @@ export function SalaryCard({
 
   return (
     <article
+      data-theme="dark"
       className={[styles.card, className ?? ''].filter(Boolean).join(' ')}
       aria-label="Your salary"
     >

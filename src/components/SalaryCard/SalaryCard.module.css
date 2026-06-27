@@ -16,8 +16,8 @@
   padding: var(--netti-card-padding, 20px);
   gap: var(--netti-card-gap, 12px);   /* Figma: uniform 12px between all items */
   border-radius: var(--netti-card-border-radius, 12px);
-  background-color: var(--netti-color-background-card);
-  border: 1px solid var(--netti-color-background-card-border);
+  background-color: var(--netti-color-surface);          /* themed (dark = navy) */
+  border: 1px solid var(--netti-color-surface-border);
   box-shadow: var(--netti-shadow-card);
 }
 
@@ -29,8 +29,7 @@
   line-height: 16px;              /* Figma h3/line-height */
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--netti-color-text-inverse);
-  opacity: 0.7;
+  color: var(--netti-color-on-surface-muted);   /* themed (dark = white 70%) */
   width: 100%;                    /* Figma: w-full, text centred */
   text-align: center;
 }
@@ -41,7 +40,7 @@
   font-size: 36px;                /* Figma display/size */
   font-weight: var(--netti-font-weight-bold);
   line-height: 40px;              /* Figma display/line-height */
-  color: var(--netti-color-text-inverse);
+  color: var(--netti-color-on-surface);
   width: 100%;                    /* Figma: w-full, text centred */
   text-align: center;
 }
@@ -61,7 +60,7 @@
   font-size: var(--netti-font-size-h1);   /* 36px — display */
   font-weight: var(--netti-font-weight-bold);
   line-height: 40px;
-  color: var(--netti-color-text-inverse);
+  color: var(--netti-color-on-surface);
 }
 
 .amountInput {
@@ -72,7 +71,7 @@
   outline: none;
   background: transparent;
   text-align: left;
-  caret-color: var(--netti-color-text-inverse);
+  caret-color: var(--netti-color-on-surface);
   appearance: none;
   -webkit-appearance: none;
 }

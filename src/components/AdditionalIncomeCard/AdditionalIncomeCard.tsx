@@ -44,6 +44,7 @@ export function AdditionalIncomeCard({
 
   return (
     <div
+      data-theme="dark"
       className={[
         styles.card,
         hasItems ? styles.hasItems : styles.empty,
