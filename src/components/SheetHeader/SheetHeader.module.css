@@ -1,6 +1,6 @@
 /* ─── SheetHeader ────────────────────────────────────────────────────────────
    Figma spec (258:841): 24px tall, centred title, optional 20px trailing icon
-   with a 20px leading spacer so the title stays centred. Title 14px Semibold,
+   with a 20px leading spacer so the title stays centred. Title 18px Semibold,
    0.5px tracking, text/primary.
    Uses Netti tokens with hard-coded fallbacks so it also works standalone.
    ──────────────────────────────────────────────────────────────────────────── */
@@ -18,7 +18,7 @@
   min-width: 0;
   text-align: center;
   font-family: var(--netti-font-family-sans, system-ui, sans-serif);
-  font-size: var(--netti-font-size-sm, 14px);
+  font-size: var(--netti-font-size-md-sb, 18px);
   font-weight: var(--netti-font-weight-semibold, 600);
   line-height: 16px;
   letter-spacing: 0.5px;
