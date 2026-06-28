@@ -1,9 +1,26 @@
 /* ─── SegmentedControl ───────────────────────────────────────────────────────
    Theme-aware: the track uses the global --netti-color-surface-raised and the
-   unselected text uses --netti-color-on-surface-muted, so it adapts to the
+   unselected text uses --netti-color-on-surface at 70%, so it adapts to the
    nearest data-theme. The `context` prop is retained but no longer needed.
    The selected pill stays a white pill with dark text in both themes.
+   An optional `label` renders above the control (Figma Toggle, node 183:60).
    ──────────────────────────────────────────────────────────────────────────── */
+
+/* ── Optional label + control wrapper ────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--netti-space-4, 4px);   /* Figma Toggle: 4px label→track */
+  width: 100%;
+}
+
+.label {
+  font-family: var(--netti-font-family-sans);
+  font-size: var(--netti-font-size-sm, 14px);
+  font-weight: var(--netti-font-weight-regular);
+  line-height: 20px;
+  color: var(--netti-color-on-surface-muted);
+}
 
 .track {
   display: flex;
@@ -29,7 +46,9 @@
   font-weight: var(--netti-font-weight-semibold);
   line-height: var(--netti-font-line-height-sm-sb);
   background-color: transparent;
-  color: var(--netti-color-on-surface-muted);   /* unselected — themed */
+  /* unselected — on-surface @ 70% (Figma Toggle 183:60); color-mix keeps the
+     focus ring at full strength, unlike element opacity */
+  color: color-mix(in srgb, var(--netti-color-on-surface) 70%, transparent);
   cursor: pointer;
   transition: all 150ms ease;
   -webkit-tap-highlight-color: transparent;

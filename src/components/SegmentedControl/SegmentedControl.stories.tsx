@@ -36,6 +36,18 @@ function Controlled({ context = 'light' }: { context?: 'dark' | 'light' }) {
 
 export const Light: Story = { render: () => <Controlled context="light" /> };
 
+/** With an optional label above the control (Figma Toggle, node 183:60). */
+export const WithLabel: Story = {
+  render: () => {
+    const [val, setVal] = useState('monthly');
+    return (
+      <div style={{ width: 328 }}>
+        <SegmentedControl label="Label" options={PERIOD_OPTIONS} value={val} onChange={setVal} />
+      </div>
+    );
+  },
+};
+
 export const Dark: Story = {
   render: () => (
     <div style={{

@@ -1,4 +1,4 @@
-import { KeyboardEvent } from 'react';
+import { KeyboardEvent, useId } from 'react';
 import styles from './SegmentedControl.module.css';
 
 /**
@@ -23,6 +23,8 @@ export interface SegmentedControlProps {
   options: SegmentOption[];
   value: string;
   onChange: (value: string) => void;
+  /** Optional text label shown above the control. */
+  label?: string;
   context?: 'dark' | 'light';
   className?: string;
   /** Accessible label for the group */
@@ -33,10 +35,12 @@ export function SegmentedControl({
   options,
   value,
   onChange,
+  label,
   context = 'light',
   className,
   'aria-label': ariaLabel = 'Select period',
 }: SegmentedControlProps) {
+  const labelId = useId();
   const handleKeyDown = (e: KeyboardEvent<HTMLButtonElement>, index: number) => {
     let nextIndex: number | null = null;
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
@@ -50,11 +54,12 @@ export function SegmentedControl({
     }
   };
 
-  return (
+  const track = (
     <div
-      className={[styles.track, styles[context], className ?? ''].filter(Boolean).join(' ')}
+      className={[styles.track, styles[context], label ? '' : (className ?? '')].filter(Boolean).join(' ')}
       role="tablist"
-      aria-label={ariaLabel}
+      aria-label={label ? undefined : ariaLabel}
+      aria-labelledby={label ? labelId : undefined}
     >
       {options.map((opt, i) => {
         const isSelected = opt.value === value;
@@ -74,6 +79,15 @@ export function SegmentedControl({
           </button>
         );
       })}
+    </div>
+  );
+
+  if (!label) return track;
+
+  return (
+    <div className={[styles.field, className ?? ''].filter(Boolean).join(' ')}>
+      <span id={labelId} className={styles.label}>{label}</span>
+      {track}
     </div>
   );
 }

@@ -388,12 +388,14 @@ export declare interface SalaryCardProps {
     onValueChange?: (value: string) => void;
 }
 
-export declare function SegmentedControl({ options, value, onChange, context, className, 'aria-label': ariaLabel, }: SegmentedControlProps): JSX_2.Element;
+export declare function SegmentedControl({ options, value, onChange, label, context, className, 'aria-label': ariaLabel, }: SegmentedControlProps): JSX_2.Element;
 
 export declare interface SegmentedControlProps {
     options: SegmentOption[];
     value: string;
     onChange: (value: string) => void;
+    /** Optional text label shown above the control. */
+    label?: string;
     context?: 'dark' | 'light';
     className?: string;
     /** Accessible label for the group */
@@ -434,7 +436,7 @@ export declare interface SelectProps {
     'data-testid'?: string;
 }
 
-export declare function Sheet({ open: controlledOpen, onOpenChange, trigger, header, children, footer, showHandle, 'aria-label': ariaLabel, className, style, }: SheetProps): JSX_2.Element;
+export declare function Sheet({ open: controlledOpen, onOpenChange, trigger, header, children, footer, showHandle, overlay, 'aria-label': ariaLabel, className, style, }: SheetProps): JSX_2.Element;
 
 export declare function SheetHeader({ title, icon, onIconClick, iconLabel, className, }: SheetHeaderProps): JSX_2.Element;
 
@@ -490,6 +492,8 @@ export declare interface SheetProps {
     footer?: ReactNode;
     /** Show the drag handle. Default true. */
     showHandle?: boolean;
+    /** Render the scrim/overlay behind the sheet (Figma `hasOverlay`). Default true. */
+    overlay?: boolean;
     /** Accessible name for the dialog (a visually-hidden title). */
     'aria-label'?: string;
     /** Extra class on the content panel. */

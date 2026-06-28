@@ -35,6 +35,8 @@ export interface SheetProps {
   footer?: ReactNode;
   /** Show the drag handle. Default true. */
   showHandle?: boolean;
+  /** Render the scrim/overlay behind the sheet (Figma `hasOverlay`). Default true. */
+  overlay?: boolean;
   /** Accessible name for the dialog (a visually-hidden title). */
   'aria-label'?: string;
   /** Extra class on the content panel. */
@@ -59,6 +61,7 @@ export function Sheet({
   children,
   footer,
   showHandle = true,
+  overlay = true,
   'aria-label': ariaLabel = 'Sheet',
   className,
   style,
@@ -79,7 +82,7 @@ export function Sheet({
     <Drawer.Root open={open} onOpenChange={handleOpenChange}>
       {trigger ? <Drawer.Trigger asChild>{trigger}</Drawer.Trigger> : null}
       <Drawer.Portal>
-        <Drawer.Overlay className={styles.overlay} style={style} />
+        {overlay ? <Drawer.Overlay className={styles.overlay} style={style} /> : null}
         <Drawer.Content
           className={[styles.content, className ?? ''].filter(Boolean).join(' ')}
           style={style}

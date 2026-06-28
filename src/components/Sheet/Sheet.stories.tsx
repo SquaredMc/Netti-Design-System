@@ -62,6 +62,31 @@ export const Slots: Story = {
   },
 };
 
+/** `overlay={false}` — no scrim behind the sheet (Figma `hasOverlay=No`). */
+export const NoOverlay: Story = {
+  render: () => {
+    const [open, setOpen] = useState(true);
+    return (
+      <div style={{ padding: 40 }}>
+        <Sheet
+          open={open}
+          onOpenChange={setOpen}
+          overlay={false}
+          aria-label="No overlay"
+          trigger={<Button variant="pro" size="lg">Open sheet (no overlay)</Button>}
+          footer={
+            <Button variant="pro" size="lg" fullWidth onClick={() => setOpen(false)}>
+              Done
+            </Button>
+          }
+        >
+          <p style={paragraph}>No scrim — the content behind stays fully visible.</p>
+        </Sheet>
+      </div>
+    );
+  },
+};
+
 /** Re-themed via `--sheet-*` overrides — proving it's product-agnostic. */
 export const Retheme: Story = {
   render: () => {
