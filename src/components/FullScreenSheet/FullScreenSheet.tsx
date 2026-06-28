@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import './FullScreenSheet.css';
 
@@ -25,7 +25,12 @@ export function FullScreenSheet({
   onOpen,
   onClose,
 }: FullScreenSheetProps) {
+  // Fire onOpen/onClose only on real open-state transitions, not on mount,
+  // so an initially-closed sheet doesn't emit a phantom onClose.
+  const prevOpen = useRef(open);
   useEffect(() => {
+    if (open === prevOpen.current) return;
+    prevOpen.current = open;
     if (open) {
       onOpen?.();
     } else {

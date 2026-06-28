@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { Drawer } from 'vaul';
 import styles from './TakeHomePaySheet.module.css';
 
@@ -47,7 +47,14 @@ export function TakeHomePaySheet({
     else setInternalOpen(next);
   };
 
+  // Fire onOpen/onClose only on real open-state transitions — not on mount.
+  // An effect (rather than handleOpenChange) is used so programmatic open
+  // changes in controlled mode still notify; the ref guard skips the initial
+  // render so a closed sheet doesn't fire a phantom onClose.
+  const prevOpen = useRef(open);
   useEffect(() => {
+    if (open === prevOpen.current) return;
+    prevOpen.current = open;
     if (open) onOpen?.();
     else onClose?.();
   }, [open]);

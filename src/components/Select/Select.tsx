@@ -42,7 +42,7 @@ export function Select({ label, options, value, onChange, className, disabled, '
     if (!isOpen) return;
     const onScroll = () => calcPos();
     const onResize = () => calcPos();
-    window.addEventListener('scroll', onScroll, true);
+    window.addEventListener('scroll', onScroll, { passive: true, capture: true });
     window.addEventListener('resize', onResize);
     return () => { window.removeEventListener('scroll', onScroll, true); window.removeEventListener('resize', onResize); };
   }, [isOpen]);
