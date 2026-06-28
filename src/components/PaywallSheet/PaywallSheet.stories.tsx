@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../Button/Button';
 import { PaywallSheet } from './PaywallSheet';
@@ -20,6 +20,31 @@ const meta: Meta<typeof PaywallSheet> = {
 };
 export default meta;
 type Story = StoryObj<typeof PaywallSheet>;
+
+/**
+ * Dark mode. The sheet portals to `<body>`, so it can't inherit a local
+ * `data-theme` wrapper — global theming works by setting `data-theme="dark"`
+ * on `<html>`/`<body>` (which the portal does inherit). This story toggles it on
+ * `<html>` while mounted to mirror that real-world mechanism.
+ */
+export const ThemedDark: Story = {
+  render: () => {
+    useEffect(() => {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      return () => document.documentElement.removeAttribute('data-theme');
+    }, []);
+    return (
+      <PaywallSheet
+        open={true}
+        onOpenChange={() => {}}
+        priceFormatted="£9.99"
+        priceNote="one-off · no subscription"
+        onPurchase={() => {}}
+        onRestore={() => {}}
+      />
+    );
+  },
+};
 
 /** Triggered by a button — open and close the sheet interactively. */
 export const Default: Story = {

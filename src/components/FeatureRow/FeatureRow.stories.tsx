@@ -27,6 +27,18 @@ const meta: Meta<typeof FeatureRow> = {
 export default meta;
 type Story = StoryObj<typeof FeatureRow>;
 
+/** Theme-aware — inside a dark surface the title goes white and the tick/text adapt. */
+export const ThemedDark: Story = {
+  render: () => (
+    <div data-theme="dark" style={{ padding: 24, background: '#00021b' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, background: '#010045', padding: 20, borderRadius: 12 }}>
+        <FeatureRow title="Bonus & overtime modelling" description="Model any additional income" state="active" />
+        <FeatureRow title="Salary comparison" description="Coming soon" state="inactive" />
+      </div>
+    </div>
+  ),
+};
+
 /** Feature is included in Pro — green tick, full-colour title. */
 export const Active: Story = {};
 

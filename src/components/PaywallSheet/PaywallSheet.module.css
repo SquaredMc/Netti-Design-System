@@ -18,7 +18,8 @@
   align-items: center;
   gap: var(--netti-space-16);
   padding: 0 var(--netti-sheet-padding, 20px) calc(32px + env(safe-area-inset-bottom));
-  background-color: var(--netti-color-background-surface);
+  background-color: var(--netti-color-surface);
+  color: var(--netti-color-on-surface);
   border-top-left-radius:  var(--netti-sheet-border-radius, 32px);
   border-top-right-radius: var(--netti-sheet-border-radius, 32px);
   box-shadow: var(--netti-shadow-sheet);
@@ -35,7 +36,7 @@
   width: 36px;
   height: 5px;
   border-radius: var(--netti-radius-full);
-  background-color: var(--netti-color-border-strong);
+  background-color: var(--netti-color-surface-overlay);
   margin-top: 12px;
   flex-shrink: 0;
 }
@@ -47,7 +48,7 @@
   font-size: 24px;
   font-weight: var(--netti-font-weight-bold);
   line-height: 30px;
-  color: var(--netti-color-text-primary);
+  color: var(--netti-color-on-surface);
   text-align: center;
   margin: 0;
 }
@@ -59,7 +60,7 @@
   font-size: 15px;
   font-weight: var(--netti-font-weight-regular);
   line-height: 22px;
-  color: var(--netti-color-text-secondary);
+  color: var(--netti-color-on-surface-muted);
   text-align: center;
   margin: 0;
 }
@@ -73,7 +74,7 @@
   width: 100%;
   padding: var(--netti-space-12) var(--netti-space-16);
   border-radius: var(--netti-card-border-radius, 12px);
-  background-color: var(--netti-color-background-surface-raised);
+  background-color: var(--netti-color-surface-raised);
 }
 
 .calloutLabel {
@@ -82,7 +83,7 @@
   font-weight: var(--netti-font-weight-medium);
   letter-spacing: 0.4px;
   text-transform: uppercase;
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
 }
 
 .calloutRow {
@@ -96,11 +97,11 @@
   font-size: var(--netti-font-size-md);
   font-weight: var(--netti-font-weight-semibold);
   line-height: var(--netti-font-line-height-md);
-  color: var(--netti-color-text-primary);
+  color: var(--netti-color-on-surface);
 }
 
 .calloutArrow {
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
 }
 
 .calloutNet {
@@ -125,7 +126,7 @@
 .divider {
   width: 100%;
   height: 1px;
-  background-color: var(--netti-color-border-default);
+  background-color: var(--netti-color-divider);
 }
 
 /* ── Price row ───────────────────────────────────────────────────────────── */
@@ -142,7 +143,7 @@
   font-size: 28px;
   font-weight: var(--netti-font-weight-bold);
   line-height: 36px;
-  color: var(--netti-color-text-primary);
+  color: var(--netti-color-on-surface);
 }
 
 .priceNote {
@@ -150,7 +151,7 @@
   font-size: 13px;                  /* Figma: 13px caption */
   font-weight: var(--netti-font-weight-regular);
   line-height: 18px;
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
 }
 
 /* ── Restore link ────────────────────────────────────────────────────────── */
@@ -163,7 +164,7 @@
   font-size: 13px;                  /* Figma: 13px caption */
   font-weight: var(--netti-font-weight-regular);
   line-height: 18px;
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
   text-decoration: underline;
   cursor: pointer;
 }

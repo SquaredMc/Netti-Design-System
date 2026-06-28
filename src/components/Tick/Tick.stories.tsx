@@ -22,6 +22,16 @@ const meta: Meta<typeof Tick> = {
 export default meta;
 type Story = StoryObj<typeof Tick>;
 
+/** Theme-aware — the active tick keeps its brand green; the inactive tick adapts to the dark surface. */
+export const ThemedDark: Story = {
+  render: () => (
+    <div data-theme="dark" style={{ display: 'flex', gap: 16, padding: 24, background: '#00021b' }}>
+      <Tick state="active" aria-label="Included" />
+      <Tick state="inactive" aria-label="Coming soon" />
+    </div>
+  ),
+};
+
 /** Green fill — feature is included in the Pro plan. */
 export const Active: Story = { args: { state: 'active' } };
 

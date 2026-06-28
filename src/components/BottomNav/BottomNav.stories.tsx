@@ -55,8 +55,10 @@ const meta: Meta<typeof BottomNav> = {
     docs: {
       description: {
         component:
-          'Fixed bottom navigation bar. Active item uses `--netti-color-action-selected-border` (navy blue); ' +
-          'inactive items use `--netti-color-text-muted`. All items are `<button>` elements for keyboard access.',
+          'Fixed bottom navigation bar. The bar surface, divider and inactive labels bind to the themed ' +
+          'role tokens (`--netti-color-surface` / `--netti-color-divider` / `--netti-color-on-surface-faint`), ' +
+          'so the whole bar adapts to a surrounding `data-theme`. The active item keeps its fixed brand colour ' +
+          '(`--netti-color-action-selected-border`). All items are `<button>` elements for keyboard access.',
       },
     },
   },
@@ -88,4 +90,16 @@ export const ResultsActive: Story = {
 /** Settings tab active. */
 export const SettingsActive: Story = {
   render: () => <BottomNav items={NAV_ITEMS} activeId="settings" onChange={() => {}} />,
+};
+
+/** Theme-aware — inside a dark surface the bar goes navy with light labels. */
+export const ThemedDark: Story = {
+  render: () => {
+    const [activeId, setActiveId] = useState('home');
+    return (
+      <div data-theme="dark" style={{ background: '#00021b' }}>
+        <BottomNav items={NAV_ITEMS} activeId={activeId} onChange={setActiveId} />
+      </div>
+    );
+  },
 };

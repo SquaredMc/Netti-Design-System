@@ -4,8 +4,8 @@
   display: flex;
   align-items: stretch;
   height: 69px;                        /* Figma: Toolbar 69px */
-  background-color: var(--netti-color-background-surface);
-  border-top: 1px solid var(--netti-color-border-default);
+  background-color: var(--netti-color-surface);
+  border-top: 1px solid var(--netti-color-divider);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
@@ -20,7 +20,7 @@
   background: transparent;
   cursor: pointer;
   padding: var(--netti-space-12) var(--netti-space-4);   /* Figma: 12px vertical */
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
   transition: color 150ms ease;
   -webkit-tap-highlight-color: transparent;
 }

@@ -21,6 +21,6 @@
 }
 
 .inactive {
-  background-color: var(--netti-color-border-default);
-  color: var(--netti-color-text-muted);
+  background-color: var(--netti-color-surface-overlay);
+  color: var(--netti-color-on-surface-faint);
 }

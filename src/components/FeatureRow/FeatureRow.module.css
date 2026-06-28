@@ -20,11 +20,11 @@
   font-size: 15px;
   font-weight: var(--netti-font-weight-semibold);
   line-height: 22px;
-  color: var(--netti-color-text-primary);
+  color: var(--netti-color-on-surface);
 }
 
 .muted {
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
 }
 
 .description {
@@ -32,5 +32,5 @@
   font-size: 13px;                  /* Figma: 13px caption */
   font-weight: var(--netti-font-weight-regular);
   line-height: 18px;
-  color: var(--netti-color-text-muted);
+  color: var(--netti-color-on-surface-faint);
 }
