@@ -1,6 +1,6 @@
 {
   "name": "@netti/design-system",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Netti design system — tokens and React components for multi-product use",
   "type": "module",
   "main": "./dist/index.cjs",

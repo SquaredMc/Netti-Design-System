@@ -71,7 +71,7 @@
   font-weight: var(--netti-font-weight-semibold);
   line-height: 24px;
   color: var(--netti-color-on-surface);
-  text-align: right;
+  text-align: left;
   outline: none;
 }
 
