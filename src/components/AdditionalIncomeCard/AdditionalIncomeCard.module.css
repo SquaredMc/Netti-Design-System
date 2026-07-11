@@ -22,10 +22,11 @@
 .hasItems {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;                                         /* preserve full content height inside scrolling ancestors — see overflow:hidden note below */
   background-color: var(--netti-color-surface);          /* themed (dark = navy) */
   border: 1px solid var(--netti-color-surface-border);
   box-shadow: var(--netti-shadow-card);
-  overflow: hidden;
+  overflow: hidden;                                        /* clips header/rows to the rounded corners; combined with flex, this also zeroes the flexbox auto min-size, so flex-shrink:0 above is required or content silently clips instead of scrolling */
 }
 
 /* ── Header — "ADDITIONAL INCOME" + Ghost button inline ─────────────────── */
