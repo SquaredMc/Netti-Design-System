@@ -636,7 +636,7 @@ function rc({
       className: [me.card, a ?? ""].filter(Boolean).join(" "),
       "aria-label": "Your salary",
       children: [
-        /* @__PURE__ */ s("span", { className: me.eyebrow, children: "YOUR SALARY" }),
+        /* @__PURE__ */ s("span", { className: me.eyebrow, children: "Your Salary" }),
         o ? /* @__PURE__ */ C("div", { className: me.amountEdit, children: [
           /* @__PURE__ */ s("span", { className: me.amountPrefix, "aria-hidden": "true", children: "£" }),
           /* @__PURE__ */ s(
@@ -3314,7 +3314,7 @@ function uc({
     ] })
   ] });
 }
-const Al = "_header_ngch4_9", Ol = "_title_ngch4_17", kl = "_spacer_ngch4_28", $l = "_icon_ngch4_33", Ml = "_iconButton_ngch4_34", Ve = {
+const Al = "_header_cu1m2_9", Ol = "_title_cu1m2_17", kl = "_spacer_cu1m2_28", $l = "_icon_cu1m2_33", Ml = "_iconButton_cu1m2_34", Ve = {
   header: Al,
   title: Ol,
   spacer: kl,

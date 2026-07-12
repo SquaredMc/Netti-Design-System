@@ -22,7 +22,7 @@
   font-size: var(--netti-font-size-md-sb, 18px);
   font-weight: var(--netti-font-weight-semibold, 600);
   line-height: var(--netti-font-line-height-md, 24px);
-  color: var(--netti-color-on-surface, #0a0a0a);
+  color: var(--netti-color-text-secondary, #4a5565);
 }
 
 .spacer {

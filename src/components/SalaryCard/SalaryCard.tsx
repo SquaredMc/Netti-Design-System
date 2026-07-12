@@ -43,7 +43,7 @@ export function SalaryCard({
       className={[styles.card, className ?? ''].filter(Boolean).join(' ')}
       aria-label="Your salary"
     >
-      <span className={styles.eyebrow}>YOUR SALARY</span>
+      <span className={styles.eyebrow}>Your Salary</span>
 
       {editable ? (
         <div className={styles.amountEdit}>
