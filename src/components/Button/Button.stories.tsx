@@ -2,6 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
 import '../../tokens.css';
 
+/** Simple plus glyph for the icon-slot examples. */
+const PlusIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+    <path d="M9 3.75v10.5M3.75 9h10.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+  </svg>
+);
+
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
@@ -79,6 +86,27 @@ export const Ghost: Story = {
 /** No fill or border. Inline tertiary action (e.g. "Learn more"). */
 export const Text: Story = {
   args: { variant: 'text', children: 'Learn more' },
+};
+
+/** Leading icon in the start slot, before the label. */
+export const WithIcon: Story = {
+  args: { variant: 'pro', icon: <PlusIcon />, children: 'Add income' },
+};
+
+/**
+ * Icon-only — omit `children` and pass `icon` + `aria-label`. Renders a square
+ * button (42 px lg / 34 px md). Shown across sizes and variants.
+ */
+export const IconOnly: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <Button variant="pro"       size="lg" icon={<PlusIcon />} aria-label="Add income" />
+      <Button variant="primary"   size="lg" icon={<PlusIcon />} aria-label="Add income" />
+      <Button variant="secondary" size="lg" icon={<PlusIcon />} aria-label="Add income" />
+      <Button variant="pro"       size="md" icon={<PlusIcon />} aria-label="Add income" />
+      <Button variant="secondary" size="md" icon={<PlusIcon />} aria-label="Add income" />
+    </div>
+  ),
 };
 
 /** All five variants in one view. Ghost is wrapped in its required dark surface. */

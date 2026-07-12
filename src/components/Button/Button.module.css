@@ -5,6 +5,7 @@
    ──────────────────────────────────────────────────────────────────────────── */
 
 .button {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -112,6 +113,15 @@
 
 /* ── Modifiers ────────────────────────────────────────────────────────────── */
 .fullWidth { width: 100%; }
+
+/* ── Icon-only — square button, centred icon, no label ───────────────────── */
+.iconOnly {
+  padding-left: 0;
+  padding-right: 0;
+  gap: 0;
+}
+.iconOnly.sizeLg { width: 42px; }   /* square: matches 42px height */
+.iconOnly.sizeMd { width: 34px; }   /* square: matches 34px height */
 
 /* ── Focus ────────────────────────────────────────────────────────────────── */
 .button:focus-visible {

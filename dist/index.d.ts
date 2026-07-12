@@ -45,9 +45,14 @@ export declare function Button({ variant, size, icon, fullWidth, children, class
 export declare interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant;
     size?: ButtonSize;
+    /** Leading icon rendered in the start slot, before the label. */
     icon?: ReactNode;
     fullWidth?: boolean;
-    children: ReactNode;
+    /**
+     * Button label. Omit to render a square, icon-only button — in that case
+     * pass `icon` and an `aria-label` for an accessible name.
+     */
+    children?: ReactNode;
 }
 
 export declare type ButtonSize = 'lg' | 'md';
