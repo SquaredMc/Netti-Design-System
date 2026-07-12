@@ -29,7 +29,7 @@
   overflow: hidden;                                        /* clips header/rows to the rounded corners; combined with flex, this also zeroes the flexbox auto min-size, so flex-shrink:0 above is required or content silently clips instead of scrolling */
 }
 
-/* ── Header — "ADDITIONAL INCOME" + Ghost button inline ─────────────────── */
+/* ── Header — "Extra Income" + Ghost button inline ───────────────────────── */
 /* Figma: 12px vertical padding, screen/margin horizontal, space-between */
 .header {
   display: flex;
@@ -39,14 +39,13 @@
   gap: var(--netti-space-12);
 }
 
-/* "ADDITIONAL INCOME" eyebrow label */
+/* "Extra Income" label — shares the card-header style used across the app
+   (Your Salary, Take Home Pay, Tax settings, Info page section titles). */
 .eyebrow {
   font-family: var(--netti-font-family-sans);
-  font-size: 12px;                        /* Figma: h3/size */
-  font-weight: var(--netti-font-weight-medium);
-  line-height: 16px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  font-size: var(--netti-font-size-md-sb);
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: var(--netti-font-line-height-md);
   color: var(--netti-color-on-surface-muted);   /* themed (dark = white 70%) */
   flex: 1;
   min-width: 0;

@@ -148,7 +148,7 @@ declare interface FullScreenSheetProps {
  *   Full-width Ghost button fills the card.
  *
  * Has-items state:
- *   Header row: "ADDITIONAL INCOME" label + "Add income" Ghost button inline (right).
+ *   Header row: "Extra Income" label + "Add income" Ghost button inline (right).
  *   Income rows below — no remove buttons in this view.
  *   Tapping a row (onItemClick) opens its edit screen, where removal happens.
  *

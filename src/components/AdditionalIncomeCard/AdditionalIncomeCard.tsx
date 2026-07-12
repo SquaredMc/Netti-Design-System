@@ -11,7 +11,7 @@ import styles from './AdditionalIncomeCard.module.css';
  *   Full-width Ghost button fills the card.
  *
  * Has-items state:
- *   Header row: "ADDITIONAL INCOME" label + "Add income" Ghost button inline (right).
+ *   Header row: "Extra Income" label + "Add income" Ghost button inline (right).
  *   Income rows below — no remove buttons in this view.
  *   Tapping a row (onItemClick) opens its edit screen, where removal happens.
  *
@@ -57,7 +57,7 @@ export function AdditionalIncomeCard({
         <>
           {/* Header: label + Add income button inline */}
           <div className={styles.header}>
-            <span className={styles.eyebrow}>ADDITIONAL INCOME</span>
+            <span className={styles.eyebrow}>Extra Income</span>
             <Button
               variant="ghost"
               size="md"

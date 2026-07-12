@@ -22,13 +22,13 @@
 }
 
 /* ── Eyebrow ─────────────────────────────────────────────────────────────── */
+/* Shares the card-header style used across the app (Take Home Pay, Extra
+   Income, Tax settings, and Info page section titles): 18/24 Semibold. */
 .eyebrow {
   font-family: var(--netti-font-family-sans);
-  font-size: 12px;                /* Figma h3/size */
-  font-weight: var(--netti-font-weight-medium);
-  line-height: 16px;              /* Figma h3/line-height */
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  font-size: var(--netti-font-size-md-sb);
+  font-weight: var(--netti-font-weight-semibold);
+  line-height: var(--netti-font-line-height-md);
   color: var(--netti-color-on-surface-muted);   /* themed (dark = white 70%) */
   width: 100%;                    /* Figma: w-full, text centred */
   text-align: center;
