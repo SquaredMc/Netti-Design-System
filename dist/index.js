@@ -733,8 +733,8 @@ function ac({
             size: "lg",
             fullWidth: !0,
             onClick: t,
-            "aria-label": "Add additional income",
-            children: "+ Add additional income"
+            "aria-label": "Add extra income",
+            children: "+ Add extra income"
           }
         )
       )

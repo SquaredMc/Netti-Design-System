@@ -94,9 +94,9 @@ export function AdditionalIncomeCard({
           size="lg"
           fullWidth
           onClick={onAdd}
-          aria-label="Add additional income"
+          aria-label="Add extra income"
         >
-          + Add additional income
+          + Add extra income
         </Button>
       )}
     </div>
