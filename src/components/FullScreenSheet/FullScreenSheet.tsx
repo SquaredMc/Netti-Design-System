@@ -38,37 +38,10 @@ export function FullScreenSheet({
     }
   }, [open]);
 
-  // Keyboard avoidance. Capacitor's Keyboard.resize is set to 'none', so
-  // WKWebView never shrinks the layout viewport when the keyboard shows —
-  // it just overlays it, hiding this sheet's fixed footer. window.visualViewport
-  // does shrink/pan live even with native resize disabled, so we track it
-  // directly and resize+reposition the sheet to match the visible area,
-  // pushing the footer up above the keyboard instead of letting it cover it.
-  const rootRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!open) return;
-    const vv = window.visualViewport;
-    const root = rootRef.current;
-    if (!vv || !root) return;
-    const applyViewport = () => {
-      root.style.height = `${vv.height}px`;
-      root.style.top = `${vv.offsetTop}px`;
-    };
-    applyViewport();
-    vv.addEventListener('resize', applyViewport);
-    vv.addEventListener('scroll', applyViewport);
-    return () => {
-      vv.removeEventListener('resize', applyViewport);
-      vv.removeEventListener('scroll', applyViewport);
-      root.style.height = '';
-      root.style.top = '';
-    };
-  }, [open]);
-
   if (!open) return null;
 
   return createPortal(
-    <div className="fss-root" ref={rootRef}>
+    <div className="fss-root">
       <div className="fss-title-bar">
         {onBack ? (
           <button type="button" className="fss-nav-btn" onClick={onBack} aria-label="Back">
