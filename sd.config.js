@@ -1,5 +1,6 @@
 import StyleDictionary from 'style-dictionary';
 import { readFileSync, writeFileSync, rmSync } from 'node:fs';
+import { swiftFormat } from './sd.swift.js';
 
 const PREFIX = 'netti';
 const CSS = 'src/tokens.css';
@@ -61,3 +62,35 @@ const darkCss = readFileSync(DARK_TMP, 'utf8');
 const block = darkCss.slice(darkCss.indexOf('[data-theme')).trim();
 writeFileSync(CSS, `${readFileSync(CSS, 'utf8').trimEnd()}\n\n${block}\n`);
 rmSync(DARK_TMP);
+
+// 4. Swift — every token as Swift constants for the native iOS app (src/NettiTokens.swift,
+//    copied to dist/swift/ by `npm run build`). Values stay as authored (only the name is transformed);
+//    the dark theme's role tokens are resolved by a second dictionary and passed in.
+const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+StyleDictionary.registerFormat(swiftFormat);
+const darkSwift = new StyleDictionary({
+  source: ['src/tokens/color.json', 'src/tokens/theme/dark.json'],
+  platforms: { swift: { transforms: ['name/camel'] } },
+});
+const { allTokens: darkAll } = await darkSwift.getPlatformTokens('swift');
+const swift = new StyleDictionary({
+  source: ['src/tokens/*.json', 'src/tokens/theme/light.json'],
+  platforms: {
+    swift: {
+      transforms: ['name/camel'],
+      buildPath: 'src/',
+      files: [
+        {
+          destination: 'NettiTokens.swift',
+          format: 'netti/swift',
+          options: {
+            packageName: pkg.name,
+            packageVersion: pkg.version,
+            darkTokens: darkAll.filter((t) => String(t.filePath).replace(/\\/g, '/').includes('theme/dark')),
+          },
+        },
+      ],
+    },
+  },
+});
+await swift.buildAllPlatforms();

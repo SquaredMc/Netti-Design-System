@@ -1,6 +1,6 @@
 {
   "name": "@netti/design-system",
-  "version": "0.11.3",
+  "version": "0.12.0",
   "description": "Netti design system — tokens and React components for multi-product use",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -13,7 +13,9 @@
       "require": "./dist/index.cjs"
     },
     "./tokens.css": "./dist/tokens.css",
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/style.css",
+    "./tokens/*": "./dist/tokens/*",
+    "./swift/*": "./dist/swift/*"
   },
   "files": [
     "dist"
@@ -22,7 +24,7 @@
     "**/*.css"
   ],
   "scripts": {
-    "build": "npm run build:tokens && vite build && cp src/tokens.css dist/tokens.css",
+    "build": "npm run build:tokens && vite build && cp src/tokens.css dist/tokens.css && cp -R src/tokens dist/tokens && mkdir -p dist/swift && cp src/NettiTokens.swift dist/swift/NettiTokens.swift",
     "build:tokens": "node sd.config.js",
     "dev": "storybook dev -p 6006",
     "storybook": "storybook dev -p 6006",

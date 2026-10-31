@@ -1,0 +1,108 @@
+{
+  "color": {
+    "navy": {
+      "900": {
+        "$value": "#00021B",
+        "$type": "color",
+        "$description": "Deepest navy — darkest backgrounds"
+      },
+      "800": {
+        "$value": "#010045",
+        "$type": "color",
+        "$description": "Primary dark — header, primary buttons"
+      },
+      "700": {
+        "$value": "#0E1868",
+        "$type": "color",
+        "$description": "Mid navy — toggle bar bg on dark cards"
+      },
+      "600": {
+        "$value": "#07205E",
+        "$type": "color",
+        "$description": "Dark card border"
+      }
+    },
+    "cyan": {
+      "400": {
+        "$value": "#26D4EB",
+        "$type": "color",
+        "$description": "Primary accent / highlight"
+      },
+      "200": {
+        "$value": "#A8EFF7",
+        "$type": "color",
+        "$description": "Cyan tint — light accent"
+      },
+      "50": {
+        "$value": "#E5FAFD",
+        "$type": "color",
+        "$description": "Palest cyan — confirmation card tint. Code extension: a raw hex in the Figma DS (ConfirmationCard 64:18); Color/alert/Highlight in the app file"
+      }
+    },
+    "blue": {
+      "800": {
+        "$value": "#01236E",
+        "$type": "color",
+        "$description": "Selected / focus state"
+      }
+    },
+    "green": {
+      "700": {
+        "$value": "#007A33",
+        "$type": "color",
+        "$description": "Positive text — 5.48:1 on white, 4.98:1 on grey/50 (WCAG AA small text)"
+      },
+      "500": {
+        "$value": "#00A63E",
+        "$type": "color"
+      },
+      "100": {
+        "$value": "#DCFCE7",
+        "$type": "color"
+      }
+    },
+    "red": {
+      "600": {
+        "$value": "#E1000A",
+        "$type": "color",
+        "$description": "Errors, destructive — code extension, not in the Figma DS"
+      },
+      "100": {
+        "$value": "#FEE2E2",
+        "$type": "color",
+        "$description": "Error background — code extension, not in the Figma DS"
+      }
+    },
+    "grey": {
+      "950": {
+        "$value": "#0A0A0A",
+        "$type": "color"
+      },
+      "700": {
+        "$value": "#4A5565",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#6B7280",
+        "$type": "color",
+        "$description": "Muted text — WCAG AA ≥ 4.5:1 on white"
+      },
+      "200": {
+        "$value": "#EEEEEE",
+        "$type": "color"
+      },
+      "100": {
+        "$value": "#E5E7EB",
+        "$type": "color"
+      },
+      "50": {
+        "$value": "#F3F4F6",
+        "$type": "color"
+      }
+    },
+    "white": {
+      "$value": "#FFFFFF",
+      "$type": "color"
+    }
+  }
+}

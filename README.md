@@ -53,6 +53,16 @@ Primitives  →  Semantic  →  Component
 
 Primitive values stay unchanged. No component code needs to change.
 
+### Token files and Swift
+
+The package also ships the token source and a Swift version of it, both built by `sd.config.js`:
+
+- `dist/tokens/*.json`: the DTCG token files (`@netti/design-system/tokens/color.json`).
+- `dist/swift/NettiTokens.swift`: every token as Swift constants for the native iOS app
+  (`PrimitiveColor`, `SemanticColor`, `ThemeColor`, `Space`, `SemanticSpacing`, `Radius`,
+  `Shadow`, `Elevate`, `FontFamily`, `FontWeight`, `FontSize`, `LineHeight`, `TypeStyle`).
+  Plain Swift, no imports. The app copies it in; it is never edited by hand.
+
 ## Component overview
 
 | Component | Description |
