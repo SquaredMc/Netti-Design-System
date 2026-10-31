@@ -29,7 +29,6 @@ export const ColorBackgroundCardBorder = "#07205e"; // Border on dark cards
 export const ColorBackgroundSurface = "#ffffff"; // Primary surface — Bottom Sheet, inputs, white cards
 export const ColorBackgroundSurfaceRaised = "#f3f4f6"; // Raised surface — segmented control bg, callout boxes
 export const ColorBackgroundHighlight = "#e5fafd"; // Highlighted surface — confirmation card
-export const ColorBackgroundApp = "#e5e7eb"; // App background behind the Settings cards. Code extension: the web app reads --netti-color-grey-100 directly; Color/Surface/3 in the app Figma file
 export const ColorTextPrimary = "#0a0a0a"; // Primary body text on light surfaces
 export const ColorTextSecondary = "#4a5565"; // Secondary labels, captions
 export const ColorTextMuted = "#6b7280"; // Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white.

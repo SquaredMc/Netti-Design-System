@@ -30,7 +30,6 @@
   --netti-color-background-surface: #ffffff; /** Primary surface — Bottom Sheet, inputs, white cards */
   --netti-color-background-surface-raised: #f3f4f6; /** Raised surface — segmented control bg, callout boxes */
   --netti-color-background-highlight: #e5fafd; /** Highlighted surface — confirmation card */
-  --netti-color-background-app: #e5e7eb; /** App background behind the Settings cards. Code extension: the web app reads --netti-color-grey-100 directly; Color/Surface/3 in the app Figma file */
   --netti-color-text-primary: #0a0a0a; /** Primary body text on light surfaces */
   --netti-color-text-secondary: #4a5565; /** Secondary labels, captions */
   --netti-color-text-muted: #6b7280; /** Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white. */
