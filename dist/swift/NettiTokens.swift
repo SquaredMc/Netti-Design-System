@@ -119,6 +119,8 @@ public enum SemanticColor {
     public static let backgroundSurfaceRaised: TokenColor = PrimitiveColor.grey50
     /// Highlighted surface — confirmation card
     public static let backgroundHighlight: TokenColor = PrimitiveColor.cyan50
+    /// App background behind the Settings cards. Code extension: the web app reads --netti-color-grey-100 directly; Color/Surface/3 in the app Figma file
+    public static let backgroundApp: TokenColor = PrimitiveColor.grey100
     /// Primary body text on light surfaces
     public static let textPrimary: TokenColor = PrimitiveColor.grey950
     /// Secondary labels, captions
@@ -169,6 +171,7 @@ public enum SemanticColor {
         ("color.background.surface", backgroundSurface),
         ("color.background.surfaceRaised", backgroundSurfaceRaised),
         ("color.background.highlight", backgroundHighlight),
+        ("color.background.app", backgroundApp),
         ("color.text.primary", textPrimary),
         ("color.text.secondary", textSecondary),
         ("color.text.muted", textMuted),
