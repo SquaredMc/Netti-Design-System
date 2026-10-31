@@ -2,8 +2,8 @@
    Figma spec (64:18): cyan-tinted card, cyan border, 72px tall, 16px padding,
    8px radius. Entered amount on the left, annualised value on the right.
 
-   NOTE: the #E5FAFD tint is a raw hex in Figma (not a variable). It should be
-   tokenised in the DS file — flagged in handoff. Using the literal until then.
+   The #E5FAFD tint is a raw hex in the Figma DS (not a variable); here it is the
+   background/highlight token (color/cyan/50, a code extension).
    ──────────────────────────────────────────────────────────────────────────── */
 
 .card {
@@ -13,7 +13,7 @@
   height: 72px;
   padding: var(--netti-space-16);
   border-radius: var(--netti-button-border-radius-sm, 8px);
-  background-color: #e5fafd;                 /* Figma: raw cyan tint (untokenised) */
+  background-color: var(--netti-color-background-highlight);
   border: 1px solid var(--netti-color-action-secondary-border);
   color: var(--netti-color-text-secondary);
 }

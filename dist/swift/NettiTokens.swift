@@ -53,6 +53,8 @@ public enum PrimitiveColor {
     public static let navy800: TokenColor = TokenColor(rgb: 0x010045)
     /// Deepest navy — darkest backgrounds
     public static let navy900: TokenColor = TokenColor(rgb: 0x00021B)
+    /// Palest cyan — confirmation card tint. Code extension: a raw hex in the Figma DS (ConfirmationCard 64:18); Color/alert/Highlight in the app file
+    public static let cyan50: TokenColor = TokenColor(rgb: 0xE5FAFD)
     /// Cyan tint — light accent
     public static let cyan200: TokenColor = TokenColor(rgb: 0xA8EFF7)
     /// Primary accent / highlight
@@ -82,6 +84,7 @@ public enum PrimitiveColor {
         ("color.navy.700", navy700),
         ("color.navy.800", navy800),
         ("color.navy.900", navy900),
+        ("color.cyan.50", cyan50),
         ("color.cyan.200", cyan200),
         ("color.cyan.400", cyan400),
         ("color.blue.800", blue800),
@@ -114,6 +117,8 @@ public enum SemanticColor {
     public static let backgroundSurface: TokenColor = PrimitiveColor.white
     /// Raised surface — segmented control bg, callout boxes
     public static let backgroundSurfaceRaised: TokenColor = PrimitiveColor.grey50
+    /// Highlighted surface — confirmation card
+    public static let backgroundHighlight: TokenColor = PrimitiveColor.cyan50
     /// Primary body text on light surfaces
     public static let textPrimary: TokenColor = PrimitiveColor.grey950
     /// Secondary labels, captions
@@ -163,6 +168,7 @@ public enum SemanticColor {
         ("color.background.cardBorder", backgroundCardBorder),
         ("color.background.surface", backgroundSurface),
         ("color.background.surfaceRaised", backgroundSurfaceRaised),
+        ("color.background.highlight", backgroundHighlight),
         ("color.text.primary", textPrimary),
         ("color.text.secondary", textSecondary),
         ("color.text.muted", textMuted),

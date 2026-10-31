@@ -7,6 +7,7 @@
   --netti-color-navy-700: #0e1868; /** Mid navy — toggle bar bg on dark cards */
   --netti-color-navy-800: #010045; /** Primary dark — header, primary buttons */
   --netti-color-navy-900: #00021b; /** Deepest navy — darkest backgrounds */
+  --netti-color-cyan-50: #e5fafd; /** Palest cyan — confirmation card tint. Code extension: a raw hex in the Figma DS (ConfirmationCard 64:18); Color/alert/Highlight in the app file */
   --netti-color-cyan-200: #a8eff7; /** Cyan tint — light accent */
   --netti-color-cyan-400: #26d4eb; /** Primary accent / highlight */
   --netti-color-blue-800: #01236e; /** Selected / focus state */
@@ -28,6 +29,7 @@
   --netti-color-background-card-border: #07205e; /** Border on dark cards */
   --netti-color-background-surface: #ffffff; /** Primary surface — Bottom Sheet, inputs, white cards */
   --netti-color-background-surface-raised: #f3f4f6; /** Raised surface — segmented control bg, callout boxes */
+  --netti-color-background-highlight: #e5fafd; /** Highlighted surface — confirmation card */
   --netti-color-text-primary: #0a0a0a; /** Primary body text on light surfaces */
   --netti-color-text-secondary: #4a5565; /** Secondary labels, captions */
   --netti-color-text-muted: #6b7280; /** Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white. */

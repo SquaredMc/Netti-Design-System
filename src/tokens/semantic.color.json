@@ -30,6 +30,11 @@
         "$value": "{color.grey.50}",
         "$type": "color",
         "$description": "Raised surface — segmented control bg, callout boxes"
+      },
+      "highlight": {
+        "$value": "{color.cyan.50}",
+        "$type": "color",
+        "$description": "Highlighted surface — confirmation card"
       }
     },
     "text": {

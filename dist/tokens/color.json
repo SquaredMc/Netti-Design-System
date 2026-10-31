@@ -32,6 +32,11 @@
         "$value": "#A8EFF7",
         "$type": "color",
         "$description": "Cyan tint — light accent"
+      },
+      "50": {
+        "$value": "#E5FAFD",
+        "$type": "color",
+        "$description": "Palest cyan — confirmation card tint. Code extension: a raw hex in the Figma DS (ConfirmationCard 64:18); Color/alert/Highlight in the app file"
       }
     },
     "blue": {
