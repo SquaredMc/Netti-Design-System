@@ -1,0 +1,44 @@
+{
+  "color": {
+    "surface": {
+      "$value": "{color.navy.800}",
+      "$type": "color",
+      "$description": "Themed card/page surface (dark mode)"
+    },
+    "surfaceRaised": {
+      "$value": "{color.navy.700}",
+      "$type": "color",
+      "$description": "Themed raised surface — toggle bar, insets (dark mode)"
+    },
+    "surfaceBorder": {
+      "$value": "{color.navy.600}",
+      "$type": "color",
+      "$description": "Themed border on a surface (dark mode)"
+    },
+    "onSurface": {
+      "$value": "{color.white}",
+      "$type": "color",
+      "$description": "Themed primary text on a surface (dark mode)"
+    },
+    "onSurfaceMuted": {
+      "$value": "rgba(255, 255, 255, 0.7)",
+      "$type": "color",
+      "$description": "Themed secondary text on a surface (dark mode)"
+    },
+    "onSurfaceFaint": {
+      "$value": "rgba(255, 255, 255, 0.5)",
+      "$type": "color",
+      "$description": "Themed tertiary / hint text on a surface (dark mode)"
+    },
+    "divider": {
+      "$value": "rgba(255, 255, 255, 0.1)",
+      "$type": "color",
+      "$description": "Themed divider/separator on a surface (dark mode)"
+    },
+    "surfaceOverlay": {
+      "$value": "rgba(255, 255, 255, 0.12)",
+      "$type": "color",
+      "$description": "Themed subtle fill on a surface — chips, hover, remove (dark mode)"
+    }
+  }
+}

@@ -54,7 +54,7 @@
         "$description": "Text on dark card surfaces"
       },
       "positive": {
-        "$value": "{color.green.500}",
+        "$value": "{color.green.700}",
         "$type": "color",
         "$description": "Take-home pay, positive amounts, success"
       },
@@ -120,7 +120,7 @@
     },
     "status": {
       "positiveText": {
-        "$value": "{color.green.500}",
+        "$value": "{color.green.700}",
         "$type": "color",
         "$description": "Success text and icons"
       },

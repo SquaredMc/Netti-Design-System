@@ -12,6 +12,7 @@
   --netti-color-blue-800: #01236e; /** Selected / focus state */
   --netti-color-green-100: #dcfce7;
   --netti-color-green-500: #00a63e;
+  --netti-color-green-700: #007a33; /** Positive text — 5.48:1 on white, 4.98:1 on grey/50 (WCAG AA small text) */
   --netti-color-red-100: #fee2e2; /** Error background — code extension, not in the Figma DS */
   --netti-color-red-600: #e1000a; /** Errors, destructive — code extension, not in the Figma DS */
   --netti-color-grey-50: #f3f4f6;
@@ -31,7 +32,7 @@
   --netti-color-text-secondary: #4a5565; /** Secondary labels, captions */
   --netti-color-text-muted: #6b7280; /** Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white. */
   --netti-color-text-inverse: #ffffff; /** Text on dark card surfaces */
-  --netti-color-text-positive: #00a63e; /** Take-home pay, positive amounts, success */
+  --netti-color-text-positive: #007a33; /** Take-home pay, positive amounts, success */
   --netti-color-text-negative: #e1000a; /** Errors, destructive actions, negative amounts */
   --netti-color-text-brand: #010045; /** Brand text — used on cyan backgrounds (Pro button) */
   --netti-color-action-primary-bg: #26d4eb; /** Pro / primary CTA fill — cyan */
@@ -43,7 +44,7 @@
   --netti-color-border-strong: #e5e7eb; /** Stronger dividers, grabber handle */
   --netti-color-border-inverse: #07205e; /** Border on dark card surfaces */
   --netti-color-border-focus: #26d4eb; /** Focus ring — accessibility */
-  --netti-color-status-positive-text: #00a63e; /** Success text and icons */
+  --netti-color-status-positive-text: #007a33; /** Success text and icons */
   --netti-color-status-positive-bg: #dcfce7; /** Success background — Tick active state */
   --netti-color-status-negative-text: #e1000a; /** Error text and icons */
   --netti-color-status-negative-bg: #fee2e2; /** Error background */

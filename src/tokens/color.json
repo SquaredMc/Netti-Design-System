@@ -42,6 +42,11 @@
       }
     },
     "green": {
+      "700": {
+        "$value": "#007A33",
+        "$type": "color",
+        "$description": "Positive text — 5.48:1 on white, 4.98:1 on grey/50 (WCAG AA small text)"
+      },
       "500": {
         "$value": "#00A63E",
         "$type": "color"

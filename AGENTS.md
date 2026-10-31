@@ -14,8 +14,8 @@ Figma wins (verify the *live variable*, not stale documentation — see
 
 ```bash
 npm install            # install deps
-npm run build          # build:tokens -> vite build -> copy tokens.css to dist
-npm run build:tokens   # regenerate src/tokens.css + src/tokens.ts from src/tokens/*.json
+npm run build          # build:tokens -> vite build -> copy tokens.css, token JSON and Swift to dist
+npm run build:tokens   # regenerate src/tokens.css, src/tokens.ts, src/NettiTokens.swift from src/tokens/*.json
 npm run storybook      # dev Storybook on http://localhost:6006
 npm run type-check     # tsc --noEmit
 ```
@@ -36,18 +36,22 @@ src/
     spacing.json radius.json shadow.json typography.json
   tokens.css          # GENERATED — do not edit by hand (style-dictionary output)
   tokens.ts           # GENERATED — do not edit by hand
+  NettiTokens.swift   # GENERATED — Swift for the native iOS app (format in sd.swift.js)
   components/<Name>/
     <Name>.tsx          # component + exported prop types
     <Name>.module.css   # styles — reference --netti-* CSS variables only
     <Name>.stories.tsx  # Storybook stories
   index.ts            # public barrel — every component + its prop types re-exported
 sd.config.js          # style-dictionary config (prefix: netti)
+sd.swift.js           # the netti/swift format used by sd.config.js
 dist/                 # GENERATED build output (committed; consumers install from git)
 ```
 
 Token pipeline: `src/tokens/*.json` → `sd.config.js` (style-dictionary) →
-`src/tokens.css` (`--netti-*` custom properties) + `src/tokens.ts`. `vite build` then
-emits `dist/`.
+`src/tokens.css` (`--netti-*` custom properties) + `src/tokens.ts` + `src/NettiTokens.swift`.
+`vite build` then emits `dist/`, and the build copies in `tokens.css`, the token JSON
+(`dist/tokens/`) and the Swift (`dist/swift/`). A token the Swift format can't place stops
+the build: add it to a group in `sd.swift.js`.
 
 ---
 

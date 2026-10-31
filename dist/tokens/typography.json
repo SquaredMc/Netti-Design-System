@@ -1,0 +1,210 @@
+{
+  "font": {
+    "family": {
+      "sans": {
+        "$value": [
+          "Inter",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Arial",
+          "sans-serif"
+        ],
+        "$type": "fontFamily",
+        "$description": "Primary UI typeface"
+      },
+      "mono": {
+        "$value": [
+          "JetBrains Mono",
+          "Menlo",
+          "monospace"
+        ],
+        "$type": "fontFamily",
+        "$description": "Monospace — code, numeric data"
+      }
+    },
+    "weight": {
+      "regular": {
+        "$value": 400,
+        "$type": "fontWeight"
+      },
+      "medium": {
+        "$value": 500,
+        "$type": "fontWeight"
+      },
+      "semibold": {
+        "$value": 600,
+        "$type": "fontWeight"
+      },
+      "bold": {
+        "$value": 700,
+        "$type": "fontWeight"
+      }
+    },
+    "size": {
+      "h1": {
+        "$value": "36px",
+        "$type": "dimension",
+        "$description": "Display — 36/40 Bold"
+      },
+      "h2": {
+        "$value": "28px",
+        "$type": "dimension",
+        "$description": "H2 — 28/36 Bold"
+      },
+      "h3": {
+        "$value": "22px",
+        "$type": "dimension",
+        "$description": "H3 — 22/28 Semi Bold"
+      },
+      "lg": {
+        "$value": "24px",
+        "$type": "dimension",
+        "$description": "Large summary figure — 24/32 (totals)"
+      },
+      "mdSb": {
+        "$value": "18px",
+        "$type": "dimension",
+        "$description": "Body LG — 18/26 Semi Bold"
+      },
+      "md": {
+        "$value": "16px",
+        "$type": "dimension",
+        "$description": "Body — 16/24 Regular"
+      },
+      "sm": {
+        "$value": "14px",
+        "$type": "dimension",
+        "$description": "Label — 14/20 Semi Bold"
+      },
+      "caption": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$description": "Caption / eyebrow — 12/16 Medium"
+      }
+    },
+    "lineHeight": {
+      "h1": {
+        "$value": "40px",
+        "$type": "dimension"
+      },
+      "h2": {
+        "$value": "36px",
+        "$type": "dimension"
+      },
+      "h3": {
+        "$value": "28px",
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": "32px",
+        "$type": "dimension"
+      },
+      "mdSb": {
+        "$value": "26px",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "24px",
+        "$type": "dimension"
+      },
+      "sm": {
+        "$value": "24px",
+        "$type": "dimension"
+      },
+      "smSb": {
+        "$value": "20px",
+        "$type": "dimension"
+      },
+      "caption": {
+        "$value": "16px",
+        "$type": "dimension"
+      }
+    }
+  },
+  "textStyle": {
+    "h1": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.h1}",
+        "fontWeight": "{font.weight.bold}",
+        "lineHeight": "{font.lineHeight.h1}"
+      },
+      "$type": "typography",
+      "$description": "Display — 36/40 Bold"
+    },
+    "h2": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.h2}",
+        "fontWeight": "{font.weight.bold}",
+        "lineHeight": "{font.lineHeight.h2}"
+      },
+      "$type": "typography",
+      "$description": "H2 — 28/36 Bold"
+    },
+    "h3": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.h3}",
+        "fontWeight": "{font.weight.semibold}",
+        "lineHeight": "{font.lineHeight.h3}"
+      },
+      "$type": "typography",
+      "$description": "H3 — 22/28 Semi Bold"
+    },
+    "bodyLg": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.mdSb}",
+        "fontWeight": "{font.weight.semibold}",
+        "lineHeight": "{font.lineHeight.mdSb}"
+      },
+      "$type": "typography",
+      "$description": "Body LG — 18/26 Semi Bold"
+    },
+    "bodyMd": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.md}",
+        "fontWeight": "{font.weight.regular}",
+        "lineHeight": "{font.lineHeight.md}"
+      },
+      "$type": "typography",
+      "$description": "Body — 16/24 Regular"
+    },
+    "bodySm": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.sm}",
+        "fontWeight": "{font.weight.regular}",
+        "lineHeight": "{font.lineHeight.smSb}"
+      },
+      "$type": "typography",
+      "$description": "Small body — 14/20 Regular"
+    },
+    "labelSm": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.sm}",
+        "fontWeight": "{font.weight.semibold}",
+        "lineHeight": "{font.lineHeight.smSb}"
+      },
+      "$type": "typography",
+      "$description": "Label — 14/20 Semi Bold"
+    },
+    "caption": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.caption}",
+        "fontWeight": "{font.weight.medium}",
+        "lineHeight": "{font.lineHeight.caption}",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.5px"
+      },
+      "$type": "typography",
+      "$description": "Caption / eyebrow — 12/16 Medium, uppercase"
+    }
+  }
+}

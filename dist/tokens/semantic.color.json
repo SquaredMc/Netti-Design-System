@@ -1,0 +1,144 @@
+{
+  "color": {
+    "background": {
+      "screen": {
+        "$value": "{color.navy.900}",
+        "$type": "color",
+        "$description": "Full-screen gradient base — page background"
+      },
+      "card": {
+        "$value": "{color.navy.800}",
+        "$type": "color",
+        "$description": "Dark card surface — Salary Card, Additional Income Card"
+      },
+      "cardSubtle": {
+        "$value": "{color.navy.700}",
+        "$type": "color",
+        "$description": "Toggle bar inside dark cards"
+      },
+      "cardBorder": {
+        "$value": "{color.navy.600}",
+        "$type": "color",
+        "$description": "Border on dark cards"
+      },
+      "surface": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Primary surface — Bottom Sheet, inputs, white cards"
+      },
+      "surfaceRaised": {
+        "$value": "{color.grey.50}",
+        "$type": "color",
+        "$description": "Raised surface — segmented control bg, callout boxes"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{color.grey.950}",
+        "$type": "color",
+        "$description": "Primary body text on light surfaces"
+      },
+      "secondary": {
+        "$value": "{color.grey.700}",
+        "$type": "color",
+        "$description": "Secondary labels, captions"
+      },
+      "muted": {
+        "$value": "{color.grey.500}",
+        "$type": "color",
+        "$description": "Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white."
+      },
+      "inverse": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Text on dark card surfaces"
+      },
+      "positive": {
+        "$value": "{color.green.700}",
+        "$type": "color",
+        "$description": "Take-home pay, positive amounts, success"
+      },
+      "negative": {
+        "$value": "{color.red.600}",
+        "$type": "color",
+        "$description": "Errors, destructive actions, negative amounts"
+      },
+      "brand": {
+        "$value": "{color.navy.800}",
+        "$type": "color",
+        "$description": "Brand text — used on cyan backgrounds (Pro button)"
+      }
+    },
+    "action": {
+      "primaryBg": {
+        "$value": "{color.cyan.400}",
+        "$type": "color",
+        "$description": "Pro / primary CTA fill — cyan"
+      },
+      "primaryText": {
+        "$value": "{color.navy.800}",
+        "$type": "color",
+        "$description": "Text on cyan CTA — navy"
+      },
+      "secondaryBorder": {
+        "$value": "{color.cyan.400}",
+        "$type": "color",
+        "$description": "Outlined secondary button border"
+      },
+      "selectedBorder": {
+        "$value": "{color.blue.800}",
+        "$type": "color",
+        "$description": "Selected toggle pill border, focus rings"
+      },
+      "selectedBg": {
+        "$value": "{color.white}",
+        "$type": "color",
+        "$description": "Selected toggle pill fill"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.grey.200}",
+        "$type": "color",
+        "$description": "Dividers, card outlines on light surfaces"
+      },
+      "strong": {
+        "$value": "{color.grey.100}",
+        "$type": "color",
+        "$description": "Stronger dividers, grabber handle"
+      },
+      "inverse": {
+        "$value": "{color.navy.600}",
+        "$type": "color",
+        "$description": "Border on dark card surfaces"
+      },
+      "focus": {
+        "$value": "{color.cyan.400}",
+        "$type": "color",
+        "$description": "Focus ring — accessibility"
+      }
+    },
+    "status": {
+      "positiveText": {
+        "$value": "{color.green.700}",
+        "$type": "color",
+        "$description": "Success text and icons"
+      },
+      "positiveBg": {
+        "$value": "{color.green.100}",
+        "$type": "color",
+        "$description": "Success background — Tick active state"
+      },
+      "negativeText": {
+        "$value": "{color.red.600}",
+        "$type": "color",
+        "$description": "Error text and icons"
+      },
+      "negativeBg": {
+        "$value": "{color.red.100}",
+        "$type": "color",
+        "$description": "Error background"
+      }
+    }
+  }
+}
