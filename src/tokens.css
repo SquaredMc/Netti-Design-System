@@ -14,8 +14,11 @@
   --netti-color-green-100: #dcfce7;
   --netti-color-green-500: #00a63e;
   --netti-color-green-700: #007a33; /** Positive text — 5.48:1 on white, 4.98:1 on grey/50 (WCAG AA small text) */
+  --netti-color-green-900: #0a3d22; /** Deep green — positive status background in dark mode */
   --netti-color-red-100: #fee2e2; /** Error background — code extension, not in the Figma DS */
+  --netti-color-red-300: #ff8a85; /** Light red — negative text in dark mode */
   --netti-color-red-600: #e1000a; /** Errors, destructive — code extension, not in the Figma DS */
+  --netti-color-red-900: #4a0a0e; /** Deep red — negative status background in dark mode */
   --netti-color-grey-50: #f3f4f6;
   --netti-color-grey-100: #e5e7eb;
   --netti-color-grey-200: #eeeeee;
@@ -23,6 +26,10 @@
   --netti-color-grey-700: #4a5565;
   --netti-color-grey-950: #0a0a0a;
   --netti-color-white: #ffffff;
+  --netti-color-white70: rgba(255, 255, 255, 0.7); /** White at 70% — Figma white/70 (a JSON token can't also be a group, so not white.70) */
+  --netti-color-white50: rgba(255, 255, 255, 0.5); /** White at 50% — Figma white/50 */
+  --netti-color-white20: rgba(255, 255, 255, 0.2); /** White at 20% — Figma white/20 */
+  --netti-color-white10: rgba(255, 255, 255, 0.1); /** White at 10% — Figma white/10 */
   --netti-color-background-screen: #00021b; /** Full-screen gradient base — page background */
   --netti-color-background-card: #010045; /** Dark card surface — Salary Card, Additional Income Card */
   --netti-color-background-card-subtle: #0e1868; /** Toggle bar inside dark cards */
@@ -30,6 +37,8 @@
   --netti-color-background-surface: #ffffff; /** Primary surface — Bottom Sheet, inputs, white cards */
   --netti-color-background-surface-raised: #f3f4f6; /** Raised surface — segmented control bg, callout boxes */
   --netti-color-background-highlight: #e5fafd; /** Highlighted surface — confirmation card */
+  --netti-color-background-app: #f3f4f6; /** App background behind the cards (native v3) */
+  --netti-color-background-hero: #010045; /** Take Home Hero surface — the one branded surface */
   --netti-color-text-primary: #0a0a0a; /** Primary body text on light surfaces */
   --netti-color-text-secondary: #4a5565; /** Secondary labels, captions */
   --netti-color-text-muted: #6b7280; /** Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white. */
@@ -37,6 +46,8 @@
   --netti-color-text-positive: #007a33; /** Take-home pay, positive amounts, success */
   --netti-color-text-negative: #e1000a; /** Errors, destructive actions, negative amounts */
   --netti-color-text-brand: #010045; /** Brand text — used on cyan backgrounds (Pro button) */
+  --netti-color-text-on-hero: #ffffff; /** Text on the hero surface */
+  --netti-color-text-on-hero-muted: rgba(255, 255, 255, 0.7); /** Secondary text on the hero surface */
   --netti-color-action-primary-bg: #26d4eb; /** Pro / primary CTA fill — cyan */
   --netti-color-action-primary-text: #010045; /** Text on cyan CTA — navy */
   --netti-color-action-secondary-border: #26d4eb; /** Outlined secondary button border */
@@ -46,6 +57,7 @@
   --netti-color-border-strong: #e5e7eb; /** Stronger dividers, grabber handle */
   --netti-color-border-inverse: #07205e; /** Border on dark card surfaces */
   --netti-color-border-focus: #26d4eb; /** Focus ring — accessibility */
+  --netti-color-border-hero: #010045; /** Hero outline — visible in dark mode */
   --netti-color-status-positive-text: #007a33; /** Success text and icons */
   --netti-color-status-positive-bg: #dcfce7; /** Success background — Tick active state */
   --netti-color-status-negative-text: #e1000a; /** Error text and icons */
@@ -145,4 +157,41 @@
   --netti-color-on-surface-faint: rgba(255, 255, 255, 0.5); /** Themed tertiary / hint text on a surface (dark mode) */
   --netti-color-divider: rgba(255, 255, 255, 0.1); /** Themed divider/separator on a surface (dark mode) */
   --netti-color-surface-overlay: rgba(255, 255, 255, 0.12); /** Themed subtle fill on a surface — chips, hover, remove (dark mode) */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-appearance="auto"] {
+    --netti-color-background-screen: #00021b;
+    --netti-color-background-card: #0e1868;
+    --netti-color-background-card-subtle: #07205e;
+    --netti-color-background-card-border: #07205e;
+    --netti-color-background-surface: #010045;
+    --netti-color-background-surface-raised: #0e1868;
+    --netti-color-background-highlight: #0e1868;
+    --netti-color-background-app: #00021b;
+    --netti-color-background-hero: #0e1868;
+    --netti-color-text-primary: #ffffff;
+    --netti-color-text-secondary: rgba(255, 255, 255, 0.7);
+    --netti-color-text-muted: rgba(255, 255, 255, 0.5);
+    --netti-color-text-inverse: #00021b;
+    --netti-color-text-positive: #00a63e;
+    --netti-color-text-negative: #ff8a85;
+    --netti-color-text-brand: #a8eff7;
+    --netti-color-text-on-hero: #ffffff;
+    --netti-color-text-on-hero-muted: rgba(255, 255, 255, 0.7);
+    --netti-color-action-primary-bg: #26d4eb;
+    --netti-color-action-primary-text: #010045;
+    --netti-color-action-secondary-border: #26d4eb;
+    --netti-color-action-selected-border: #26d4eb;
+    --netti-color-action-selected-bg: #0e1868;
+    --netti-color-border-default: rgba(255, 255, 255, 0.1);
+    --netti-color-border-strong: rgba(255, 255, 255, 0.2);
+    --netti-color-border-inverse: #07205e;
+    --netti-color-border-focus: #26d4eb;
+    --netti-color-border-hero: #07205e;
+    --netti-color-status-positive-text: #00a63e;
+    --netti-color-status-positive-bg: #0a3d22;
+    --netti-color-status-negative-text: #ff8a85;
+    --netti-color-status-negative-bg: #4a0a0e;
+  }
 }
