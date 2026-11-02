@@ -1,22 +1,24 @@
 {
   "color": {
     "background": {
-      "screen": { "$value": "{color.navy.900}", "$type": "color" },
+      "screen": { "$value": "{color.ink.950}", "$type": "color" },
       "card": { "$value": "{color.navy.700}", "$type": "color" },
       "cardSubtle": { "$value": "{color.navy.600}", "$type": "color" },
       "cardBorder": { "$value": "{color.navy.600}", "$type": "color" },
-      "surface": { "$value": "{color.navy.800}", "$type": "color" },
-      "surfaceRaised": { "$value": "{color.navy.700}", "$type": "color" },
+      "surface": { "$value": "{color.ink.900}", "$type": "color" },
+      "surfaceRaised": { "$value": "{color.ink.800}", "$type": "color" },
       "highlight": { "$value": "{color.navy.700}", "$type": "color" },
-      "app": { "$value": "{color.navy.900}", "$type": "color" },
-      "hero": { "$value": "{color.navy.700}", "$type": "color" }
+      "app": { "$value": "{color.ink.950}", "$type": "color" },
+      "hero": { "$value": "{color.navy.700}", "$type": "color" },
+      "sheet": { "$value": "{color.ink.900}", "$type": "color" },
+      "sheetSurface": { "$value": "{color.ink.800}", "$type": "color" }
     },
     "text": {
       "primary": { "$value": "{color.white}", "$type": "color" },
       "secondary": { "$value": "{color.white70}", "$type": "color" },
       "muted": { "$value": "{color.white50}", "$type": "color" },
       "inverse": { "$value": "{color.navy.900}", "$type": "color" },
-      "positive": { "$value": "{color.green.500}", "$type": "color" },
+      "positive": { "$value": "{color.green.400}", "$type": "color" },
       "negative": { "$value": "{color.red.300}", "$type": "color" },
       "brand": { "$value": "{color.cyan.200}", "$type": "color" },
       "onHero": { "$value": "{color.white}", "$type": "color" },
@@ -27,7 +29,7 @@
       "primaryText": { "$value": "{color.navy.800}", "$type": "color" },
       "secondaryBorder": { "$value": "{color.cyan.400}", "$type": "color" },
       "selectedBorder": { "$value": "{color.cyan.400}", "$type": "color" },
-      "selectedBg": { "$value": "{color.navy.700}", "$type": "color" }
+      "selectedBg": { "$value": "{color.ink.800}", "$type": "color" }
     },
     "border": {
       "default": { "$value": "{color.white10}", "$type": "color" },
@@ -37,7 +39,7 @@
       "hero": { "$value": "{color.navy.600}", "$type": "color" }
     },
     "status": {
-      "positiveText": { "$value": "{color.green.500}", "$type": "color" },
+      "positiveText": { "$value": "{color.green.400}", "$type": "color" },
       "positiveBg": { "$value": "{color.green.900}", "$type": "color" },
       "negativeText": { "$value": "{color.red.300}", "$type": "color" },
       "negativeBg": { "$value": "{color.red.900}", "$type": "color" }

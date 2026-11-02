@@ -56,6 +56,11 @@
         "$value": "#00A63E",
         "$type": "color"
       },
+      "400": {
+        "$value": "#00C950",
+        "$type": "color",
+        "$description": "Positive text in dark mode: 6.49:1 on ink/800, 7.79:1 on ink/900"
+      },
       "100": {
         "$value": "#DCFCE7",
         "$type": "color"
@@ -113,6 +118,23 @@
       "50": {
         "$value": "#F3F4F6",
         "$type": "color"
+      }
+    },
+    "ink": {
+      "950": {
+        "$value": "#0A0A10",
+        "$type": "color",
+        "$description": "Ink: grey with a faint navy tint. Dark mode app background"
+      },
+      "900": {
+        "$value": "#1A1A23",
+        "$type": "color",
+        "$description": "Ink: dark mode cards, pills and sheets"
+      },
+      "800": {
+        "$value": "#292933",
+        "$type": "color",
+        "$description": "Ink: dark mode raised surfaces, rows inside a sheet, the selected segment"
       }
     },
     "white": {

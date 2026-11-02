@@ -68,6 +68,8 @@ public enum PrimitiveColor {
     /// Selected / focus state
     public static let blue800: TokenColor = TokenColor(rgb: 0x01236E)
     public static let green100: TokenColor = TokenColor(rgb: 0xDCFCE7)
+    /// Positive text in dark mode: 6.49:1 on ink/800, 7.79:1 on ink/900
+    public static let green400: TokenColor = TokenColor(rgb: 0x00C950)
     public static let green500: TokenColor = TokenColor(rgb: 0x00A63E)
     /// Positive text — 5.48:1 on white, 4.98:1 on grey/50 (WCAG AA small text)
     public static let green700: TokenColor = TokenColor(rgb: 0x007A33)
@@ -88,6 +90,12 @@ public enum PrimitiveColor {
     public static let grey500: TokenColor = TokenColor(rgb: 0x6B7280)
     public static let grey700: TokenColor = TokenColor(rgb: 0x4A5565)
     public static let grey950: TokenColor = TokenColor(rgb: 0x0A0A0A)
+    /// Ink: dark mode raised surfaces, rows inside a sheet, the selected segment
+    public static let ink800: TokenColor = TokenColor(rgb: 0x292933)
+    /// Ink: dark mode cards, pills and sheets
+    public static let ink900: TokenColor = TokenColor(rgb: 0x1A1A23)
+    /// Ink: grey with a faint navy tint. Dark mode app background
+    public static let ink950: TokenColor = TokenColor(rgb: 0x0A0A10)
     public static let white: TokenColor = TokenColor(rgb: 0xFFFFFF)
     /// White at 70% — Figma white/70 (a JSON token can't also be a group, so not white.70)
     public static let white70: TokenColor = TokenColor(rgb: 0xFFFFFF, opacity: 0.7)
@@ -109,6 +117,7 @@ public enum PrimitiveColor {
         ("color.cyan.400", cyan400),
         ("color.blue.800", blue800),
         ("color.green.100", green100),
+        ("color.green.400", green400),
         ("color.green.500", green500),
         ("color.green.700", green700),
         ("color.green.900", green900),
@@ -122,6 +131,9 @@ public enum PrimitiveColor {
         ("color.grey.500", grey500),
         ("color.grey.700", grey700),
         ("color.grey.950", grey950),
+        ("color.ink.800", ink800),
+        ("color.ink.900", ink900),
+        ("color.ink.950", ink950),
         ("color.white", white),
         ("color.white70", white70),
         ("color.white50", white50),
@@ -134,7 +146,7 @@ public enum PrimitiveColor {
 /// /// Each one aliases a primitive in each appearance.
 public enum SemanticColor {
     /// Full-screen gradient base — page background
-    public static let backgroundScreen: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.navy900, dark: PrimitiveColor.navy900)
+    public static let backgroundScreen: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.navy900, dark: PrimitiveColor.ink950)
     /// Dark card surface — Salary Card, Additional Income Card
     public static let backgroundCard: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.navy800, dark: PrimitiveColor.navy700)
     /// Toggle bar inside dark cards
@@ -142,15 +154,19 @@ public enum SemanticColor {
     /// Border on dark cards
     public static let backgroundCardBorder: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.navy600, dark: PrimitiveColor.navy600)
     /// Primary surface — Bottom Sheet, inputs, white cards
-    public static let backgroundSurface: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.white, dark: PrimitiveColor.navy800)
+    public static let backgroundSurface: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.white, dark: PrimitiveColor.ink900)
     /// Raised surface — segmented control bg, callout boxes
-    public static let backgroundSurfaceRaised: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.grey50, dark: PrimitiveColor.navy700)
+    public static let backgroundSurfaceRaised: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.grey50, dark: PrimitiveColor.ink800)
     /// Highlighted surface — confirmation card
     public static let backgroundHighlight: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.cyan50, dark: PrimitiveColor.navy700)
     /// App background behind the cards (native v3)
-    public static let backgroundApp: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.grey50, dark: PrimitiveColor.navy900)
+    public static let backgroundApp: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.grey50, dark: PrimitiveColor.ink950)
     /// Take Home Hero surface — the one branded surface
     public static let backgroundHero: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.navy800, dark: PrimitiveColor.navy700)
+    /// A sheet over the app (editors, Add income): matches background/app in light, a step above it in dark
+    public static let backgroundSheet: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.grey50, dark: PrimitiveColor.ink900)
+    /// Cards and the pinned live take-home inside a sheet: matches background/surface in light, a step above background/sheet in dark
+    public static let backgroundSheetSurface: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.white, dark: PrimitiveColor.ink800)
     /// Primary body text on light surfaces
     public static let textPrimary: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.grey950, dark: PrimitiveColor.white)
     /// Secondary labels, captions
@@ -160,7 +176,7 @@ public enum SemanticColor {
     /// Text on dark card surfaces
     public static let textInverse: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.white, dark: PrimitiveColor.navy900)
     /// Take-home pay, positive amounts, success
-    public static let textPositive: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.green700, dark: PrimitiveColor.green500)
+    public static let textPositive: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.green700, dark: PrimitiveColor.green400)
     /// Errors, destructive actions, negative amounts
     public static let textNegative: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.red600, dark: PrimitiveColor.red300)
     /// Brand text — used on cyan backgrounds (Pro button)
@@ -178,7 +194,7 @@ public enum SemanticColor {
     /// Selected toggle pill border, focus rings
     public static let actionSelectedBorder: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.blue800, dark: PrimitiveColor.cyan400)
     /// Selected toggle pill fill
-    public static let actionSelectedBg: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.white, dark: PrimitiveColor.navy700)
+    public static let actionSelectedBg: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.white, dark: PrimitiveColor.ink800)
     /// Dividers, card outlines on light surfaces
     public static let borderDefault: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.grey200, dark: PrimitiveColor.white10)
     /// Stronger dividers, grabber handle
@@ -190,7 +206,7 @@ public enum SemanticColor {
     /// Hero outline — visible in dark mode
     public static let borderHero: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.navy800, dark: PrimitiveColor.navy600)
     /// Success text and icons
-    public static let statusPositiveText: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.green700, dark: PrimitiveColor.green500)
+    public static let statusPositiveText: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.green700, dark: PrimitiveColor.green400)
     /// Success background — Tick active state
     public static let statusPositiveBg: AppearanceTokenColor = AppearanceTokenColor(light: PrimitiveColor.green100, dark: PrimitiveColor.green900)
     /// Error text and icons
@@ -209,6 +225,8 @@ public enum SemanticColor {
         ("color.background.highlight", backgroundHighlight),
         ("color.background.app", backgroundApp),
         ("color.background.hero", backgroundHero),
+        ("color.background.sheet", backgroundSheet),
+        ("color.background.sheetSurface", backgroundSheetSurface),
         ("color.text.primary", textPrimary),
         ("color.text.secondary", textSecondary),
         ("color.text.muted", textMuted),

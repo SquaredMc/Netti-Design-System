@@ -133,6 +133,11 @@ build stops if a path is missing on either side.
   page whose root sets `data-appearance="auto"`, so an app designed for light only (the
   Netti web app) stays light.
 
+Dark mode is built like light: the app background, surfaces and sheets are the `ink` greys
+(neutral, with a faint navy tint), and navy is kept for the hero and the navy cards, the only
+navy surfaces in light too. Positive text is `green/400` in dark mode, because `green/500` is
+under 4.5:1 on `ink/800`.
+
 To add a semantic colour, edit `semantic.color.json` **and** `appearance/dark.json` (and the
 Figma `Semantic/Colour` collection's Dark mode).
 

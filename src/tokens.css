@@ -12,6 +12,7 @@
   --netti-color-cyan-400: #26d4eb; /** Primary accent / highlight */
   --netti-color-blue-800: #01236e; /** Selected / focus state */
   --netti-color-green-100: #dcfce7;
+  --netti-color-green-400: #00c950; /** Positive text in dark mode: 6.49:1 on ink/800, 7.79:1 on ink/900 */
   --netti-color-green-500: #00a63e;
   --netti-color-green-700: #007a33; /** Positive text — 5.48:1 on white, 4.98:1 on grey/50 (WCAG AA small text) */
   --netti-color-green-900: #0a3d22; /** Deep green — positive status background in dark mode */
@@ -25,6 +26,9 @@
   --netti-color-grey-500: #6b7280; /** Muted text — WCAG AA ≥ 4.5:1 on white */
   --netti-color-grey-700: #4a5565;
   --netti-color-grey-950: #0a0a0a;
+  --netti-color-ink-800: #292933; /** Ink: dark mode raised surfaces, rows inside a sheet, the selected segment */
+  --netti-color-ink-900: #1a1a23; /** Ink: dark mode cards, pills and sheets */
+  --netti-color-ink-950: #0a0a10; /** Ink: grey with a faint navy tint. Dark mode app background */
   --netti-color-white: #ffffff;
   --netti-color-white70: rgba(255, 255, 255, 0.7); /** White at 70% — Figma white/70 (a JSON token can't also be a group, so not white.70) */
   --netti-color-white50: rgba(255, 255, 255, 0.5); /** White at 50% — Figma white/50 */
@@ -39,6 +43,8 @@
   --netti-color-background-highlight: #e5fafd; /** Highlighted surface — confirmation card */
   --netti-color-background-app: #f3f4f6; /** App background behind the cards (native v3) */
   --netti-color-background-hero: #010045; /** Take Home Hero surface — the one branded surface */
+  --netti-color-background-sheet: #f3f4f6; /** A sheet over the app (editors, Add income): matches background/app in light, a step above it in dark */
+  --netti-color-background-sheet-surface: #ffffff; /** Cards and the pinned live take-home inside a sheet: matches background/surface in light, a step above background/sheet in dark */
   --netti-color-text-primary: #0a0a0a; /** Primary body text on light surfaces */
   --netti-color-text-secondary: #4a5565; /** Secondary labels, captions */
   --netti-color-text-muted: #6b7280; /** Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white. */
@@ -161,20 +167,22 @@
 
 @media (prefers-color-scheme: dark) {
   :root[data-appearance="auto"] {
-    --netti-color-background-screen: #00021b;
+    --netti-color-background-screen: #0a0a10;
     --netti-color-background-card: #0e1868;
     --netti-color-background-card-subtle: #07205e;
     --netti-color-background-card-border: #07205e;
-    --netti-color-background-surface: #010045;
-    --netti-color-background-surface-raised: #0e1868;
+    --netti-color-background-surface: #1a1a23;
+    --netti-color-background-surface-raised: #292933;
     --netti-color-background-highlight: #0e1868;
-    --netti-color-background-app: #00021b;
+    --netti-color-background-app: #0a0a10;
     --netti-color-background-hero: #0e1868;
+    --netti-color-background-sheet: #1a1a23;
+    --netti-color-background-sheet-surface: #292933;
     --netti-color-text-primary: #ffffff;
     --netti-color-text-secondary: rgba(255, 255, 255, 0.7);
     --netti-color-text-muted: rgba(255, 255, 255, 0.5);
     --netti-color-text-inverse: #00021b;
-    --netti-color-text-positive: #00a63e;
+    --netti-color-text-positive: #00c950;
     --netti-color-text-negative: #ff8a85;
     --netti-color-text-brand: #a8eff7;
     --netti-color-text-on-hero: #ffffff;
@@ -183,13 +191,13 @@
     --netti-color-action-primary-text: #010045;
     --netti-color-action-secondary-border: #26d4eb;
     --netti-color-action-selected-border: #26d4eb;
-    --netti-color-action-selected-bg: #0e1868;
+    --netti-color-action-selected-bg: #292933;
     --netti-color-border-default: rgba(255, 255, 255, 0.1);
     --netti-color-border-strong: rgba(255, 255, 255, 0.2);
     --netti-color-border-inverse: #07205e;
     --netti-color-border-focus: #26d4eb;
     --netti-color-border-hero: #07205e;
-    --netti-color-status-positive-text: #00a63e;
+    --netti-color-status-positive-text: #00c950;
     --netti-color-status-positive-bg: #0a3d22;
     --netti-color-status-negative-text: #ff8a85;
     --netti-color-status-negative-bg: #4a0a0e;
