@@ -1,6 +1,7 @@
 import StyleDictionary from 'style-dictionary';
 import { readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { swiftFormat } from './sd.swift.js';
+import { composeFormat } from './sd.compose.js';
 
 const PREFIX = 'netti';
 const CSS = 'src/tokens.css';
@@ -132,3 +133,31 @@ const swift = new StyleDictionary({
   },
 });
 await swift.buildAllPlatforms();
+
+// 5. Kotlin — every token as Kotlin constants for the native Android app (src/NettiTokens.kt,
+//    copied to dist/kotlin/ by `npm run build`), with the same groups and names as the Swift. The
+//    dark values come from the dictionaries resolved for the Swift above.
+StyleDictionary.registerFormat(composeFormat);
+const kotlin = new StyleDictionary({
+  source: ['src/tokens/*.json', 'src/tokens/theme/light.json'],
+  platforms: {
+    kotlin: {
+      transforms: ['name/camel'],
+      buildPath: 'src/',
+      files: [
+        {
+          destination: 'NettiTokens.kt',
+          format: 'netti/compose',
+          options: {
+            packageName: pkg.name,
+            packageVersion: pkg.version,
+            kotlinPackage: 'com.nettiapp.designsystem',
+            darkTokens: darkAll.filter((t) => String(t.filePath).replace(/\\/g, '/').includes('theme/dark')),
+            appearanceDarkTokens: appearanceAll.filter((t) => String(t.filePath).replace(/\\/g, '/').includes('appearance/dark')),
+          },
+        },
+      ],
+    },
+  },
+});
+await kotlin.buildAllPlatforms();

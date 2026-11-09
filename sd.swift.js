@@ -8,8 +8,10 @@
 // `options.darkTokens` (the `theme/dark.json` tokens, resolved by a second dictionary).
 // Semantic colours likewise get their dark-mode values from `options.appearanceDarkTokens`
 // (`appearance/dark.json`, resolved by a third).
+//
+// The `netti/compose` format (sd.compose.js) uses the same GROUPS.
 
-const GROUPS = [
+export const GROUPS = [
   { name: 'PrimitiveColor', file: 'color.json', kind: 'color', drop: 1,
     doc: 'Colour primitives (color.json). Components use SemanticColor and ThemeColor, never these.' },
   { name: 'SemanticColor', file: 'semantic.color.json', kind: 'appearance', drop: 1,
