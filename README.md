@@ -63,6 +63,10 @@ The package also ships the token source and a Swift version of it, both built by
   `Shadow`, `Elevate`, `FontFamily`, `FontWeight`, `FontSize`, `LineHeight`, `TypeStyle`).
   Plain Swift, no imports. The app copies it in; it is never edited by hand.
 
+**Dark mode** (v0.13.0): each semantic colour has a dark-mode value (`dist/tokens/appearance/dark.json`).
+In Swift, `SemanticColor` values carry both. In CSS they are opt-in: set `data-appearance="auto"` on
+the root element to follow `prefers-color-scheme`. See AGENTS.md, "Dark mode".
+
 ## Component overview
 
 | Component | Description |

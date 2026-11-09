@@ -6,12 +6,14 @@
 //
 // Light-theme role tokens come from the dictionary itself; their dark values come from
 // `options.darkTokens` (the `theme/dark.json` tokens, resolved by a second dictionary).
+// Semantic colours likewise get their dark-mode values from `options.appearanceDarkTokens`
+// (`appearance/dark.json`, resolved by a third).
 
 const GROUPS = [
   { name: 'PrimitiveColor', file: 'color.json', kind: 'color', drop: 1,
     doc: 'Colour primitives (color.json). Components use SemanticColor and ThemeColor, never these.' },
-  { name: 'SemanticColor', file: 'semantic.color.json', kind: 'color', drop: 1,
-    doc: 'Colours by role (semantic.color.json). Each one aliases a primitive.' },
+  { name: 'SemanticColor', file: 'semantic.color.json', kind: 'appearance', drop: 1,
+    doc: 'Colours by role (semantic.color.json), with their dark-mode values (appearance/dark.json).\n/// Each one aliases a primitive in each appearance.' },
   { name: 'ThemeColor', file: 'theme/light.json', kind: 'themed', drop: 1,
     doc: 'Role colours with a value per theme (theme/light.json and theme/dark.json). Dark is the\n/// `[data-theme="dark"]` theme: the navy Salary and Extra Income cards.' },
   { name: 'Space', file: 'spacing.json', kind: 'dimension', drop: 1, digitPrefix: 's',
@@ -39,6 +41,7 @@ const GROUPS = [
 const VALUE_TYPE = {
   color: 'TokenColor',
   themed: 'ThemedTokenColor',
+  appearance: 'AppearanceTokenColor',
   dimension: 'Double',
   shadow: '[TokenShadowLayer]',
   fontFamily: '[String]',
@@ -110,7 +113,7 @@ function colorValue(token, names) {
   return reference(token.original.$value, names) ?? colorLiteral(token.$value);
 }
 
-function valueFor(token, group, names, darkByPath) {
+function valueFor(token, group, names, darkByPath, appearanceDarkByPath) {
   switch (group.kind) {
     case 'color':
       return colorValue(token, names);
@@ -118,6 +121,11 @@ function valueFor(token, group, names, darkByPath) {
       const dark = darkByPath.get(token.path.join('.'));
       if (!dark) throw new Error(`netti/swift: ${token.path.join('.')} has no dark value`);
       return `ThemedTokenColor(light: ${colorValue(token, names)}, dark: ${colorValue(dark, names)})`;
+    }
+    case 'appearance': {
+      const dark = appearanceDarkByPath.get(token.path.join('.'));
+      if (!dark) throw new Error(`netti/swift: ${token.path.join('.')} has no dark-mode value`);
+      return `AppearanceTokenColor(light: ${colorValue(token, names)}, dark: ${colorValue(dark, names)})`;
     }
     case 'dimension':
       return px(token.$value);
@@ -181,6 +189,12 @@ public struct ThemedTokenColor: Hashable, Sendable {
     public let dark: TokenColor
 }
 
+/// A role colour with a value per system appearance: light mode and dark mode.
+public struct AppearanceTokenColor: Hashable, Sendable {
+    public let light: TokenColor
+    public let dark: TokenColor
+}
+
 /// One layer of a shadow, in points.
 public struct TokenShadowLayer: Hashable, Sendable {
     public let offsetX: Double
@@ -206,6 +220,9 @@ export const swiftFormat = {
     const darkByPath = new Map(
       (options.darkTokens ?? []).map((t) => [t.path.join('.'), t]),
     );
+    const appearanceDarkByPath = new Map(
+      (options.appearanceDarkTokens ?? []).map((t) => [t.path.join('.'), t]),
+    );
     const grouped = new Map(GROUPS.map((g) => [g.name, []]));
     const names = new Map();
     for (const token of dictionary.allTokens) {
@@ -218,6 +235,11 @@ export const swiftFormat = {
     const dark = [...darkByPath.keys()].sort();
     if (themed.join() !== dark.join()) {
       throw new Error(`netti/swift: light and dark themes differ: [${themed}] vs [${dark}]`);
+    }
+    const semantic = grouped.get('SemanticColor').map(({ token }) => token.path.join('.')).sort();
+    const semanticDark = [...appearanceDarkByPath.keys()].sort();
+    if (semantic.join() !== semanticDark.join()) {
+      throw new Error(`netti/swift: semantic colours and their dark-mode values differ: [${semantic}] vs [${semanticDark}]`);
     }
 
     const out = [
@@ -234,7 +256,7 @@ export const swiftFormat = {
       out.push('', ...docLines(group.doc, ''), `public enum ${group.name} {`);
       for (const { token, name } of entries) {
         out.push(...docLines(token.$description, '    '));
-        out.push(`    public static let ${name}: ${type} = ${valueFor(token, group, names, darkByPath)}`);
+        out.push(`    public static let ${name}: ${type} = ${valueFor(token, group, names, darkByPath, appearanceDarkByPath)}`);
       }
       out.push('', '    /// Every token in this group, by its path in the JSON.');
       out.push(`    public static let all: [(path: String, value: ${type})] = [`);

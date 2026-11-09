@@ -120,6 +120,27 @@ tokens flip by theme and **themes nest** (a dark Card on a light screen).
 green positive) stay as-is. To add a themed value, edit **both** `theme/light.json` and
 `theme/dark.json` (and the Figma `Semantic/Theme` collection).
 
+### Dark mode (system appearance), from v0.13.0
+
+Separate from the themes above: the **semantic** colours (`semantic.color.json`) also have a
+dark-mode value each, in `src/tokens/appearance/dark.json`, mirroring the Light and Dark modes
+of the Figma `Semantic/Colour` collection. Every semantic colour must have one; the Swift
+build stops if a path is missing on either side.
+
+- **Swift:** `SemanticColor.*` is an `AppearanceTokenColor(light:dark:)`; the app resolves it
+  by the system appearance.
+- **CSS:** the dark values are opt-in. They apply under `prefers-color-scheme: dark` only on a
+  page whose root sets `data-appearance="auto"`, so an app designed for light only (the
+  Netti web app) stays light.
+
+Dark mode is built like light: the app background, surfaces and sheets are the `ink` greys
+(neutral, with a faint navy tint), and navy is kept for the hero and the navy cards, the only
+navy surfaces in light too. Positive text is `green/400` in dark mode, because `green/500` is
+under 4.5:1 on `ink/800`.
+
+To add a semantic colour, edit `semantic.color.json` **and** `appearance/dark.json` (and the
+Figma `Semantic/Colour` collection's Dark mode).
+
 ---
 
 ## Working with components
