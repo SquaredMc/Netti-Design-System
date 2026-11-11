@@ -23,6 +23,9 @@ const KIND = {
   fontFamily: { type: 'List<String>' },
   fontWeight: { type: 'Int' },
   typography: { type: 'TokenTypeStyle' },
+  // Durations are milliseconds and a spring's bounce is a Float, as Compose's animation APIs take
+  // them. A group holding both (MotionSpring) types its `all` list as Number.
+  motion: { typeOf: (token) => (token.$type === 'duration' ? 'Long' : 'Float'), mixedType: 'Number' },
 };
 
 // Font sizes and line heights scale with the system font size, so they are `sp`; every other
@@ -43,6 +46,10 @@ const DOCS = {
   FontSize: 'Font sizes (typography.json).',
   LineHeight: 'Line heights (typography.json).',
   TypeStyle: 'Text styles (typography.json `textStyle`).',
+  MotionDuration: 'How long a motion takes (motion.json), in milliseconds.',
+  MotionHold: 'How long a highlight or a chip stays before it fades (motion.json), in milliseconds.',
+  MotionStagger: 'The delay between one item and the next in a cascade (motion.json), in milliseconds.',
+  MotionSpring: 'Springs (motion.json) in SwiftUI\'s perceptual terms, two tokens each: a duration in\nmilliseconds and a bounce from 0 to 1. For Compose\'s spring, dampingRatio = 1 − bounce and\nstiffness = (2π / duration in seconds)². Only `reward` bounces.',
 };
 
 const SET_DOCS = {
@@ -102,6 +109,16 @@ function dimension(value, unit) {
   if (!match) fail(`expected a px dimension, got ${value}`);
   const n = number(Number(match[1]));
   return `${n.startsWith('-') ? `(${n})` : n}.${unit}`;
+}
+
+/** A duration, `100ms` or `0.1s`, as whole milliseconds. */
+function milliseconds(value) {
+  const match = /^([0-9.]+)(ms|s)$/.exec(String(value));
+  if (!match) fail(`expected a duration in ms or s, got ${value}`);
+  const n = Number(match[1]);
+  const ms = match[2] === 'ms' ? n : n * 1000;
+  if (!Number.isInteger(ms)) fail(`a duration must be whole milliseconds, got ${value}`);
+  return number(ms);
 }
 
 function colorLiteral(value) {
@@ -176,6 +193,11 @@ function valueFor(token, group, names) {
         `uppercase = ${v.textTransform === 'uppercase'})`,
       ].join('');
     }
+    case 'motion':
+      // A duration as a Long of milliseconds, or a plain number (a spring's bounce) as a Float.
+      if (token.$type === 'duration') return `${milliseconds(token.$value)}L`;
+      if (token.$type === 'number') return `${number(token.$value)}f`;
+      return fail(`${token.path.join('.')} is a ${token.$type}; motion tokens are durations or numbers`);
     default:
       return fail(`unknown kind ${group.kind}`);
   }
@@ -261,11 +283,13 @@ export const composeFormat = {
       const doc = DOCS[group.name] ?? fail(`no Kotlin doc for group ${group.name}`);
 
       if (!kind.set) {
-        const type = SP_GROUPS.has(group.name) ? 'TextUnit' : kind.type;
+        const typeOf = (token) => (SP_GROUPS.has(group.name) ? 'TextUnit' : kind.typeOf ? kind.typeOf(token) : kind.type);
+        const types = new Set(entries.map(({ token }) => typeOf(token)));
+        const type = types.size === 1 ? [...types][0] : (kind.mixedType ?? fail(`${group.name} mixes ${[...types]}`));
         out.push('', ...kdoc(doc, ''), `public object ${group.name} {`);
         for (const { token, name } of entries) {
           out.push(...kdoc(token.$description, '    '));
-          out.push(`    public val ${name}: ${type} = ${valueFor(token, group, names)}`);
+          out.push(`    public val ${name}: ${typeOf(token)} = ${valueFor(token, group, names)}`);
         }
         out.push('', ...allList('Every token in this group', type, entries, (e) => e.name), '}');
         continue;

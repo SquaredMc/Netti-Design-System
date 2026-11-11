@@ -60,7 +60,8 @@ The package also ships the token source, and Swift and Kotlin versions of it, al
 - `dist/tokens/*.json`: the DTCG token files (`@netti/design-system/tokens/color.json`).
 - `dist/swift/NettiTokens.swift`: every token as Swift constants for the native iOS app
   (`PrimitiveColor`, `SemanticColor`, `ThemeColor`, `Space`, `SemanticSpacing`, `Radius`,
-  `Shadow`, `Elevate`, `FontFamily`, `FontWeight`, `FontSize`, `LineHeight`, `TypeStyle`).
+  `Shadow`, `Elevate`, `FontFamily`, `FontWeight`, `FontSize`, `LineHeight`, `TypeStyle`, and from
+  v0.15.0 `MotionDuration`, `MotionHold`, `MotionStagger`, `MotionSpring`).
   Plain Swift, no imports. The app copies it in; it is never edited by hand.
 - `dist/kotlin/NettiTokens.kt` (v0.14.0): the same tokens, groups and names as Kotlin for the
   native Android app (Jetpack Compose), in package `com.nettiapp.designsystem`. Colours are
@@ -72,6 +73,12 @@ The package also ships the token source, and Swift and Kotlin versions of it, al
 **Dark mode** (v0.13.0): each semantic colour has a dark-mode value (`dist/tokens/appearance/dark.json`).
 In Swift, `SemanticColor` values carry both; in Kotlin, `SemanticColor.light` and `SemanticColor.dark` are the two sets. In CSS they are opt-in: set `data-appearance="auto"` on
 the root element to follow `prefers-color-scheme`. See AGENTS.md, "Dark mode".
+
+**Motion** (v0.15.0): durations, holds, the cascade's stagger and three springs
+(`dist/tokens/motion.json`, the Figma `Motion` collection), for the native apps only: they are
+in the Swift and the Kotlin, not in `tokens.css` or `tokens.ts`. Swift has seconds (`MotionDuration.fade`
+is `0.1`) and Kotlin milliseconds (`100L`); each spring is a duration and a bounce, in SwiftUI's
+terms (`MotionSpring.numberDuration`, `MotionSpring.numberBounce`). See AGENTS.md, "Motion".
 
 ## Component overview
 

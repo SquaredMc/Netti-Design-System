@@ -38,6 +38,14 @@ export const GROUPS = [
     doc: 'Line heights (typography.json), in points.' },
   { name: 'TypeStyle', path: ['textStyle'], kind: 'typography', drop: 1,
     doc: 'Text styles (typography.json `textStyle`).' },
+  { name: 'MotionDuration', path: ['motion', 'duration'], kind: 'motion', drop: 2,
+    doc: 'How long a motion takes (motion.json), in seconds.' },
+  { name: 'MotionHold', path: ['motion', 'hold'], kind: 'motion', drop: 2,
+    doc: 'How long a highlight or a chip stays before it fades (motion.json), in seconds.' },
+  { name: 'MotionStagger', path: ['motion', 'stagger'], kind: 'motion', drop: 2,
+    doc: 'The delay between one item and the next in a cascade (motion.json), in seconds.' },
+  { name: 'MotionSpring', path: ['motion', 'spring'], kind: 'motion', drop: 2,
+    doc: 'Springs (motion.json) in SwiftUI\'s perceptual terms, two tokens each: a duration in\nseconds and a bounce from 0 to 1, for `Spring(duration:bounce:)`. Only `reward` bounces.' },
 ];
 
 const VALUE_TYPE = {
@@ -49,6 +57,7 @@ const VALUE_TYPE = {
   fontFamily: '[String]',
   fontWeight: 'Int',
   typography: 'TokenTypeStyle',
+  motion: 'Double',
 };
 
 const filePath = (token) => String(token.filePath).replace(/\\/g, '/');
@@ -86,6 +95,14 @@ function px(value) {
   const match = /^(-?[0-9.]+)px$/.exec(String(value));
   if (!match) throw new Error(`netti/swift: expected a px dimension, got ${value}`);
   return number(Number(match[1]));
+}
+
+/** A duration, `100ms` or `0.1s`, in seconds: what SwiftUI's animations and TimeInterval take. */
+function seconds(value) {
+  const match = /^([0-9.]+)(ms|s)$/.exec(String(value));
+  if (!match) throw new Error(`netti/swift: expected a duration in ms or s, got ${value}`);
+  const n = Number(match[1]);
+  return number(match[2] === 'ms' ? n / 1000 : n);
 }
 
 function colorLiteral(value) {
@@ -161,6 +178,11 @@ function valueFor(token, group, names, darkByPath, appearanceDarkByPath) {
         `uppercase: ${v.textTransform === 'uppercase'})`,
       ].join('');
     }
+    case 'motion':
+      // A duration, in seconds, or a plain number: a spring's bounce.
+      if (token.$type === 'duration') return seconds(token.$value);
+      if (token.$type === 'number') return number(token.$value);
+      throw new Error(`netti/swift: ${token.path.join('.')} is a ${token.$type}; motion tokens are durations or numbers`);
     default:
       throw new Error(`netti/swift: unknown kind ${group.kind}`);
   }

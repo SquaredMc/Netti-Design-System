@@ -7,6 +7,10 @@ const PREFIX = 'netti';
 const CSS = 'src/tokens.css';
 const DARK_TMP = 'src/tokens.dark.css';
 
+// The motion tokens (motion.json) are for the native apps: they go to Swift and Kotlin only, so
+// tokens.css and tokens.ts stay as they were.
+const notMotion = (token) => token.path[0] !== 'motion';
+
 // 1. Base build — primitives + fixed semantics + LIGHT theme role tokens, under :root.
 //    `src/tokens/*.json` matches top-level files only (excludes theme/), so the
 //    dark theme file is not pulled into the default :root block.
@@ -22,6 +26,7 @@ const base = new StyleDictionary({
         {
           destination: 'tokens.css',
           format: 'css/variables',
+          filter: notMotion,
           options: { selector: ':root', outputReferences: false },
         },
       ],
@@ -29,7 +34,7 @@ const base = new StyleDictionary({
     ts: {
       transformGroup: 'js',
       buildPath: 'src/',
-      files: [{ destination: 'tokens.ts', format: 'javascript/es6' }],
+      files: [{ destination: 'tokens.ts', format: 'javascript/es6', filter: notMotion }],
     },
   },
 });
