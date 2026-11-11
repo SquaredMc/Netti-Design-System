@@ -34,6 +34,7 @@ src/
     semantic.color.json # semantic roles: background/text/action/border/status (alias primitives)
     semantic.spacing.json # layout/card/sheet/button/toggle/listRow spacing
     spacing.json radius.json shadow.json typography.json
+    motion.json         # durations, holds, stagger and springs: Swift and Kotlin only
   tokens.css          # GENERATED — do not edit by hand (style-dictionary output)
   tokens.ts           # GENERATED — do not edit by hand
   NettiTokens.swift   # GENERATED — Swift for the native iOS app (format in sd.swift.js)
@@ -145,6 +146,25 @@ under 4.5:1 on `ink/800`.
 
 To add a semantic colour, edit `semantic.color.json` **and** `appearance/dark.json` (and the
 Figma `Semantic/Colour` collection's Dark mode).
+
+### Motion, from v0.15.0
+
+`src/tokens/motion.json` mirrors the Figma `Motion` collection, whose number variables hold
+milliseconds (and a unitless bounce): `duration/fade` there is `motion.duration.fade` here.
+
+- **Durations** (`duration`, `hold`, `stagger`) are DTCG `duration` tokens, written `"100ms"`.
+- **Springs** are two tokens each, in SwiftUI's perceptual terms: `spring/<name>/duration` and
+  `spring/<name>/bounce` (a `number`, 0 to 1). Only `reward` bounces; numbers never overshoot.
+- **Swift:** `MotionDuration`, `MotionHold`, `MotionStagger` and `MotionSpring`, all `Double`
+  seconds (and the bounces), for `Spring(duration:bounce:)` and SwiftUI's animations.
+- **Kotlin:** the same objects, durations as `Long` milliseconds and bounces as `Float`. Compose's
+  spring takes `dampingRatio = 1 − bounce` and `stiffness = (2π / duration in seconds)²`.
+- **Not in CSS or TS:** `sd.config.js` filters the motion tokens out of `tokens.css` and
+  `tokens.ts`, so the web outputs don't change. Drop the filter if the web app ever animates
+  with them.
+
+Figma stores numbers as 32-bit floats, so a bounce of 0.15 reads back as 0.15000000596. The
+JSON keeps the intended value.
 
 ---
 

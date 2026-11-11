@@ -1,0 +1,78 @@
+{
+  "motion": {
+    "duration": {
+      "fade": {
+        "$value": "100ms",
+        "$type": "duration",
+        "$description": "Label crossfades; the Reduce Motion fallback for rolls."
+      },
+      "quick": {
+        "$value": "200ms",
+        "$type": "duration",
+        "$description": "Chips in and out; a highlight coming in."
+      },
+      "reveal": {
+        "$value": "900ms",
+        "$type": "duration",
+        "$description": "The first number counting up."
+      }
+    },
+    "hold": {
+      "highlight": {
+        "$value": "600ms",
+        "$type": "duration",
+        "$description": "A row highlight fading out."
+      },
+      "delta": {
+        "$value": "2500ms",
+        "$type": "duration",
+        "$description": "How long the delta chip stays on screen."
+      }
+    },
+    "stagger": {
+      "cascade": {
+        "$value": "24ms",
+        "$type": "duration",
+        "$description": "The breakdown cascade, per row."
+      }
+    },
+    "spring": {
+      "number": {
+        "duration": {
+          "$value": "300ms",
+          "$type": "duration",
+          "$description": "Every rolling figure."
+        },
+        "bounce": {
+          "$value": 0,
+          "$type": "number",
+          "$description": "Every rolling figure. Numbers never overshoot."
+        }
+      },
+      "layout": {
+        "duration": {
+          "$value": "450ms",
+          "$type": "duration",
+          "$description": "Expand, collapse, rows moving."
+        },
+        "bounce": {
+          "$value": 0,
+          "$type": "number",
+          "$description": "Expand, collapse, rows moving."
+        }
+      },
+      "reward": {
+        "duration": {
+          "$value": "500ms",
+          "$type": "duration",
+          "$description": "Rewards only."
+        },
+        "bounce": {
+          "$value": 0.15,
+          "$type": "number",
+          "$description": "Rewards only: the one spring that bounces."
+        }
+      }
+    }
+  }
+}
