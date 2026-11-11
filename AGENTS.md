@@ -14,8 +14,8 @@ Figma wins (verify the *live variable*, not stale documentation — see
 
 ```bash
 npm install            # install deps
-npm run build          # build:tokens -> vite build -> copy tokens.css, token JSON and Swift to dist
-npm run build:tokens   # regenerate src/tokens.css, src/tokens.ts, src/NettiTokens.swift from src/tokens/*.json
+npm run build          # build:tokens -> vite build -> copy tokens.css, token JSON, Swift and Kotlin to dist
+npm run build:tokens   # regenerate src/tokens.css, src/tokens.ts, src/NettiTokens.swift, src/NettiTokens.kt from src/tokens/*.json
 npm run storybook      # dev Storybook on http://localhost:6006
 npm run type-check     # tsc --noEmit
 ```
@@ -37,21 +37,24 @@ src/
   tokens.css          # GENERATED — do not edit by hand (style-dictionary output)
   tokens.ts           # GENERATED — do not edit by hand
   NettiTokens.swift   # GENERATED — Swift for the native iOS app (format in sd.swift.js)
+  NettiTokens.kt      # GENERATED — Kotlin for the native Android app (format in sd.compose.js)
   components/<Name>/
     <Name>.tsx          # component + exported prop types
     <Name>.module.css   # styles — reference --netti-* CSS variables only
     <Name>.stories.tsx  # Storybook stories
   index.ts            # public barrel — every component + its prop types re-exported
 sd.config.js          # style-dictionary config (prefix: netti)
-sd.swift.js           # the netti/swift format used by sd.config.js
+sd.swift.js           # the netti/swift format used by sd.config.js, and the token GROUPS
+sd.compose.js         # the netti/compose format (Kotlin), on the same GROUPS
 dist/                 # GENERATED build output (committed; consumers install from git)
 ```
 
 Token pipeline: `src/tokens/*.json` → `sd.config.js` (style-dictionary) →
-`src/tokens.css` (`--netti-*` custom properties) + `src/tokens.ts` + `src/NettiTokens.swift`.
-`vite build` then emits `dist/`, and the build copies in `tokens.css`, the token JSON
-(`dist/tokens/`) and the Swift (`dist/swift/`). A token the Swift format can't place stops
-the build: add it to a group in `sd.swift.js`.
+`src/tokens.css` (`--netti-*` custom properties) + `src/tokens.ts` + `src/NettiTokens.swift`
++ `src/NettiTokens.kt`. `vite build` then emits `dist/`, and the build copies in `tokens.css`,
+the token JSON (`dist/tokens/`), the Swift (`dist/swift/`) and the Kotlin (`dist/kotlin/`). A
+token the Swift or Kotlin format can't place stops the build: add it to a group in
+`sd.swift.js`; a new group also needs its Kotlin doc in `sd.compose.js`.
 
 ---
 
@@ -125,10 +128,12 @@ green positive) stay as-is. To add a themed value, edit **both** `theme/light.js
 Separate from the themes above: the **semantic** colours (`semantic.color.json`) also have a
 dark-mode value each, in `src/tokens/appearance/dark.json`, mirroring the Light and Dark modes
 of the Figma `Semantic/Colour` collection. Every semantic colour must have one; the Swift
-build stops if a path is missing on either side.
+and Kotlin builds stop if a path is missing on either side.
 
 - **Swift:** `SemanticColor.*` is an `AppearanceTokenColor(light:dark:)`; the app resolves it
   by the system appearance.
+- **Kotlin:** `SemanticColor.light` and `SemanticColor.dark` are two `SemanticColorSet`s; the
+  app provides the one for the system appearance.
 - **CSS:** the dark values are opt-in. They apply under `prefers-color-scheme: dark` only on a
   page whose root sets `data-appearance="auto"`, so an app designed for light only (the
   Netti web app) stays light.

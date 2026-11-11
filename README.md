@@ -53,18 +53,24 @@ Primitives  →  Semantic  →  Component
 
 Primitive values stay unchanged. No component code needs to change.
 
-### Token files and Swift
+### Token files, Swift and Kotlin
 
-The package also ships the token source and a Swift version of it, both built by `sd.config.js`:
+The package also ships the token source, and Swift and Kotlin versions of it, all built by `sd.config.js`:
 
 - `dist/tokens/*.json`: the DTCG token files (`@netti/design-system/tokens/color.json`).
 - `dist/swift/NettiTokens.swift`: every token as Swift constants for the native iOS app
   (`PrimitiveColor`, `SemanticColor`, `ThemeColor`, `Space`, `SemanticSpacing`, `Radius`,
   `Shadow`, `Elevate`, `FontFamily`, `FontWeight`, `FontSize`, `LineHeight`, `TypeStyle`).
   Plain Swift, no imports. The app copies it in; it is never edited by hand.
+- `dist/kotlin/NettiTokens.kt` (v0.14.0): the same tokens, groups and names as Kotlin for the
+  native Android app (Jetpack Compose), in package `com.nettiapp.designsystem`. Colours are
+  Compose `Color`, spacing and radii `Dp`, font sizes and line heights `TextUnit` (sp). Semantic
+  and theme colours come as light and dark sets: `SemanticColor.light.textPrimary`,
+  `ThemeColor.dark.surface`. It needs only Compose's runtime, ui-graphics and ui-unit. The app
+  copies it in; it is never edited by hand.
 
 **Dark mode** (v0.13.0): each semantic colour has a dark-mode value (`dist/tokens/appearance/dark.json`).
-In Swift, `SemanticColor` values carry both. In CSS they are opt-in: set `data-appearance="auto"` on
+In Swift, `SemanticColor` values carry both; in Kotlin, `SemanticColor.light` and `SemanticColor.dark` are the two sets. In CSS they are opt-in: set `data-appearance="auto"` on
 the root element to follow `prefers-color-scheme`. See AGENTS.md, "Dark mode".
 
 ## Component overview
