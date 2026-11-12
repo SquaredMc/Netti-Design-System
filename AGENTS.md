@@ -144,6 +144,10 @@ Dark mode is built like light: the app background, surfaces and sheets are the `
 navy surfaces in light too. Positive text is `green/400` in dark mode, because `green/500` is
 under 4.5:1 on `ink/800`.
 
+`background/hero-tag` (v0.16.0, `heroTag` in the JSON) is the fill of a Tag on the hero (the
+Tag's Emphasis=On hero), behind `text/on-hero`. It is `white/20` in both modes, since the hero is
+navy in both.
+
 To add a semantic colour, edit `semantic.color.json` **and** `appearance/dark.json` (and the
 Figma `Semantic/Colour` collection's Dark mode).
 

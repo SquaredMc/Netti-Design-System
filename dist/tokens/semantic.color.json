@@ -55,6 +55,11 @@
         "$value": "{color.white}",
         "$type": "color",
         "$description": "Cards and the pinned live take-home inside a sheet: matches background/surface in light, a step above background/sheet in dark"
+      },
+      "heroTag": {
+        "$value": "{color.white20}",
+        "$type": "color",
+        "$description": "A Tag on the Take Home Hero (Emphasis=On hero), behind text/on-hero: white 20% in light and dark"
       }
     },
     "text": {
