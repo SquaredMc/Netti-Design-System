@@ -11,7 +11,8 @@
       "app": { "$value": "{color.ink.950}", "$type": "color" },
       "hero": { "$value": "{color.navy.700}", "$type": "color" },
       "sheet": { "$value": "{color.ink.900}", "$type": "color" },
-      "sheetSurface": { "$value": "{color.ink.800}", "$type": "color" }
+      "sheetSurface": { "$value": "{color.ink.800}", "$type": "color" },
+      "heroTag": { "$value": "{color.white20}", "$type": "color" }
     },
     "text": {
       "primary": { "$value": "{color.white}", "$type": "color" },

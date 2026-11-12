@@ -44,6 +44,7 @@ export const ColorBackgroundApp = "#f3f4f6"; // App background behind the cards 
 export const ColorBackgroundHero = "#010045"; // Take Home Hero surface — the one branded surface
 export const ColorBackgroundSheet = "#f3f4f6"; // A sheet over the app (editors, Add income): matches background/app in light, a step above it in dark
 export const ColorBackgroundSheetSurface = "#ffffff"; // Cards and the pinned live take-home inside a sheet: matches background/surface in light, a step above background/sheet in dark
+export const ColorBackgroundHeroTag = "#ffffff33"; // A Tag on the Take Home Hero (Emphasis=On hero), behind text/on-hero: white 20% in light and dark
 export const ColorTextPrimary = "#0a0a0a"; // Primary body text on light surfaces
 export const ColorTextSecondary = "#4a5565"; // Secondary labels, captions
 export const ColorTextMuted = "#6b7280"; // Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white.

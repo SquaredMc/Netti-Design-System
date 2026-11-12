@@ -45,6 +45,7 @@
   --netti-color-background-hero: #010045; /** Take Home Hero surface — the one branded surface */
   --netti-color-background-sheet: #f3f4f6; /** A sheet over the app (editors, Add income): matches background/app in light, a step above it in dark */
   --netti-color-background-sheet-surface: #ffffff; /** Cards and the pinned live take-home inside a sheet: matches background/surface in light, a step above background/sheet in dark */
+  --netti-color-background-hero-tag: rgba(255, 255, 255, 0.2); /** A Tag on the Take Home Hero (Emphasis=On hero), behind text/on-hero: white 20% in light and dark */
   --netti-color-text-primary: #0a0a0a; /** Primary body text on light surfaces */
   --netti-color-text-secondary: #4a5565; /** Secondary labels, captions */
   --netti-color-text-muted: #6b7280; /** Muted text — placeholders, hints, disabled. WCAG AA ≥ 4.5:1 on white. */
@@ -178,6 +179,7 @@
     --netti-color-background-hero: #0e1868;
     --netti-color-background-sheet: #1a1a23;
     --netti-color-background-sheet-surface: #292933;
+    --netti-color-background-hero-tag: rgba(255, 255, 255, 0.2);
     --netti-color-text-primary: #ffffff;
     --netti-color-text-secondary: rgba(255, 255, 255, 0.7);
     --netti-color-text-muted: rgba(255, 255, 255, 0.5);
